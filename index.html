@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuraAI - AI-Powered Apps for Health & Productivity</title>
+    <meta name="description" content="LuraAI builds intelligent apps that enhance health, learning, and productivity through AI innovation.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #12122a;
+            --bg-card: #1a1a3e;
+            --text-primary: #f0f0ff;
+            --text-secondary: #a0a0c0;
+            --accent-blue: #4f8fff;
+            --accent-purple: #8f5fff;
+            --accent-gradient: linear-gradient(135deg, #4f8fff, #8f5fff);
+            --card-border: rgba(127, 127, 255, 0.15);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 26, 0.8);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(79, 143, 255, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(143, 95, 255, 0.08) 0%, transparent 50%);
+            animation: drift 20s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-2%, 2%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 1rem auto 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 0.85rem 2.5rem;
+            background: var(--accent-gradient);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(79, 143, 255, 0.3);
+        }
+
+        .hero-contact {
+            margin-top: 5rem;
+            padding: 1.5rem 2rem;
+            background: rgba(26, 26, 62, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            text-align: left;
+        }
+
+        .hero-contact p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            font-weight: 300;
+        }
+
+        .hero-contact p:last-child {
+            margin-bottom: 0;
+        }
+
+        .hero-contact p strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .hero-contact a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .hero-contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Apps Grid */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .app-card {
+            background: var(--bg-card);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .app-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(127, 127, 255, 0.3);
+        }
+
+        .app-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .app-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .app-card .app-subtitle {
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .app-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .app-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
+        }
+
+        .app-tag {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            background: rgba(79, 143, 255, 0.1);
+            color: var(--accent-blue);
+            border: 1px solid rgba(79, 143, 255, 0.2);
+        }
+
+        /* App card colors */
+        .app-oplan .app-icon { background: linear-gradient(135deg, #4f8fff, #3366cc); color: #fff; }
+        .app-antiadhd .app-icon { background: linear-gradient(135deg, #ff6b8a, #ee4466); color: #fff; }
+        .app-antidementia .app-icon { background: linear-gradient(135deg, #50c878, #2ea85c); color: #fff; }
+        .app-kword .app-icon { background: linear-gradient(135deg, #ffb84f, #e69a2e); color: #fff; }
+        .app-readbook .app-icon { background: linear-gradient(135deg, #a855f7, #7c3aed); color: #fff; }
+
+        /* About Section */
+        .about {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            text-align: center;
+            border: 1px solid var(--card-border);
+        }
+
+        .about p {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about .location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 2rem;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        .contact-info .section-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info p strong {
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                padding: 3rem 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.8rem 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="nav-logo">LuraAI</a>
+        <ul class="nav-links">
+            <li><a href="#apps">Apps</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>LuraAI</h1>
+            <p class="tagline">AI-powered apps for health &amp; productivity</p>
+            <a href="#apps" class="hero-cta">Explore Our Apps</a>
+            <div class="hero-contact">
+                <p><strong>Entity Name:</strong> LuraAI</p>
+                <p><strong>D-U-N-S Number:</strong> 696467783</p>
+                <p><strong>Address:</strong> 65 Dongtansillicheon-ro 2-gil, Dongtan-gu, Hwaseong Gyeonggi 18495, South Korea</p>
+                <p><strong>Email:</strong> <a href="mailto:luraai.dev@gmail.com">luraai.dev@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps">
+        <h2 class="section-title">Our Apps</h2>
+        <p class="section-subtitle">Intelligent solutions designed to enhance your daily life through AI innovation</p>
+
+        <div class="apps-grid">
+
+            <!-- oPlan -->
+            <div class="app-card app-oplan">
+                <div class="app-icon">oP</div>
+                <p class="app-subtitle">Planner</p>
+                <h3>oPlan</h3>
+                <p>Next-generation schedule &amp; task management planner with an integrated date-time picker, AI-optimized reminders, and seamless Apple Watch connectivity.</p>
+                <div class="app-tags">
+                    <span class="app-tag">AI Reminders</span>
+                    <span class="app-tag">Apple Watch</span>
+                    <span class="app-tag">Task Management</span>
+                </div>
+            </div>
+
+            <!-- antiADHD -->
+            <div class="app-card app-antiadhd">
+                <div class="app-icon">aA</div>
+                <p class="app-subtitle">Digital Therapeutics</p>
+                <h3>antiADHD</h3>
+                <p>ADHD digital therapeutic (DTx) featuring cognitive training, screen-time management, biofeedback, and evidence-based behavioral interventions.</p>
+                <div class="app-tags">
+                    <span class="app-tag">DTx</span>
+                    <span class="app-tag">Cognitive Training</span>
+                    <span class="app-tag">Biofeedback</span>
+                </div>
+            </div>
+
+            <!-- antiDementia -->
+            <div class="app-card app-antidementia">
+                <div class="app-icon">aD</div>
+                <p class="app-subtitle">Brain Health</p>
+                <h3>antiDementia</h3>
+                <p>Dementia prevention app delivering 40 Hz gamma stimulation (visual, auditory, and haptic), cognitive exercises, and a senior-friendly UI.</p>
+                <div class="app-tags">
+                    <span class="app-tag">40Hz Gamma</span>
+                    <span class="app-tag">Senior-Friendly</span>
+                    <span class="app-tag">Prevention</span>
+                </div>
+            </div>
+
+            <!-- kWord -->
+            <div class="app-card app-kword">
+                <div class="app-icon">kW</div>
+                <p class="app-subtitle">Language Learning</p>
+                <h3>kWord</h3>
+                <p>Korean vocabulary builder powered by SM-2 spaced repetition. Includes TOPIK prep, pronunciation TTS, and swipe-based flashcards.</p>
+                <div class="app-tags">
+                    <span class="app-tag">Spaced Repetition</span>
+                    <span class="app-tag">TOPIK</span>
+                    <span class="app-tag">Flashcards</span>
+                </div>
+            </div>
+
+            <!-- ReadBook -->
+            <div class="app-card app-readbook">
+                <div class="app-icon">RB</div>
+                <p class="app-subtitle">Children's Education</p>
+                <h3>ReadBook</h3>
+                <p>Multilingual children's reading app supporting 10 languages with TTS synchronization and developmentally appropriate content for every stage.</p>
+                <div class="app-tags">
+                    <span class="app-tag">10 Languages</span>
+                    <span class="app-tag">TTS Sync</span>
+                    <span class="app-tag">Kids</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about">
+            <h2 class="section-title">About LuraAI</h2>
+            <p>We build intelligent applications that make a meaningful impact on health, learning, and everyday productivity. Our team combines expertise in AI, neuroscience, and user-centered design to create tools people love to use.</p>
+            <p>From digital therapeutics to language learning, every LuraAI product is grounded in research and refined through real-world feedback.</p>
+            <div class="location">
+                <span>📍</span>
+                <span>Hwaseong-si, Gyeonggi-do, South Korea (화성시, 경기도)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact">
+        <div class="contact-info">
+            <h2 class="section-title">Contact</h2>
+            <p><strong>Entity Name:</strong> LuraAI</p>
+            <p><strong>D-U-N-S Number:</strong> 696467783</p>
+            <p><strong>Address:</strong> 65 Dongtansillicheon-ro 2-gil, Dongtan-gu, Hwaseong Gyeonggi 18495, South Korea</p>
+            <p><strong>Email:</strong> <a href="mailto:luraai.dev@gmail.com">luraai.dev@gmail.com</a></p>
+        </div>
+        <div class="footer-links">
+            <a href="#apps">Apps</a>
+            <a href="#about">About</a>
+            <a href="mailto:luraai.dev@gmail.com">Contact</a>
+        </div>
+        <p>&copy; 2025 LuraAI. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
