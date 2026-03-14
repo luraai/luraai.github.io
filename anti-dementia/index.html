@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>antiDementia - AI 기반 치매 예방 앱 | LuraAI</title>
-    <meta name="description" content="antiDementia는 40Hz 감마 자극과 인지 훈련을 통해 치매를 예방하는 AI 기반 건강 앱입니다.">
+    <title>antiDementia - AI-Powered Dementia Prevention App | LuraAI</title>
+    <meta name="description" content="antiDementia is an AI-powered brain health app featuring 40Hz gamma stimulation and cognitive training for dementia prevention.">
     <link rel="icon" type="image/png" href="../favicon/favicon.png">
     <style>
         * {
@@ -59,6 +59,12 @@
             width: auto;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -74,6 +80,36 @@
 
         .nav-links a:hover {
             color: var(--text-primary);
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.35rem 0.7rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            transition: background 0.3s, color 0.3s;
+            user-select: none;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--text-primary);
+        }
+
+        .lang-toggle .globe-icon {
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .lang-toggle .lang-label {
+            font-weight: 500;
         }
 
         /* Hero Section */
@@ -293,6 +329,27 @@
             gap: 2rem;
         }
 
+        /* i18n visibility */
+        [data-lang-ko] { display: none; }
+        [data-lang-en] { display: inline; }
+        .lang-ko [data-lang-ko] { display: inline; }
+        .lang-ko [data-lang-en] { display: none; }
+
+        /* Block-level i18n */
+        div[data-lang-ko], p[data-lang-ko], span[data-lang-ko] { display: none; }
+        div[data-lang-en], p[data-lang-en], span[data-lang-en] { display: block; }
+        span[data-lang-en] { display: inline; }
+        .lang-ko div[data-lang-ko], .lang-ko p[data-lang-ko] { display: block; }
+        .lang-ko span[data-lang-ko] { display: inline; }
+        .lang-ko div[data-lang-en], .lang-ko p[data-lang-en] { display: none; }
+        .lang-ko span[data-lang-en] { display: none; }
+
+        /* Flex containers for tags */
+        .app-tags[data-lang-ko] { display: none; }
+        .app-tags[data-lang-en] { display: flex; }
+        .lang-ko .app-tags[data-lang-ko] { display: flex; }
+        .lang-ko .app-tags[data-lang-en] { display: none; }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -326,6 +383,14 @@
                 padding: 0.8rem 1rem;
             }
 
+            .nav-right {
+                gap: 0.8rem;
+            }
+
+            .nav-links {
+                gap: 0.7rem;
+            }
+
             .hero h1 {
                 font-size: 2rem;
             }
@@ -347,11 +412,18 @@
     <!-- Navigation -->
     <nav>
         <a href="/" class="nav-logo"><img src="../favicon/favicon.png" alt="LuraAI" class="nav-logo-img"></a>
-        <ul class="nav-links">
-            <li><a href="/">LuraAI Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="/">LuraAI Home</a></li>
+                <li><a href="#features"><span data-lang-en>Features</span><span data-lang-ko>Features</span></a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="lang-toggle" id="langToggle" title="Switch language">
+                <span class="globe-icon">&#127760;</span>
+                <span class="lang-label" data-lang-en>KO</span>
+                <span class="lang-label" data-lang-ko>EN</span>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -359,72 +431,124 @@
         <div class="hero-content">
             <div class="app-icon-hero">aD</div>
             <h1>antiDementia</h1>
-            <p class="tagline">AI 기반 치매 예방 건강 앱</p>
+            <p class="tagline">
+                <span data-lang-en>AI-Powered Brain Health &amp; Dementia Prevention</span>
+                <span data-lang-ko>AI &#44592;&#48152; &#52824;&#47588; &#50696;&#48169; &#44148;&#44053; &#50545;</span>
+            </p>
         </div>
     </section>
 
     <!-- Description -->
     <div class="description">
-        <p>
-            antiDementia는 최신 뇌과학 연구에 기반한 <strong style="color: var(--accent-green);">40Hz 감마 자극</strong>과
-            다양한 <strong style="color: var(--accent-green);">인지 훈련 프로그램</strong>을 통해
-            치매를 예방하고 뇌 건강을 증진하는 앱입니다.
+        <p data-lang-en>
+            antiDementia leverages the latest neuroscience research to deliver
+            <strong style="color: var(--accent-green);">40Hz gamma stimulation</strong> and
+            a variety of <strong style="color: var(--accent-green);">cognitive training programs</strong>
+            designed to prevent dementia and boost brain health.
         </p>
-        <p>
-            시각, 청각, 촉각 자극을 결합한 멀티모달 감마 엔트레인먼트와
-            시니어 친화적 UI로 누구나 쉽게 사용할 수 있습니다.
+        <p data-lang-en>
+            Combining visual, auditory, and haptic stimulation in a multimodal gamma entrainment experience
+            with a senior-friendly UI, antiDementia is easy for anyone to use.
         </p>
-        <div class="app-tags">
-            <span class="app-tag">40Hz 감마 자극</span>
-            <span class="app-tag">인지 훈련</span>
-            <span class="app-tag">시니어 친화</span>
-            <span class="app-tag">뇌 건강</span>
-            <span class="app-tag">치매 예방</span>
+        <p data-lang-ko>
+            antiDementia&#45716; &#52572;&#49888; &#45516;&#44284;&#54617; &#50672;&#44396;&#50640; &#44592;&#48152;&#54620;
+            <strong style="color: var(--accent-green);">40Hz &#44048;&#47560; &#51088;&#44537;</strong>&#44284;
+            &#45796;&#50577;&#54620; <strong style="color: var(--accent-green);">&#51064;&#51648; &#54984;&#47144; &#54532;&#47196;&#44536;&#47016;</strong>&#51012; &#53685;&#54644;
+            &#52824;&#47588;&#47484; &#50696;&#48169;&#54616;&#44256; &#45516; &#44148;&#44053;&#51012; &#51613;&#51652;&#54616;&#45716; &#50545;&#51077;&#45768;&#45796;.
+        </p>
+        <p data-lang-ko>
+            &#49884;&#44033;, &#52397;&#44033;, &#52489;&#44033; &#51088;&#44537;&#51012; &#44208;&#54633;&#54620; &#47680;&#54000;&#47784;&#45804; &#44048;&#47560; &#50644;&#53944;&#47112;&#51064;&#47676;&#53944;&#50752;
+            &#49884;&#45768;&#50612; &#52828;&#54868;&#51201; UI&#47196; &#45572;&#44396;&#45208; &#49789;&#44172; &#49324;&#50857;&#54624; &#49688; &#51080;&#49845;&#45768;&#45796;.
+        </p>
+        <div class="app-tags" data-lang-en>
+            <span class="app-tag">40Hz Gamma</span>
+            <span class="app-tag">Cognitive Training</span>
+            <span class="app-tag">Senior-Friendly</span>
+            <span class="app-tag">Brain Health</span>
+            <span class="app-tag">Prevention</span>
+        </div>
+        <div class="app-tags" data-lang-ko>
+            <span class="app-tag">40Hz &#44048;&#47560; &#51088;&#44537;</span>
+            <span class="app-tag">&#51064;&#51648; &#54984;&#47144;</span>
+            <span class="app-tag">&#49884;&#45768;&#50612; &#52828;&#54868;</span>
+            <span class="app-tag">&#45516; &#44148;&#44053;</span>
+            <span class="app-tag">&#52824;&#47588; &#50696;&#48169;</span>
         </div>
     </div>
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <h2 class="section-title">주요 기능</h2>
+        <h2 class="section-title">
+            <span data-lang-en>Key Features</span>
+            <span data-lang-ko>&#51452;&#50836; &#44592;&#45733;</span>
+        </h2>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">💡</div>
-                <h3>40Hz 감마 자극</h3>
-                <p>시각(Light), 청각(Sound), 촉각(Haptic) 자극을 활용한 멀티모달 40Hz 감마파 엔트레인먼트로 뇌 활성화를 돕습니다.</p>
+                <div class="feature-icon">&#128161;</div>
+                <h3>
+                    <span data-lang-en>40Hz Gamma Stimulation</span>
+                    <span data-lang-ko>40Hz &#44048;&#47560; &#51088;&#44537;</span>
+                </h3>
+                <p data-lang-en>Multimodal 40Hz gamma entrainment through visual (light), auditory (sound), and haptic stimulation to help activate and protect the brain.</p>
+                <p data-lang-ko>&#49884;&#44033;(Light), &#52397;&#44033;(Sound), &#52489;&#44033;(Haptic) &#51088;&#44537;&#51012; &#54876;&#50857;&#54620; &#47680;&#54000;&#47784;&#45804; 40Hz &#44048;&#47560;&#54028; &#50644;&#53944;&#47112;&#51064;&#47676;&#53944;&#47196; &#45516; &#54876;&#49457;&#54868;&#47484; &#46037;&#49845;&#45768;&#45796;.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🧠</div>
-                <h3>인지 훈련</h3>
-                <p>기억력, 주의력, 문제해결 능력을 강화하는 과학적으로 설계된 인지 훈련 프로그램을 제공합니다.</p>
+                <div class="feature-icon">&#129504;</div>
+                <h3>
+                    <span data-lang-en>Cognitive Training</span>
+                    <span data-lang-ko>&#51064;&#51648; &#54984;&#47144;</span>
+                </h3>
+                <p data-lang-en>Scientifically designed cognitive exercises to strengthen memory, attention, and problem-solving skills.</p>
+                <p data-lang-ko>&#44592;&#50613;&#47141;, &#51452;&#51032;&#47141;, &#47928;&#51228;&#54644;&#44208; &#45733;&#47141;&#51012; &#44053;&#54868;&#54616;&#45716; &#44284;&#54617;&#51201;&#51004;&#47196; &#49444;&#44228;&#46108; &#51064;&#51648; &#54984;&#47144; &#54532;&#47196;&#44536;&#47016;&#51012; &#51228;&#44277;&#54633;&#45768;&#45796;.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">👴</div>
-                <h3>시니어 친화 UI</h3>
-                <p>큰 글씨, 직관적인 인터페이스, 간편한 조작으로 어르신도 쉽게 사용할 수 있도록 설계되었습니다.</p>
+                <div class="feature-icon">&#128116;</div>
+                <h3>
+                    <span data-lang-en>Senior-Friendly UI</span>
+                    <span data-lang-ko>&#49884;&#45768;&#50612; &#52828;&#54868; UI</span>
+                </h3>
+                <p data-lang-en>Large text, intuitive interface, and simple controls designed so that seniors can use the app with ease.</p>
+                <p data-lang-ko>&#53360; &#44544;&#50472;, &#51649;&#44288;&#51201;&#51064; &#51064;&#53552;&#54168;&#51060;&#49828;, &#44036;&#54200;&#54620; &#51312;&#51089;&#51004;&#47196; &#50612;&#47476;&#49888;&#46020; &#49789;&#44172; &#49324;&#50857;&#54624; &#49688; &#51080;&#46020;&#47197; &#49444;&#44228;&#46104;&#50632;&#49845;&#45768;&#45796;.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>건강 리포트</h3>
-                <p>훈련 기록과 인지 능력 변화를 추적하여 개인 맞춤형 건강 리포트를 제공합니다.</p>
+                <div class="feature-icon">&#128202;</div>
+                <h3>
+                    <span data-lang-en>Health Reports</span>
+                    <span data-lang-ko>&#44148;&#44053; &#47532;&#54252;&#53944;</span>
+                </h3>
+                <p data-lang-en>Track training history and cognitive changes with personalized health reports to monitor your progress.</p>
+                <p data-lang-ko>&#54984;&#47144; &#44592;&#47197;&#44284; &#51064;&#51648; &#45733;&#47141; &#48320;&#54868;&#47484; &#52628;&#51201;&#54616;&#50668; &#44060;&#51064; &#47582;&#52644;&#54805; &#44148;&#44053; &#47532;&#54252;&#53944;&#47484; &#51228;&#44277;&#54633;&#45768;&#45796;.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">⏰</div>
-                <h3>맞춤 알림</h3>
-                <p>규칙적인 뇌 훈련 습관을 위한 스마트 알림 기능으로 꾸준한 치매 예방을 지원합니다.</p>
+                <div class="feature-icon">&#9200;</div>
+                <h3>
+                    <span data-lang-en>Smart Reminders</span>
+                    <span data-lang-ko>&#47582;&#52644; &#50508;&#47548;</span>
+                </h3>
+                <p data-lang-en>Smart notification system to help build a regular brain training habit for consistent dementia prevention.</p>
+                <p data-lang-ko>&#44508;&#52825;&#51201;&#51064; &#45516; &#54984;&#47144; &#49845;&#44288;&#51012; &#50948;&#54620; &#49828;&#47560;&#53944; &#50508;&#47548; &#44592;&#45733;&#51004;&#47196; &#44984;&#51456;&#54620; &#52824;&#47588; &#50696;&#48169;&#51012; &#51648;&#50896;&#54633;&#45768;&#45796;.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🔬</div>
-                <h3>과학적 근거</h3>
-                <p>MIT 등 주요 연구기관의 최신 감마파 연구에 기반한 검증된 접근 방식을 적용합니다.</p>
+                <div class="feature-icon">&#128300;</div>
+                <h3>
+                    <span data-lang-en>Research-Backed</span>
+                    <span data-lang-ko>&#44284;&#54617;&#51201; &#44540;&#44144;</span>
+                </h3>
+                <p data-lang-en>Built on validated approaches from the latest gamma wave research by leading institutions including MIT.</p>
+                <p data-lang-ko>MIT &#46321; &#51452;&#50836; &#50672;&#44396;&#44592;&#44288;&#51032; &#52572;&#49888; &#44048;&#47560;&#54028; &#50672;&#44396;&#50640; &#44592;&#48152;&#54620; &#44160;&#51613;&#46108; &#51217;&#44540; &#48169;&#49885;&#51012; &#51201;&#50857;&#54633;&#45768;&#45796;.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h2 class="section-title">문의하기</h2>
+        <h2 class="section-title">
+            <span data-lang-en>Contact Us</span>
+            <span data-lang-ko>&#47928;&#51032;&#54616;&#44592;</span>
+        </h2>
         <div class="contact-card">
-            <p>antiDementia에 대한 문의, 제안, 파트너십 등<br>무엇이든 편하게 연락해 주세요.</p>
+            <p data-lang-en>Have questions, suggestions, or partnership inquiries about antiDementia?<br>We'd love to hear from you.</p>
+            <p data-lang-ko>antiDementia&#50640; &#45824;&#54620; &#47928;&#51032;, &#51228;&#50504;, &#54028;&#53944;&#45320;&#49901; &#46321;<br>&#47924;&#50631;&#51060;&#46304; &#54200;&#54616;&#44172; &#50672;&#46973;&#54644; &#51452;&#49464;&#50836;.</p>
             <a href="mailto:contact@luraai.io" class="contact-email">contact@luraai.io</a>
         </div>
     </section>
@@ -433,11 +557,39 @@
     <footer>
         <div class="footer-links">
             <a href="/">LuraAI Home</a>
-            <a href="privacy/ko/">개인정보처리방침</a>
-            <a href="terms/ko/">이용약관</a>
+            <span data-lang-en>
+                <a href="privacy/en/">Privacy Policy</a>
+            </span>
+            <span data-lang-ko>
+                <a href="privacy/ko/">&#44060;&#51064;&#51221;&#48372;&#52376;&#47532;&#48169;&#52840;</a>
+            </span>
+            <span data-lang-en>
+                <a href="terms/en/">Terms of Service</a>
+            </span>
+            <span data-lang-ko>
+                <a href="terms/ko/">&#51060;&#50857;&#50557;&#44288;</a>
+            </span>
         </div>
         <p>&copy; 2025 LuraAI. All rights reserved.</p>
     </footer>
+
+    <script>
+        (function() {
+            var body = document.body;
+            var toggle = document.getElementById('langToggle');
+            var saved = localStorage.getItem('antidementia-lang');
+            if (saved === 'ko') {
+                body.classList.add('lang-ko');
+                document.documentElement.lang = 'ko';
+            }
+            toggle.addEventListener('click', function() {
+                body.classList.toggle('lang-ko');
+                var isKo = body.classList.contains('lang-ko');
+                document.documentElement.lang = isKo ? 'ko' : 'en';
+                localStorage.setItem('antidementia-lang', isKo ? 'ko' : 'en');
+            });
+        })();
+    </script>
 
 </body>
 </html>
