@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadBook - Multilingual Children's Reading App | LuraAI</title>
+    <meta name="description" content="ReadBook is a multilingual children's reading app supporting 11 languages with TTS synchronization and age-appropriate content for every stage.">
+    <link rel="icon" type="image/png" href="../favicon/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #12122a;
+            --bg-card: #1a1a3e;
+            --text-primary: #f0f0ff;
+            --text-secondary: #a0a0c0;
+            --accent-main: #a855f7;
+            --accent-main-dark: #7c3aed;
+            --accent-gradient: linear-gradient(135deg, #a855f7, #7c3aed);
+            --card-border: rgba(127, 127, 255, 0.15);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 26, 0.8);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.35rem 0.7rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            transition: background 0.3s, color 0.3s;
+            user-select: none;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--text-primary);
+        }
+
+        .lang-toggle .globe-icon {
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .lang-toggle .lang-label {
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(124, 58, 237, 0.08) 0%, transparent 50%);
+            animation: drift 20s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-2%, 2%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+
+        .app-icon-hero {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin: 0.5rem auto 2rem;
+            font-weight: 300;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.8rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Description Section */
+        .description {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .description p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .app-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .app-tag {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            background: rgba(168, 85, 247, 0.1);
+            color: var(--accent-main);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        /* Contact Section */
+        .contact {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .contact-email {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: var(--accent-gradient);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--card-border);
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent-main);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        /* i18n visibility */
+        [data-lang-ko] { display: none; }
+        [data-lang-en] { display: inline; }
+        .lang-ko [data-lang-ko] { display: inline; }
+        .lang-ko [data-lang-en] { display: none; }
+
+        /* Block-level i18n */
+        div[data-lang-ko], p[data-lang-ko], span[data-lang-ko] { display: none; }
+        div[data-lang-en], p[data-lang-en], span[data-lang-en] { display: block; }
+        span[data-lang-en] { display: inline; }
+        .lang-ko div[data-lang-ko], .lang-ko p[data-lang-ko] { display: block; }
+        .lang-ko span[data-lang-ko] { display: inline; }
+        .lang-ko div[data-lang-en], .lang-ko p[data-lang-en] { display: none; }
+        .lang-ko span[data-lang-en] { display: none; }
+
+        /* Flex containers for tags */
+        .app-tags[data-lang-ko] { display: none; }
+        .app-tags[data-lang-en] { display: flex; }
+        .lang-ko .app-tags[data-lang-ko] { display: flex; }
+        .lang-ko .app-tags[data-lang-en] { display: none; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features, .description, .contact {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.8rem 1rem;
+            }
+
+            .nav-right {
+                gap: 0.8rem;
+            }
+
+            .nav-links {
+                gap: 0.7rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .app-icon-hero {
+                width: 64px;
+                height: 64px;
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="nav-logo"><img src="../favicon/favicon.png" alt="LuraAI" class="nav-logo-img"></a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="/">LuraAI Home</a></li>
+                <li><a href="#features"><span data-lang-en>Features</span><span data-lang-ko>Features</span></a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="lang-toggle" id="langToggle" title="Switch language">
+                <span class="globe-icon">&#127760;</span>
+                <span class="lang-label" data-lang-en>KO</span>
+                <span class="lang-label" data-lang-ko>EN</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon-hero">RB</div>
+            <h1>ReadBook</h1>
+            <p class="tagline">
+                <span data-lang-en>Multilingual Children's Reading &amp; Learning</span>
+                <span data-lang-ko>다국어 어린이 독서 &amp; 학습 앱</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Description -->
+    <div class="description">
+        <p data-lang-en>
+            ReadBook is a next-generation multilingual children's reading platform with
+            <strong style="color: var(--accent-main);">AI-powered TTS synchronization</strong> and
+            <strong style="color: var(--accent-main);">age-appropriate content</strong>
+            designed to nurture literacy from infancy through elementary school.
+        </p>
+        <p data-lang-en>
+            Supporting 11 languages with real-time word highlighting, curated Korean &amp; global classic stories,
+            and a gamified achievement system, ReadBook makes reading fun and educational for every child.
+        </p>
+        <p data-lang-ko>
+            ReadBook은 <strong style="color: var(--accent-main);">AI 기반 TTS 동기화</strong>와
+            <strong style="color: var(--accent-main);">연령별 맞춤 콘텐츠</strong>를 제공하는
+            차세대 다국어 어린이 독서 플랫폼입니다.
+        </p>
+        <p data-lang-ko>
+            11개 언어 지원, 실시간 단어 하이라이팅, 한국 전래동화와 세계 명작,
+            게임화된 성취 시스템으로 모든 어린이에게 재미있고 교육적인 독서 경험을 선사합니다.
+        </p>
+        <div class="app-tags" data-lang-en>
+            <span class="app-tag">11 Languages</span>
+            <span class="app-tag">TTS Sync</span>
+            <span class="app-tag">Age-Appropriate</span>
+            <span class="app-tag">Korean Classics</span>
+            <span class="app-tag">Reading Achievements</span>
+        </div>
+        <div class="app-tags" data-lang-ko>
+            <span class="app-tag">11개 언어</span>
+            <span class="app-tag">TTS 동기화</span>
+            <span class="app-tag">연령별 맞춤</span>
+            <span class="app-tag">전래동화</span>
+            <span class="app-tag">독서 성취</span>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">
+            <span data-lang-en>Key Features</span>
+            <span data-lang-ko>주요 기능</span>
+        </h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">&#127760;</div>
+                <h3>
+                    <span data-lang-en>11-Language Support</span>
+                    <span data-lang-ko>11개 언어 지원</span>
+                </h3>
+                <p data-lang-en>Read stories in Korean, English, Chinese, Spanish, Hindi, Arabic, French, Portuguese, Russian, Indonesian, and Japanese with native TTS.</p>
+                <p data-lang-ko>한국어, 영어, 중국어, 스페인어, 힌디어, 아랍어, 프랑스어, 포르투갈어, 러시아어, 인도네시아어, 일본어까지 11개 언어로 동화를 읽을 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128264;</div>
+                <h3>
+                    <span data-lang-en>TTS &amp; Word Highlighting</span>
+                    <span data-lang-ko>TTS &amp; 단어 하이라이팅</span>
+                </h3>
+                <p data-lang-en>Real-time word-level highlighting synchronized with text-to-speech narration, helping children follow along as they listen and read.</p>
+                <p data-lang-ko>TTS 음성과 실시간으로 동기화되는 단어별 하이라이팅으로 아이들이 듣고 읽으며 자연스럽게 따라갈 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128118;</div>
+                <h3>
+                    <span data-lang-en>Age-Based Content</span>
+                    <span data-lang-ko>연령별 맞춤 콘텐츠</span>
+                </h3>
+                <p data-lang-en>Stories curated for three developmental stages: Baby (0-2), Preschool (3-5), and School (6+) based on Scarborough's Reading Rope framework.</p>
+                <p data-lang-ko>스카보로 독서 로프 이론에 기반하여 아기(0-2세), 유아(3-5세), 초등(6세+) 3단계로 나뉜 발달 맞춤 콘텐츠를 제공합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128218;</div>
+                <h3>
+                    <span data-lang-en>Korean &amp; Global Classics</span>
+                    <span data-lang-ko>전래동화 &amp; 세계 명작</span>
+                </h3>
+                <p data-lang-en>A rich library of 60+ stories including Korean classics like Heungbu &amp; Nolbu and global tales like Peter Rabbit and Cinderella.</p>
+                <p data-lang-ko>흥부와 놀부, 콩쥐 팥쥐 등 한국 전래동화와 피터래빗, 신데렐라 등 세계 명작까지 60편 이상의 풍부한 도서관을 제공합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#127942;</div>
+                <h3>
+                    <span data-lang-en>Reading Achievements</span>
+                    <span data-lang-ko>독서 성취 시스템</span>
+                </h3>
+                <p data-lang-en>Gamified badges, reading streaks, vocabulary collection, and quiz challenges that motivate children to read more every day.</p>
+                <p data-lang-ko>배지, 연속 독서, 단어 수집, 퀴즈 챌린지 등 게임화된 성취 시스템으로 매일 더 많이 읽도록 동기를 부여합니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128272;</div>
+                <h3>
+                    <span data-lang-en>Safe &amp; Ad-Free</span>
+                    <span data-lang-ko>안전 &amp; 광고 없음</span>
+                </h3>
+                <p data-lang-en>Parental controls, no ads, and COPPA-compliant design ensure a completely safe reading environment for children.</p>
+                <p data-lang-ko>보호자 잠금, 광고 없음, COPPA 준수 설계로 어린이에게 완전히 안전한 독서 환경을 보장합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">
+            <span data-lang-en>Contact Us</span>
+            <span data-lang-ko>문의하기</span>
+        </h2>
+        <div class="contact-card">
+            <p data-lang-en>Have questions, suggestions, or partnership inquiries about ReadBook?<br>We'd love to hear from you.</p>
+            <p data-lang-ko>ReadBook에 대한 문의, 제안, 파트너십 등<br>무엇이든 편하게 연락해 주세요.</p>
+            <a href="mailto:contact@luraai.io" class="contact-email">contact@luraai.io</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="/">LuraAI Home</a>
+            <span data-lang-en>
+                <a href="privacy/en/">Privacy Policy</a>
+            </span>
+            <span data-lang-ko>
+                <a href="privacy/ko/">개인정보처리방침</a>
+            </span>
+            <span data-lang-en>
+                <a href="terms/en/">Terms of Service</a>
+            </span>
+            <span data-lang-ko>
+                <a href="terms/ko/">이용약관</a>
+            </span>
+        </div>
+        <p>&copy; 2025 LuraAI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        (function() {
+            var body = document.body;
+            var toggle = document.getElementById('langToggle');
+            var saved = localStorage.getItem('readbook-lang');
+            if (saved === 'ko') {
+                body.classList.add('lang-ko');
+                document.documentElement.lang = 'ko';
+            }
+            toggle.addEventListener('click', function() {
+                body.classList.toggle('lang-ko');
+                var isKo = body.classList.contains('lang-ko');
+                document.documentElement.lang = isKo ? 'ko' : 'en';
+                localStorage.setItem('readbook-lang', isKo ? 'ko' : 'en');
+            });
+        })();
+    </script>
+
+</body>
+</html>

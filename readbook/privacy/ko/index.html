@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadBook - 개인정보 처리방침</title>
+    <meta name="description" content="ReadBook 앱 개인정보 처리방침">
+    <link rel="icon" type="image/png" href="/favicon/favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #12122a;
+            --text-primary: #f0f0ff;
+            --text-secondary: #a0a0c0;
+            --accent-blue: #4f8fff;
+            --accent-gradient: linear-gradient(135deg, #4f8fff, #8f5fff);
+            --card-border: rgba(127, 127, 255, 0.15);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+        nav {
+            position: fixed; top: 0; width: 100%;
+            padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 26, 0.8);
+            border-bottom: 1px solid var(--card-border);
+        }
+        .nav-logo { display: flex; align-items: center; text-decoration: none; }
+        .nav-logo-img { height: 32px; width: auto; }
+        .lang-switch {
+            color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;
+            padding: 0.4rem 1rem; border: 1px solid var(--card-border); border-radius: 20px;
+            transition: color 0.3s, border-color 0.3s;
+        }
+        .lang-switch:hover { color: var(--text-primary); border-color: var(--accent-blue); }
+        .container {
+            max-width: 800px; margin: 0 auto;
+            padding: 7rem 2rem 4rem;
+        }
+        h1 {
+            font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .subtitle { color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 0.95rem; }
+        h2 {
+            font-size: 1.3rem; font-weight: 700; margin: 2rem 0 0.8rem;
+            color: var(--text-primary);
+        }
+        p, li { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.8rem; }
+        ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.4rem; }
+        .highlight {
+            background: rgba(168, 85, 247, 0.1);
+            border-left: 3px solid #a855f7;
+            padding: 1rem 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .highlight p { color: #c084fc; margin-bottom: 0; }
+        footer {
+            text-align: center; padding: 3rem 2rem;
+            border-top: 1px solid var(--card-border); margin-top: 2rem;
+        }
+        footer p { color: var(--text-secondary); font-size: 0.85rem; }
+        footer a { color: var(--accent-blue); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.7rem; }
+            .container { padding: 6rem 1.2rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo"><img src="/favicon/favicon.png" alt="LuraAI" class="nav-logo-img"></a>
+    <a href="/readbook/privacy/en" class="lang-switch">English</a>
+</nav>
+
+<div class="container">
+    <h1>개인정보 처리방침</h1>
+    <p class="subtitle">ReadBook 앱 | 시행일: 2025년 1월 1일</p>
+
+    <h2>제1조 (목적)</h2>
+    <p>본 개인정보 처리방침은 LuraAI(이하 "회사")가 제공하는 ReadBook 앱(이하 "앱")의 개인정보 처리에 관한 사항을 안내하기 위해 작성되었습니다.</p>
+
+    <h2>제2조 (수집하는 개인정보)</h2>
+    <div class="highlight">
+        <p><strong>본 앱은 이용자의 개인정보를 일체 수집하지 않습니다.</strong></p>
+    </div>
+    <ul>
+        <li>회원가입 절차가 없으며, 계정 생성을 요구하지 않습니다.</li>
+        <li>이름, 이메일, 전화번호, 위치정보 등 어떠한 개인 식별 정보도 수집하지 않습니다.</li>
+        <li>사용 기록, 독서 데이터, 기기 정보 등을 수집하거나 서버에 전송하지 않습니다.</li>
+    </ul>
+
+    <h2>제3조 (개인정보의 보관)</h2>
+    <div class="highlight">
+        <p><strong>수집하는 개인정보가 없으므로, 보관하는 개인정보도 없습니다.</strong></p>
+    </div>
+    <p>앱 내 모든 데이터(독서 진행 상황, 설정값 등)는 이용자의 기기에만 저장되며, 회사의 서버로 전송되지 않습니다.</p>
+
+    <h2>제4조 (개인정보의 제3자 제공)</h2>
+    <p>수집하는 개인정보가 없으므로, 제3자에게 제공하는 개인정보도 없습니다.</p>
+
+    <h2>제5조 (쿠키 및 추적 기술)</h2>
+    <p>본 앱은 쿠키, 웹 비콘, 광고 식별자 또는 기타 추적 기술을 사용하지 않습니다.</p>
+
+    <h2>제6조 (아동의 개인정보)</h2>
+    <p>본 앱은 어린이와 가족을 위해 설계되었습니다. 아동을 포함한 어떠한 이용자의 개인정보도 수집하지 않으므로, 아동 개인정보 보호에 관한 별도의 절차가 불필요합니다. 본 앱은 COPPA 및 기타 아동 안전 규정을 준수합니다.</p>
+
+    <h2>제7조 (처리방침의 변경)</h2>
+    <p>회사는 필요 시 본 개인정보 처리방침을 변경할 수 있으며, 변경 사항은 앱 내 또는 본 페이지를 통해 공지합니다.</p>
+
+    <h2>제8조 (연락처)</h2>
+    <p>본 개인정보 처리방침에 관한 문의 사항은 아래로 연락해 주시기 바랍니다.</p>
+    <ul>
+        <li><strong>회사명:</strong> LuraAI</li>
+        <li><strong>이메일:</strong> contact@luraai.io</li>
+        <li><strong>주소:</strong> 경기도 화성시 동탄실리천로2길 65</li>
+    </ul>
+</div>
+
+<footer>
+    <p><a href="/">LuraAI</a> · <a href="/readbook/terms/ko">이용약관</a></p>
+    <p>&copy; 2025 LuraAI. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
