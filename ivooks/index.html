@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReadBook - Multilingual Children's Reading App | LuraAI</title>
-    <meta name="description" content="ReadBook is a multilingual children's reading app supporting 11 languages with TTS synchronization and age-appropriate content for every stage.">
+    <title>iVooks - Multilingual Children's Reading App | LuraAI</title>
+    <meta name="description" content="iVooks is a multilingual children's reading app supporting 11 languages with TTS synchronization and age-appropriate content for every stage.">
     <link rel="icon" type="image/png" href="../favicon/favicon.png">
     <style>
         * {
@@ -429,8 +429,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="app-icon-hero">RB</div>
-            <h1>ReadBook</h1>
+            <div class="app-icon-hero">iV</div>
+            <h1>iVooks</h1>
             <p class="tagline">
                 <span data-lang-en>Multilingual Children's Reading &amp; Learning</span>
                 <span data-lang-ko>다국어 어린이 독서 &amp; 학습 앱</span>
@@ -441,17 +441,17 @@
     <!-- Description -->
     <div class="description">
         <p data-lang-en>
-            ReadBook is a next-generation multilingual children's reading platform with
+            iVooks is a next-generation multilingual children's reading platform with
             <strong style="color: var(--accent-main);">AI-powered TTS synchronization</strong> and
             <strong style="color: var(--accent-main);">age-appropriate content</strong>
             designed to nurture literacy from infancy through elementary school.
         </p>
         <p data-lang-en>
             Supporting 11 languages with real-time word highlighting, curated Korean &amp; global classic stories,
-            and a gamified achievement system, ReadBook makes reading fun and educational for every child.
+            and a gamified achievement system, iVooks makes reading fun and educational for every child.
         </p>
         <p data-lang-ko>
-            ReadBook은 <strong style="color: var(--accent-main);">AI 기반 TTS 동기화</strong>와
+            iVooks은 <strong style="color: var(--accent-main);">AI 기반 TTS 동기화</strong>와
             <strong style="color: var(--accent-main);">연령별 맞춤 콘텐츠</strong>를 제공하는
             차세대 다국어 어린이 독서 플랫폼입니다.
         </p>
@@ -546,8 +546,8 @@
             <span data-lang-ko>문의하기</span>
         </h2>
         <div class="contact-card">
-            <p data-lang-en>Have questions, suggestions, or partnership inquiries about ReadBook?<br>We'd love to hear from you.</p>
-            <p data-lang-ko>ReadBook에 대한 문의, 제안, 파트너십 등<br>무엇이든 편하게 연락해 주세요.</p>
+            <p data-lang-en>Have questions, suggestions, or partnership inquiries about iVooks?<br>We'd love to hear from you.</p>
+            <p data-lang-ko>iVooks에 대한 문의, 제안, 파트너십 등<br>무엇이든 편하게 연락해 주세요.</p>
             <a href="mailto:contact@luraai.io" class="contact-email">contact@luraai.io</a>
         </div>
     </section>
@@ -576,7 +576,7 @@
         (function() {
             var body = document.body;
             var toggle = document.getElementById('langToggle');
-            var saved = localStorage.getItem('readbook-lang');
+            var saved = localStorage.getItem('ivooks-lang');
             if (saved === 'ko') {
                 body.classList.add('lang-ko');
                 document.documentElement.lang = 'ko';
@@ -585,7 +585,7 @@
                 body.classList.toggle('lang-ko');
                 var isKo = body.classList.contains('lang-ko');
                 document.documentElement.lang = isKo ? 'ko' : 'en';
-                localStorage.setItem('readbook-lang', isKo ? 'ko' : 'en');
+                localStorage.setItem('ivooks-lang', isKo ? 'ko' : 'en');
             });
         })();
     </script>
