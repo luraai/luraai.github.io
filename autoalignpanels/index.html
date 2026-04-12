@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoAlignPanels - Smart Window Grid Alignment for macOS</title>
+    <meta name="description" content="Instantly align your macOS windows into a perfect grid with a single hotkey. AutoAlignPanels is the simplest window tiling tool for macOS.">
+    <link rel="icon" type="image/png" href="../favicon/favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0a0a1a; --bg2: #12122a; --card: #1a1a3e;
+            --text: #f0f0ff; --text2: #a0a0c0;
+            --blue: #4f8fff; --purple: #8f5fff;
+            --grad: linear-gradient(135deg, #5882fa, #8c64f0);
+            --border: rgba(127,127,255,0.15);
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; backdrop-filter: blur(20px); background: rgba(10,10,26,0.8); border-bottom: 1px solid var(--border); }
+        nav a { color: var(--text2); text-decoration: none; font-size: 0.95rem; }
+        nav a:hover { color: var(--text); }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6rem 2rem 4rem; position: relative; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at 30% 50%, rgba(88,130,250,0.1) 0%, transparent 50%), radial-gradient(ellipse at 70% 50%, rgba(140,100,240,0.08) 0%, transparent 50%); }
+        .hero-content { position: relative; z-index: 1; }
+        .app-icon-hero { width: 128px; height: 128px; border-radius: 28px; margin-bottom: 1.5rem; box-shadow: 0 20px 60px rgba(88,130,250,0.3); }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 0.5rem; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero .tagline { font-size: 1.3rem; color: var(--text2); max-width: 500px; margin: 0.5rem auto 2rem; }
+        .badge { display: inline-block; margin-top: 1rem; }
+        .badge img { height: 50px; }
+        .features { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+        .features h2 { text-align: center; font-size: 2rem; margin-bottom: 2.5rem; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .feature-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
+        .feature-card .icon { font-size: 2rem; margin-bottom: 0.8rem; }
+        .feature-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .feature-card p { color: var(--text2); font-size: 0.9rem; }
+        .how-it-works { max-width: 700px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
+        .how-it-works h2 { font-size: 2rem; margin-bottom: 2rem; }
+        .steps { display: flex; flex-direction: column; gap: 1.5rem; text-align: left; }
+        .step { display: flex; align-items: flex-start; gap: 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; }
+        .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+        .step p { color: var(--text2); font-size: 0.95rem; margin-top: 0.3rem; }
+        .step h3 { font-size: 1rem; }
+        .price-section { text-align: center; padding: 4rem 2rem; }
+        .price-card { display: inline-block; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem 3rem; }
+        .price { font-size: 3rem; font-weight: 800; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .price-note { color: var(--text2); font-size: 0.9rem; margin: 0.5rem 0 1.5rem; }
+        .cta-btn { display: inline-block; padding: 0.85rem 2.5rem; background: var(--grad); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(79,143,255,0.3); }
+        footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); }
+        footer p { color: var(--text2); font-size: 0.85rem; margin-bottom: 0.5rem; }
+        footer a { color: var(--blue); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .feature-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../">&larr; LuraAI</a>
+        <div style="display:flex;gap:1.5rem;">
+            <a href="#features">Features</a>
+            <a href="#how">How It Works</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="icon.png" alt="AutoAlignPanels Icon" class="app-icon-hero">
+            <h1>AutoAlignPanels</h1>
+            <p class="tagline">One hotkey. Perfect window grid. Every time.</p>
+            <p style="color:var(--text2);max-width:480px;margin:0 auto;">Instantly arrange all windows of the same app into a clean grid layout. No dragging, no snapping zones &mdash; just press a key.</p>
+            <div class="badge" style="margin-top:2rem;">
+                <a href="https://apps.apple.com/app/autoalignpanels" class="cta-btn">Download on the Mac App Store</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">&#9632;&#9632;<br>&#9632;&#9632;</div>
+                <h3>Smart Grid Layout</h3>
+                <p>Automatically calculates the optimal grid (2x2, 3x2, etc.) based on the number of windows. Fewer windows? Empty cells are left clean.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#9000;</div>
+                <h3>Customizable Hotkey</h3>
+                <p>Default is Shift+Ctrl+P, but change it to any key combination you like via the built-in shortcut recorder.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#9881;</div>
+                <h3>Menu Bar App</h3>
+                <p>Lives quietly in your menu bar. Click the icon to access settings, or hide it entirely and use only the hotkey.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#8942;</div>
+                <h3>Adjustable Gaps</h3>
+                <p>Set the spacing between windows to your preference &mdash; from tight edge-to-edge to comfortable padding.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#9658;</div>
+                <h3>Same-App Focus</h3>
+                <p>Only aligns windows of the currently active application, keeping your other workspaces untouched.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#128640;</div>
+                <h3>Apple Silicon Native</h3>
+                <p>Built exclusively for Apple Silicon Macs. Lightning fast, minimal resource usage.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div><h3>Open multiple windows</h3><p>Open several windows of the same app &mdash; Terminal, Finder, Safari, anything.</p></div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div><h3>Press the hotkey</h3><p>Hit Shift+Ctrl+P (or your custom shortcut) while the app is in focus.</p></div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div><h3>Windows snap to grid</h3><p>All visible windows of that app instantly arrange into a perfect grid layout.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="price-section">
+        <div class="price-card">
+            <div class="price">$0.99</div>
+            <p class="price-note">One-time purchase. No subscription.</p>
+            <a href="https://apps.apple.com/app/autoalignpanels" class="cta-btn">Get AutoAlignPanels</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="mailto:luraai.dev@gmail.com">Support</a>
+            <a href="../">LuraAI</a>
+        </div>
+        <p>&copy; 2025 LuraAI. All rights reserved.</p>
+    </footer>
+</body>
+</html>
