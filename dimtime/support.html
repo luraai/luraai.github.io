@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객 지원 - 급여계산기 (DimeTime)</title>
+    <meta name="description" content="급여계산기(DimeTime) 고객 지원. 자주 묻는 질문과 문의 안내. contact@luraai.io">
+    <link rel="icon" type="image/png" href="../favicon/favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Pretendard', Roboto, sans-serif; background: #0a0a1a; color: #f0f0ff; line-height: 1.8; }
+        .container { max-width: 700px; margin: 0 auto; padding: 6rem 2rem 4rem; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(20px); background: rgba(10,10,26,0.8); border-bottom: 1px solid rgba(31,195,107,0.18); z-index: 100; }
+        nav a { color: #a0a0c0; text-decoration: none; font-size: 0.95rem; }
+        nav a:hover { color: #f0f0ff; }
+        h1 { font-size: 2.2rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #1FC36B, #0FA45E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .date { color: #a0a0c0; margin-bottom: 2rem; font-size: 0.9rem; }
+        h2 { font-size: 1.3rem; margin: 2.5rem 0 1rem; }
+        p, li { color: #c0c0e0; font-size: 0.95rem; margin-bottom: 1rem; }
+        ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        a { color: #1FC36B; }
+        strong { color: #f0f0ff; }
+        details { background: #1a1a3e; border: 1px solid rgba(31,195,107,0.18); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 0.8rem; }
+        details summary { cursor: pointer; font-weight: 600; color: #f0f0ff; font-size: 0.98rem; }
+        details p { margin: 0.8rem 0 0; }
+        details p:last-child { margin-bottom: 0; }
+        .contact-box { background: #12122a; border: 1px solid rgba(31,195,107,0.18); border-radius: 16px; padding: 1.8rem; margin-top: 1rem; }
+        .contact-box p:last-of-type { margin-bottom: 0; }
+        .cta-btn { display: inline-block; margin-top: 1rem; padding: 0.8rem 2rem; background: linear-gradient(135deg, #1FC36B, #0FA45E); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(31,195,107,0.3); }
+        footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(31,195,107,0.18); margin-top: 3rem; }
+        footer p { color: #a0a0c0; font-size: 0.85rem; }
+        @media (max-width: 480px) { nav { padding: 0.8rem 1rem; } nav a { font-size: 0.85rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="./">&larr; 급여계산기</a>
+        <div style="display:flex;gap:1.2rem;">
+            <a href="privacy.html">개인정보</a>
+            <a href="terms.html">약관</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>고객 지원</h1>
+        <p class="date">급여계산기 (DimeTime) &middot; iOS 17+ (iPhone &middot; iPad)</p>
+
+        <div class="contact-box">
+            <p><strong>문의 이메일:</strong> <a href="mailto:contact@luraai.io">contact@luraai.io</a></p>
+            <p>버그 신고, 기능 제안, 사용 중 막히는 부분 &mdash; 무엇이든 환영합니다. 영업일 기준 1~2일 이내에 답변드립니다.</p>
+            <a class="cta-btn" href="mailto:contact@luraai.io?subject=%5B%EA%B8%89%EC%97%AC%EA%B3%84%EC%82%B0%EA%B8%B0%5D%20%EB%AC%B8%EC%9D%98">메일 보내기</a>
+        </div>
+
+        <h2>자주 묻는 질문</h2>
+
+        <details open>
+            <summary>주휴수당은 어떻게 자동으로 계산되나요?</summary>
+            <p>근로기준법에 따라 <strong>주 15시간 이상</strong> 근무한 알바생에 한해 <em>1일 평균 소정근로시간(최대 8시간) × 시급</em>이 자동으로 적용됩니다. 비수기·성수기 일정이 다르면 주별로 따로 산정합니다.</p>
+        </details>
+
+        <details>
+            <summary>세금 3.3%는 어떻게 적용되나요?</summary>
+            <p>설정 화면의 세율을 기본 3.3%로 두면, 세전 금액에 0.967을 곱한 값이 세후 실지급액으로 표시됩니다. 세율은 자유롭게 조정할 수 있습니다.</p>
+        </details>
+
+        <details>
+            <summary>22일·23일처럼 떨어지지 않는 달은요?</summary>
+            <p>월 단위로 한 번에 곱하는 게 아니라, 한 달 안의 모든 주를 따로 계산해서 합산합니다. 첫 주·마지막 주가 3일·4일 같은 부분 주여도 정확합니다.</p>
+        </details>
+
+        <details>
+            <summary>iCloud를 꺼두면 어떻게 되나요?</summary>
+            <p>로컬 저장만으로 정상 동작합니다. iCloud를 켜면 기기 간 자동 동기화가 활성화되며, 데이터는 사용자 본인의 iCloud(CloudKit Private Database)에만 저장됩니다.</p>
+        </details>
+
+        <details>
+            <summary>무료로 어디까지 쓸 수 있나요?</summary>
+            <p>무료로 <strong>사업장 1개, 사업장당 알바생 3명</strong>까지 등록할 수 있습니다. 주휴수당·세금 계산, 근무 기록, CSV 내보내기, iCloud 동기화 등 <strong>모든 계산 기능은 무료에서도 그대로</strong> 쓸 수 있어요 &mdash; 등록 개수만 제한됩니다.</p>
+        </details>
+
+        <details>
+            <summary>Pro 잠금 해제는 무엇이 달라지나요?</summary>
+            <p>설정 → Pro 잠금 해제에서 <strong>₩9,900 한 번 결제</strong>하면 <strong>사업장 10개, 사업장당 알바생 49명</strong>까지 등록할 수 있습니다. 구독이 아니라 <strong>일회성 비소비성 구매</strong>라 자동 갱신이 없습니다. 다른 기기에서는 같은 Apple ID로 로그인 후 '이전 구매 복원' 버튼으로 복원할 수 있습니다.</p>
+        </details>
+
+        <details>
+            <summary>알바생 데이터를 백업하거나 옮길 수 있나요?</summary>
+            <p>iCloud를 켜두면 기기 간 자동 동기화로 백업됩니다. 급여 탭에서 <strong>월별 급여 내역을 CSV로 내보내</strong> 엑셀·메일·메신저로 보관하거나 공유할 수도 있습니다.</p>
+        </details>
+
+        <details>
+            <summary>내 데이터를 개발자가 볼 수 있나요?</summary>
+            <p>아니요. 앱은 개인정보를 수집하지 않으며, 데이터를 저장하는 자체 서버도 없습니다. 모든 데이터는 사용자의 기기와 사용자 본인의 iCloud에만 저장되어 개발자는 접근할 수 없습니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 참고하세요.</p>
+        </details>
+
+        <details>
+            <summary>데이터를 모두 삭제하려면?</summary>
+            <p>사업장·알바생·근무 기록은 앱 안에서 개별 삭제할 수 있습니다. 전체 삭제를 원하면 iOS 설정에서 앱을 삭제하세요. iCloud에 저장된 데이터도 함께 제거됩니다.</p>
+        </details>
+
+        <details>
+            <summary>Android 버전은요?</summary>
+            <p>준비 중입니다. Pro 잠금 해제·iCloud 동기화·CSV 내보내기는 현재 iOS에서만 제공됩니다. 출시 알림을 원하시면 <a href="mailto:contact@luraai.io">contact@luraai.io</a>로 알려주세요.</p>
+        </details>
+
+        <h2>Support (English)</h2>
+        <p>DimeTime (Korean title: 급여계산기) is a payroll calculator for small-business owners on iOS 17+. It collects no personal data, contains no ads, and stores everything on your device and your own iCloud.</p>
+        <p>For questions, bug reports, or feature requests, email <a href="mailto:contact@luraai.io">contact@luraai.io</a>. We usually reply within 1&ndash;2 business days. See also the <a href="privacy-en.html">Privacy Policy</a> and <a href="terms-en.html">Terms of Service</a>.</p>
+
+        <h2>제공자 정보</h2>
+        <p><strong>LuraAI</strong><br>
+        이메일: <a href="mailto:contact@luraai.io">contact@luraai.io</a></p>
+    </div>
+    <footer>
+        <p>&copy; 2026 LuraAI. All rights reserved.</p>
+    </footer>
+</body>
+</html>
