@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>급여계산기 (DimeTime) - 주휴수당까지 자동 계산하는 알바 급여 계산기</title>
-    <meta name="description" content="주휴수당과 세금 3.3%까지 자동으로 계산해주는, 사장님을 위한 알바 급여 계산기. iOS 17+ · 광고 없음 · 개인정보 수집 없음.">
+    <meta name="description" content="주휴수당과 세금 3.3%까지 자동으로 계산해주는, 사장님을 위한 알바 급여 계산기. iPhone · iPad · Mac · 광고 없음 · 개인정보 수집 없음.">
     <link rel="icon" type="image/png" href="../favicon/favicon.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,6 +44,16 @@
         .formula-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
         .formula-card h3 { font-size: 1.05rem; margin-bottom: 0.8rem; }
         .formula-card p { color: var(--body); font-size: 0.95rem; }
+        .shots { max-width: 1040px; margin: 0 auto; padding: 2rem 2rem 4rem; text-align: center; }
+        .shots h2 { font-size: 2rem; margin-bottom: 0.6rem; }
+        .shots .sub { color: var(--text2); margin-bottom: 2.5rem; font-size: 0.95rem; }
+        .shots img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--border); box-shadow: 0 24px 60px rgba(0,0,0,0.45); }
+        .shot-mac { max-width: 900px; margin: 0 auto 2.5rem; }
+        .shot-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto; }
+        .shot-row figure { margin: 0; }
+        .shot-row figcaption { color: var(--text2); font-size: 0.85rem; margin-top: 0.7rem; }
+        .shot-row img { border-radius: 18px; }
+        @media (max-width: 640px) { .shot-row { grid-template-columns: 1fr; max-width: 320px; } }
         .price-section { text-align: center; padding: 4rem 2rem; }
         .price-section h2 { font-size: 2rem; margin-bottom: 2rem; }
         .price-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; max-width: 760px; margin: 0 auto; }
@@ -76,6 +86,7 @@
         <a href="../">&larr; LuraAI</a>
         <div style="display:flex;gap:1.2rem;flex-wrap:wrap;">
             <a href="#features">기능</a>
+            <a href="#shots">화면</a>
             <a href="#pricing">요금제</a>
             <a href="privacy.html">개인정보</a>
             <a href="terms.html">약관</a>
@@ -89,7 +100,7 @@
             <h1>급여계산기</h1>
             <p class="tagline">사장님 손에 들어맞는 알바 급여 계산기</p>
             <p style="color:var(--body);max-width:500px;margin:0 auto;">주휴수당도, 세금 3.3%도 자동으로. 출퇴근만 탭하면 이번 달 실지급액이 바로 나옵니다.</p>
-            <div><span class="pill">DimeTime · iOS 17+ (iPhone &middot; iPad)</span></div>
+            <div><span class="pill">DimeTime · iOS &middot; iPadOS 17+ &middot; macOS 14+ (iPhone &middot; iPad &middot; Mac)</span></div>
             <div class="hero-links">
                 <a href="privacy.html">개인정보처리방침</a>
                 <a href="terms.html">이용약관</a>
@@ -123,15 +134,40 @@
                 <p>22일·23일처럼 딱 떨어지지 않는 달도 한 달 안의 모든 주를 따로 계산해 합산합니다.</p>
             </div>
             <div class="feature-card">
+                <div class="icon">&#128421;</div>
+                <h3>맥에서는 대시보드로</h3>
+                <p>맥에서는 사이드바 + 대시보드 데스크톱 화면으로 열립니다. 이번 달 지급 예정액, 오늘 근무, 알바생별 급여를 한 화면에서 봅니다.</p>
+            </div>
+            <div class="feature-card">
                 <div class="icon">&#9729;</div>
                 <h3>iCloud 자동 동기화</h3>
-                <p>아이폰과 아이패드에서 같은 데이터를 봅니다. 데이터는 사용자 본인의 iCloud에만 저장됩니다.</p>
+                <p>아이폰·아이패드·맥에서 같은 데이터를 봅니다. 데이터는 사용자 본인의 iCloud에만 저장됩니다.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">&#128274;</div>
                 <h3>광고 없음 · 추적 없음</h3>
                 <p>광고도, 분석 SDK도, 외부 서버도 없습니다. 개발자는 사용자의 데이터를 볼 수 없습니다.</p>
             </div>
+        </div>
+    </section>
+
+    <section id="shots" class="shots">
+        <h2>화면</h2>
+        <p class="sub">같은 데이터를 기기에 맞는 화면으로 봅니다 &mdash; 맥은 사이드바 + 대시보드, 아이폰·아이패드는 탭 화면.</p>
+        <img class="shot-mac" src="shots/mac-dashboard.png" alt="맥 대시보드 — 이번 달 지급 예정액, 오늘 근무, 알바생별 급여" loading="lazy">
+        <div class="shot-row">
+            <figure>
+                <img src="shots/iphone-payroll.png" alt="아이폰 급여 화면 — 알바생별 예상 지급액" loading="lazy">
+                <figcaption>급여 &mdash; 주휴수당·세금 반영</figcaption>
+            </figure>
+            <figure>
+                <img src="shots/iphone-timesheet.png" alt="아이폰 근무 캘린더 — 출퇴근 기록" loading="lazy">
+                <figcaption>근무 &mdash; 캘린더에서 탭</figcaption>
+            </figure>
+            <figure>
+                <img src="shots/iphone-workers.png" alt="아이폰 알바생 목록" loading="lazy">
+                <figcaption>알바생 &mdash; 한 번만 등록</figcaption>
+            </figure>
         </div>
     </section>
 
