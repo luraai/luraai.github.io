@@ -6,45 +6,61 @@
     <title>VoxNote — 온디바이스 AI 회의록</title>
     <meta name="description" content="녹음·전사·요약을 모두 기기 안에서. 음성도 전사문도 기본적으로 기기를 떠나지 않습니다. 인터넷을 꺼도 동작하는 macOS 회의록 앱.">
     <link rel="icon" type="image/png" href="../favicon/favicon.png">
+
+    <!-- 공유 카드 -->
+    <meta property="og:title" content="VoxNote — 온디바이스 AI 회의록">
+    <meta property="og:description" content="회의 내용은 당신의 것입니다. 녹음·전사·요약이 모두 기기 안에서 이루어집니다.">
+    <meta property="og:image" content="https://luraai.io/voxnote/icon.png">
+    <meta property="og:url" content="https://luraai.io/voxnote/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Pretendard', Roboto, sans-serif; background: #0a0a1a; color: #f0f0ff; line-height: 1.8; }
-        .container { max-width: 860px; margin: 0 auto; padding: 6rem 2rem 4rem; }
+        .container { max-width: 980px; margin: 0 auto; padding: 6rem 2rem 4rem; }
         nav { position: fixed; top: 0; width: 100%; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(20px); background: rgba(10,10,26,0.8); border-bottom: 1px solid rgba(44,133,105,0.25); z-index: 100; }
         nav a { color: #a0a0c0; text-decoration: none; font-size: 0.95rem; }
         nav a:hover { color: #f0f0ff; }
 
-        .hero { text-align: center; padding: 2rem 0 3rem; }
-        .mark { width: 84px; height: 84px; margin: 0 auto 1.5rem; }
-        h1 { font-size: 2.8rem; margin-bottom: 0.6rem; background: linear-gradient(135deg, #3CA98A, #2C8569); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .tagline { color: #f0f0ff; font-size: 1.25rem; margin-bottom: 0.8rem; font-weight: 600; }
-        .sub { color: #a0a0c0; font-size: 1rem; max-width: 560px; margin: 0 auto 2rem; }
+        .hero { text-align: center; padding: 2rem 0 3.5rem; }
+        .app-icon-hero { width: 128px; height: 128px; border-radius: 28px; margin-bottom: 1.5rem; box-shadow: 0 20px 60px rgba(44,133,105,0.35); }
+        h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 0.5rem; background: linear-gradient(135deg, #3CA98A, #2C8569); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .tagline { color: #f0f0ff; font-size: 1.3rem; margin-bottom: 0.8rem; font-weight: 600; }
+        .sub { color: #a0a0c0; font-size: 1rem; max-width: 580px; margin: 0 auto 1.2rem; }
+        .pill { display: inline-block; padding: 0.35rem 0.9rem; border-radius: 999px; background: rgba(44,133,105,0.12); color: #3CA98A; border: 1px solid rgba(44,133,105,0.3); font-size: 0.85rem; font-weight: 600; margin-bottom: 1.6rem; }
         .hero-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
         .hero-links a { color: #a0a0c0; font-size: 0.9rem; text-decoration: none; border: 1px solid rgba(127,127,255,0.18); padding: 0.5rem 1.1rem; border-radius: 50px; }
         .hero-links a:hover { color: #f0f0ff; border-color: rgba(44,133,105,0.5); }
 
-        h2 { font-size: 1.5rem; margin: 3rem 0 1rem; }
+        h2 { font-size: 1.5rem; margin: 3.5rem 0 1rem; }
         p, li { color: #c0c0e0; font-size: 0.98rem; margin-bottom: 1rem; }
         ul { padding-left: 1.5rem; }
         strong { color: #f0f0ff; }
         a { color: #3CA98A; }
         code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 0.88em; color: #d8d8f0; background: rgba(127,127,255,0.10); padding: 0.1rem 0.35rem; border-radius: 4px; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin: 1.5rem 0 0; }
+        /* 스크린샷 */
+        .shots { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
+        .shot figure { margin: 0; }
+        .shot img { width: 100%; border-radius: 14px; border: 1px solid rgba(127,127,255,0.15); box-shadow: 0 16px 50px rgba(0,0,0,0.45); display: block; }
+        .shot figcaption { color: #a0a0c0; font-size: 0.9rem; margin-top: 0.7rem; text-align: center; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
         .card { background: #12122c; border: 1px solid rgba(127,127,255,0.15); border-radius: 16px; padding: 1.5rem; }
         .card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: #f0f0ff; }
         .card p { font-size: 0.9rem; margin: 0; }
 
-        .legend { display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1rem 0 0; }
+        .legend { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem; }
         .legend div { display: flex; align-items: center; gap: 0.5rem; font-size: 0.92rem; color: #c0c0e0; }
         .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
         .dot-local { background: #2C8569; }
         .dot-cloud { background: #3E6FB0; }
         .dot-rec { background: #C75D4A; }
 
-        footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(44,133,105,0.25); margin-top: 3rem; }
+        footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(44,133,105,0.25); margin-top: 4rem; }
         footer p { color: #a0a0c0; font-size: 0.85rem; }
-        @media (max-width: 480px) { nav { padding: 0.8rem 1rem; } nav a { font-size: 0.85rem; } h1 { font-size: 2.1rem; } }
+        @media (max-width: 480px) { nav { padding: 0.8rem 1rem; } nav a { font-size: 0.85rem; } h1 { font-size: 2.2rem; } .app-icon-hero { width: 96px; height: 96px; } }
     </style>
 </head>
 <body>
@@ -59,24 +75,40 @@
 
     <div class="container">
         <div class="hero">
-            <!-- 브랜드 마크 — 둥근 디바이스 타일 안의 음성 파형: "목소리가, 기기 안에" -->
-            <svg class="mark" viewBox="0 0 48 48" fill="none" role="img" aria-label="VoxNote">
-                <rect x="2" y="2" width="44" height="44" rx="13" fill="#2C8569"/>
-                <g fill="#FBFAF7">
-                    <rect x="13" y="20" width="3.4" height="8" rx="1.7"/>
-                    <rect x="19" y="15" width="3.4" height="18" rx="1.7"/>
-                    <rect x="25" y="11" width="3.4" height="26" rx="1.7"/>
-                    <rect x="31" y="17" width="3.4" height="14" rx="1.7"/>
-                </g>
-            </svg>
+            <!-- 앱과 동일한 브랜드 마크 — 둥근 디바이스 타일 안의 음성 파형:
+                 "목소리가, 기기 안에"라는 제품의 약속이 그대로 글리프다. -->
+            <img src="icon.png" alt="VoxNote 앱 아이콘" class="app-icon-hero">
             <h1>VoxNote</h1>
             <p class="tagline">회의 내용은 당신의 것입니다.</p>
             <p class="sub">녹음 · 전사 · 요약을 모두 이 기기 안에서. 음성도 전사문도 기본적으로 기기를 떠나지 않습니다. 인터넷을 꺼도 그대로 동작합니다.</p>
+            <span class="pill">macOS 12+ · Apple Silicon &amp; Intel</span>
             <div class="hero-links">
                 <a href="privacy.html">개인정보처리방침</a>
                 <a href="terms.html">이용약관</a>
                 <a href="support.html">고객 지원</a>
                 <a href="privacy-en.html">English</a>
+            </div>
+        </div>
+
+        <h2>화면</h2>
+        <div class="shots">
+            <div class="shot">
+                <figure>
+                    <img src="shots/2-providers.png" alt="AI 프로바이더 화면. 로컬 엔진은 초록색, 외부 API는 파란색으로 구분된다." loading="lazy">
+                    <figcaption>초록은 이 기기 안에서 실행되는 엔진, 파랑은 데이터가 기기를 떠나는 외부 API입니다.</figcaption>
+                </figure>
+            </div>
+            <div class="shot">
+                <figure>
+                    <img src="shots/1-transcript.png" alt="회의 전사 화면. 녹음된 대화가 문단으로 표시되고 재생 바가 함께 있다." loading="lazy">
+                    <figcaption>말하는 동안 바로 받아씁니다. 전사 줄을 누르면 그 지점의 음성이 재생됩니다.</figcaption>
+                </figure>
+            </div>
+            <div class="shot">
+                <figure>
+                    <img src="shots/3-models.png" alt="모델 관리자 화면. 내려받은 AI 모델이 기기에서 실행됨을 알리는 배너가 있다." loading="lazy">
+                    <figcaption>필요한 AI 모델만 골라 내려받습니다. 내려받은 모델은 이 기기에서 실행됩니다.</figcaption>
+                </figure>
             </div>
         </div>
 
