@@ -3,137 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kWord - 개인정보 처리방침</title>
-    <meta name="description" content="kWord 앱 개인정보 처리방침">
-    <link rel="icon" type="image/png" href="/favicon/favicon.png">
+    <title>개인정보처리방침 — kWord | LuraAI</title>
+    <meta name="description" content="kWord 개인정보처리방침. 계정 없음, 회사 서버 없음, 추적 없음. 학습 기록은 기기와 사용자 본인의 iCloud에만 저장됩니다.">
+    <link rel="icon" type="image/png" href="../../../favicon/favicon.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg-primary: #0a0a1a;
-            --bg-secondary: #12122a;
-            --text-primary: #f0f0ff;
-            --text-secondary: #a0a0c0;
-            --accent-blue: #4f8fff;
-            --accent-gradient: linear-gradient(135deg, #4f8fff, #8f5fff);
-            --card-border: rgba(127, 127, 255, 0.15);
+            --cobalt: #2E5BFF;
+            --cobalt-light: #5C7CFF;
+            --persimmon: #FB5025;
+            --card-border: rgba(92, 124, 255, 0.18);
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard', 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a1a; color: #f0f0ff; line-height: 1.8;
         }
         nav {
-            position: fixed; top: 0; width: 100%;
-            padding: 1rem 2rem;
+            position: fixed; top: 0; width: 100%; padding: 1rem 2rem;
             display: flex; justify-content: space-between; align-items: center;
-            z-index: 100;
-            backdrop-filter: blur(20px);
-            background: rgba(10, 10, 26, 0.8);
-            border-bottom: 1px solid var(--card-border);
+            backdrop-filter: blur(20px); background: rgba(10,10,26,0.8);
+            border-bottom: 1px solid var(--card-border); z-index: 100;
         }
-        .nav-logo { display: flex; align-items: center; text-decoration: none; }
-        .nav-logo-img { height: 32px; width: auto; }
-        .lang-switch {
-            color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;
-            padding: 0.4rem 1rem; border: 1px solid var(--card-border); border-radius: 20px;
-            transition: color 0.3s, border-color 0.3s;
-        }
-        .lang-switch:hover { color: var(--text-primary); border-color: var(--accent-blue); }
-        .container {
-            max-width: 800px; margin: 0 auto;
-            padding: 7rem 2rem 4rem;
-        }
+        nav a { color: #a0a0c0; text-decoration: none; font-size: 0.95rem; }
+        nav a:hover { color: #f0f0ff; }
+        .nav-links { display: flex; gap: 1.2rem; }
+        .container { max-width: 720px; margin: 0 auto; padding: 6.5rem 2rem 4rem; }
         h1 {
-            font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem;
-            background: var(--accent-gradient);
+            font-size: 2.1rem; margin-bottom: 0.4rem; letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #5C7CFF, #2E5BFF);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-        .subtitle { color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 0.95rem; }
-        h2 {
-            font-size: 1.3rem; font-weight: 700; margin: 2rem 0 0.8rem;
-            color: var(--text-primary);
+        .date { color: #a0a0c0; margin-bottom: 2rem; font-size: 0.9rem; }
+        h2 { font-size: 1.22rem; margin: 2.2rem 0 0.7rem; }
+        p, li { color: #c0c0e0; font-size: 0.95rem; margin-bottom: 0.9rem; }
+        ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+        strong { color: #f0f0ff; }
+        a { color: var(--cobalt-light); }
+        .callout {
+            background: rgba(46,91,255,0.09);
+            border-left: 3px solid var(--cobalt);
+            padding: 1rem 1.2rem; border-radius: 0 10px 10px 0; margin: 1.6rem 0;
         }
-        p, li { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.8rem; }
-        ul { padding-left: 1.5rem; margin-bottom: 1rem; }
-        li { margin-bottom: 0.4rem; }
-        .highlight {
-            background: rgba(255, 184, 79, 0.1);
-            border-left: 3px solid #ffb84f;
-            padding: 1rem 1.2rem;
-            border-radius: 0 8px 8px 0;
-            margin: 1.5rem 0;
-        }
-        .highlight p { color: #ffd080; margin-bottom: 0; }
-        footer {
-            text-align: center; padding: 3rem 2rem;
-            border-top: 1px solid var(--card-border); margin-top: 2rem;
-        }
-        footer p { color: var(--text-secondary); font-size: 0.85rem; }
-        footer a { color: var(--accent-blue); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-        @media (max-width: 768px) {
-            h1 { font-size: 1.7rem; }
-            .container { padding: 6rem 1.2rem 3rem; }
-        }
+        .callout p { margin-bottom: 0; color: #cdd8ff; }
+        .callout.warm { background: rgba(251,80,37,0.08); border-left-color: var(--persimmon); }
+        .callout.warm p { color: #ffcdc0; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.4rem; font-size: 0.9rem; }
+        th, td { text-align: left; padding: 0.6rem 0.7rem; border-bottom: 1px solid var(--card-border); color: #c0c0e0; vertical-align: top; }
+        th { color: #f0f0ff; font-weight: 600; }
+        footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--card-border); margin-top: 3rem; }
+        footer p { color: #70708f; font-size: 0.85rem; }
+        @media (max-width: 520px) { nav { padding: 0.8rem 1rem; } nav a { font-size: 0.85rem; } .nav-links { gap: 0.8rem; } }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="../../">&larr; kWord</a>
+        <div class="nav-links">
+            <a href="../../terms/ko/">이용약관</a>
+            <a href="../../support/ko/">지원</a>
+            <a href="../en/">English</a>
+        </div>
+    </nav>
 
-<nav>
-    <a href="/" class="nav-logo"><img src="/favicon/favicon.png" alt="LuraAI" class="nav-logo-img"></a>
-    <a href="/kword/privacy/en" class="lang-switch">English</a>
-</nav>
+    <div class="container">
+        <h1>개인정보처리방침</h1>
+        <p class="date">최종 수정일: 2026년 7월 13일 &middot; <a href="../en/">English</a></p>
 
-<div class="container">
-    <h1>개인정보 처리방침</h1>
-    <p class="subtitle">kWord 앱 | 시행일: 2025년 1월 1일</p>
+        <div class="callout">
+            <p>kWord는 계정을 만들지 않고, 회사 서버로 아무것도 보내지 않습니다. 앱에는 LuraAI의 서버와 통신하는 코드 자체가 존재하지 않으며, 분석·추적·광고 SDK도 사용하지 않습니다. 학습 기록은 기기에 저장되고, 동기화를 켜면 <strong>사용자 본인의</strong> iCloud로만 오갑니다.</p>
+        </div>
 
-    <h2>제1조 (목적)</h2>
-    <p>본 개인정보 처리방침은 LuraAI(이하 "회사")가 제공하는 kWord 앱(이하 "앱")의 개인정보 처리에 관한 사항을 안내하기 위해 작성되었습니다.</p>
+        <h2>제1조 (회사가 수집하는 정보)</h2>
+        <p>LuraAI(이하 &ldquo;회사&rdquo;)는 kWord(이하 &ldquo;앱&rdquo;)를 통해 <strong>어떠한 개인정보도 수집하지 않습니다.</strong></p>
+        <ul>
+            <li>회원가입이 없으며 계정을 만들지 않습니다.</li>
+            <li>이름·이메일·전화번호·위치 등 어떤 식별자도 요구하거나 수집하지 않습니다.</li>
+            <li>분석·추적·광고 프레임워크를 일절 사용하지 않으며, 제3자 SDK를 포함하지 않습니다.</li>
+            <li>앱에는 회사 서버로 데이터를 전송하는 네트워크 코드가 들어 있지 않습니다.</li>
+        </ul>
 
-    <h2>제2조 (수집하는 개인정보)</h2>
-    <div class="highlight">
-        <p><strong>본 앱은 이용자의 개인정보를 일체 수집하지 않습니다.</strong></p>
+        <h2>제2조 (기기에 저장되는 데이터)</h2>
+        <p>앱이 만드는 모든 학습 데이터는 이용자의 기기 안에 저장됩니다.</p>
+        <ul>
+            <li>단어별 학습 진행 상황, 복습 일정, 정답·오답 기록</li>
+            <li>학습 세션 기록, XP·레벨·스트릭, 퀘스트와 업적</li>
+            <li>앱 설정(언어, 테마, 하루 학습량, 알림 시각 등)</li>
+            <li>앱 사용 이벤트 기록 — 통계 화면과 문제 진단에 쓰이며, <strong>기기를 벗어나지 않습니다.</strong> 이용자가 직접 파일로 내보내는 경우에만 기기 밖으로 나갑니다.</li>
+        </ul>
+
+        <h2>제3조 (iCloud 동기화 — 사용자 본인의 저장소)</h2>
+        <p>기기 간 동기화를 사용하는 경우, 학습 데이터는 Apple의 CloudKit을 통해 <strong>이용자 본인의 iCloud 개인 데이터베이스</strong>에 저장됩니다. 이는 이용자의 Apple 계정에 속한 저장소이며, <strong>회사는 여기에 접근할 수 없습니다.</strong> 동기화는 기기의 iCloud 설정을 따르며, iOS 설정에서 언제든 끌 수 있습니다.</p>
+
+        <h2>제4조 (리그 — 선택 참여, 공개 순위표)</h2>
+        <div class="callout warm">
+            <p>이 항목은 <strong>이용자가 직접 켤 때만</strong> 적용됩니다. 기본값은 &ldquo;참여 안 함&rdquo;입니다.</p>
+        </div>
+        <p>주간 리그(순위표) 참여를 선택하면, 다른 이용자에게 보이는 <strong>공개 CloudKit 데이터베이스</strong>에 다음 항목이 게시됩니다.</p>
+        <ul>
+            <li><strong>자동 생성된 익명 표시 이름</strong> — 앱이 무작위로 만듭니다. 이용자가 직접 입력하지 않으며, 실명·이메일과 연결되지 않습니다.</li>
+            <li><strong>주간 XP와 레벨</strong> — 순위 산정을 위한 숫자입니다.</li>
+            <li><strong>익명 식별 토큰</strong> — 무작위 UUID로, 기기의 키체인에 보관됩니다. Apple 계정이나 개인 식별 정보와 연결되지 않습니다.</li>
+        </ul>
+        <p>친구 기능의 &ldquo;친구 코드&rdquo; 역시 위 토큰에서 파생된 값이며, 개인 식별 정보를 담지 않습니다. 학습한 단어·오답·발음 녹음 등은 <strong>어떤 경우에도 공개되지 않습니다.</strong> 리그 참여를 끄면 게시가 중단됩니다.</p>
+
+        <h2>제5조 (기기 권한)</h2>
+        <p>앱은 아래 iOS 권한을 요청할 수 있습니다. 모두 <strong>거부해도 앱의 핵심 학습 기능은 그대로 동작합니다.</strong></p>
+        <table>
+            <tr><th>권한</th><th>용도</th></tr>
+            <tr>
+                <td><strong>마이크</strong></td>
+                <td>발음 평가 기능에서 이용자의 발음을 듣기 위해 사용합니다. 녹음은 <strong>저장되지도, 전송되지도 않습니다.</strong></td>
+            </tr>
+            <tr>
+                <td><strong>음성 인식</strong></td>
+                <td>발음 점수를 매기기 위해 사용합니다. 인식은 <code>requiresOnDeviceRecognition</code> 설정으로 <strong>기기 안에서만</strong> 수행되며, 기기가 온디바이스 인식을 지원하지 않으면 기능이 비활성화됩니다.</td>
+            </tr>
+            <tr>
+                <td><strong>알림</strong></td>
+                <td>복습 시각 알림을 보내기 위해 사용합니다. 알림은 모두 <strong>기기에서 로컬로</strong> 예약되며, 푸시 서버를 거치지 않습니다.</td>
+            </tr>
+        </table>
+
+        <h2>제6조 (인앱 구매)</h2>
+        <p>앱은 Apple의 StoreKit을 통해 구독 및 콘텐츠 팩 구매를 제공합니다. 결제 처리와 영수증 검증은 <strong>전적으로 Apple이 수행</strong>하며, 회사는 이용자의 결제 수단이나 Apple 계정 정보를 받지도, 보관하지도 않습니다. 구매 여부는 기기에서 확인됩니다.</p>
+
+        <h2>제7조 (제3자 제공 및 판매)</h2>
+        <p>회사는 수집하는 개인정보가 없으므로, 제3자에게 제공하거나 판매하는 개인정보도 없습니다.</p>
+
+        <h2>제8조 (쿠키 및 추적 기술)</h2>
+        <p>앱은 쿠키, 웹 비콘, 광고 식별자(IDFA), 기타 크로스 앱 추적 기술을 사용하지 않습니다.</p>
+
+        <h2>제9조 (아동의 개인정보)</h2>
+        <p>회사는 아동을 포함한 어떠한 이용자의 개인정보도 수집하지 않습니다. 앱은 연령 등급 4+로 제공됩니다.</p>
+
+        <h2>제10조 (데이터 삭제)</h2>
+        <p>기기에 저장된 학습 데이터는 <strong>앱을 삭제하면 함께 삭제됩니다.</strong> iCloud에 동기화된 데이터는 iOS 설정 &rarr; Apple 계정 &rarr; iCloud에서 관리·삭제할 수 있습니다. 리그에 게시된 항목은 앱에서 리그 참여를 끄면 중단됩니다. 앱 안에서 데이터 내보내기·가져오기·전체 초기화도 지원합니다.</p>
+
+        <h2>제11조 (처리방침의 변경)</h2>
+        <p>본 방침이 변경되면 이 페이지의 최종 수정일이 갱신되며, 중요한 변경은 앱 내에서 안내합니다.</p>
+
+        <h2>제12조 (문의)</h2>
+        <p>개인정보 처리에 관한 문의는 <a href="mailto:contact@luraai.io">contact@luraai.io</a> 로 보내주세요.</p>
     </div>
-    <ul>
-        <li>회원가입 절차가 없으며, 계정 생성을 요구하지 않습니다.</li>
-        <li>이름, 이메일, 전화번호, 위치정보 등 어떠한 개인 식별 정보도 수집하지 않습니다.</li>
-        <li>학습 데이터, 사용 기록, 기기 정보 등을 수집하거나 서버에 전송하지 않습니다.</li>
-        <li>분석, 추적, 광고 프레임워크를 일체 사용하지 않습니다.</li>
-    </ul>
 
-    <h2>제3조 (개인정보의 보관)</h2>
-    <div class="highlight">
-        <p><strong>수집하는 개인정보가 없으므로, 보관하는 개인정보도 없습니다.</strong></p>
-    </div>
-    <p>앱 내 모든 데이터(단어 학습 진행 상황, 학습 세션, 설정값 등)는 이용자의 기기에만 저장되며, 회사의 서버로 전송되지 않습니다.</p>
-
-    <h2>제4조 (개인정보의 제3자 제공)</h2>
-    <p>수집하는 개인정보가 없으므로, 제3자에게 제공하는 개인정보도 없습니다.</p>
-
-    <h2>제5조 (쿠키 및 추적 기술)</h2>
-    <p>본 앱은 쿠키, 웹 비콘, 광고 식별자 또는 기타 추적 기술을 사용하지 않습니다.</p>
-
-    <h2>제6조 (아동의 개인정보)</h2>
-    <p>본 앱은 아동을 포함한 어떠한 이용자의 개인정보도 수집하지 않으므로, 아동 개인정보 보호에 관한 별도의 절차가 불필요합니다.</p>
-
-    <h2>제7조 (처리방침의 변경)</h2>
-    <p>회사는 필요 시 본 개인정보 처리방침을 변경할 수 있으며, 변경 사항은 앱 내 또는 본 페이지를 통해 공지합니다.</p>
-
-    <h2>제8조 (연락처)</h2>
-    <p>본 개인정보 처리방침에 관한 문의 사항은 아래로 연락해 주시기 바랍니다.</p>
-    <ul>
-        <li><strong>회사명:</strong> LuraAI</li>
-        <li><strong>이메일:</strong> contact@luraai.io</li>
-        <li><strong>주소:</strong> 경기도 화성시 동탄실리천로2길 65</li>
-    </ul>
-</div>
-
-<footer>
-    <p><a href="/">LuraAI</a> · <a href="/kword/terms/ko">이용약관</a></p>
-    <p>&copy; 2025 LuraAI. All rights reserved.</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2026 LuraAI. All rights reserved.</p>
+    </footer>
 </body>
 </html>

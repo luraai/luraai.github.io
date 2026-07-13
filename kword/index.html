@@ -1,595 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kWord - Smart Korean Vocabulary Learning App | LuraAI</title>
-    <meta name="description" content="kWord is a scientifically-designed Korean vocabulary app using SM-2 spaced repetition, TOPIK prep, TTS pronunciation, and swipe-based flashcards.">
+    <title>kWord — 매일 한국어 학습 | LuraAI</title>
+    <meta name="description" content="TOPIK 어휘 4,800개 이상을 SM-2 간격 반복으로 익히는 한국어 단어 앱. 계정 없음, 서버 없음, 추적 없음 — 학습 기록은 기기에 남습니다.">
     <link rel="icon" type="image/png" href="../favicon/favicon.png">
+    <meta property="og:title" content="kWord — 매일 한국어 학습">
+    <meta property="og:description" content="TOPIK 단어 · 퀴즈 · 오답 복습. 계정도 서버도 없이, 기기 안에서.">
+    <meta property="og:image" content="https://luraai.io/kword/icon.png">
+    <meta property="og:url" content="https://luraai.io/kword/">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        /* kWord — "Hanji & Cobalt": cobalt is the brand, persimmon the reward
+           accent. The same two hues the app itself is built on. */
         :root {
+            --cobalt: #2E5BFF;
+            --cobalt-deep: #1F45E5;
+            --cobalt-light: #5C7CFF;
+            --persimmon: #FB5025;
             --bg-primary: #0a0a1a;
             --bg-secondary: #12122a;
-            --bg-card: #1a1a3e;
+            --bg-card: #16162e;
             --text-primary: #f0f0ff;
             --text-secondary: #a0a0c0;
-            --accent-main: #ffb84f;
-            --accent-main-dark: #e69a2e;
-            --accent-gradient: linear-gradient(135deg, #ffb84f, #e69a2e);
-            --card-border: rgba(127, 127, 255, 0.15);
+            --text-body: #c0c0e0;
+            --card-border: rgba(92, 124, 255, 0.18);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard', 'Segoe UI', Roboto, sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
-        /* Navigation */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
+            position: fixed; top: 0; width: 100%;
             padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex; justify-content: space-between; align-items: center;
             z-index: 100;
             backdrop-filter: blur(20px);
             background: rgba(10, 10, 26, 0.8);
             border-bottom: 1px solid var(--card-border);
         }
+        .nav-logo { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; color: inherit; text-decoration: none; }
+        .nav-logo img { width: 28px; height: 28px; border-radius: 7px; }
+        .nav-links { display: flex; gap: 1.4rem; }
+        nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--text-primary); }
 
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .nav-logo-img {
-            height: 32px;
-            width: auto;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        /* Language Toggle */
-        .lang-toggle {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            padding: 0.35rem 0.7rem;
-            cursor: pointer;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            transition: background 0.3s, color 0.3s;
-            user-select: none;
-        }
-
-        .lang-toggle:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: var(--text-primary);
-        }
-
-        .lang-toggle .globe-icon {
-            font-size: 1rem;
-            line-height: 1;
-        }
-
-        .lang-toggle .lang-label {
-            font-weight: 500;
-        }
-
-        /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 9rem 2rem 5rem;
             text-align: center;
-            padding: 6rem 2rem 4rem;
-            position: relative;
-            overflow: hidden;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 0%, rgba(46, 91, 255, 0.20), transparent 70%),
+                radial-gradient(ellipse 40% 40% at 82% 18%, rgba(251, 80, 37, 0.10), transparent 70%);
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at 30% 50%, rgba(255, 184, 79, 0.08) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 50%, rgba(230, 154, 46, 0.08) 0%, transparent 50%);
-            animation: drift 20s ease-in-out infinite;
+        .hero img.app-icon {
+            width: 108px; height: 108px;
+            border-radius: 24px;
+            box-shadow: 0 18px 48px rgba(46, 91, 255, 0.35);
+            margin-bottom: 1.6rem;
         }
-
-        @keyframes drift {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(-2%, 2%); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-        }
-
-        .app-icon-hero {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            background: var(--accent-gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #fff;
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 8px 30px rgba(255, 184, 79, 0.3);
-        }
-
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2.1rem, 6vw, 3.3rem);
             font-weight: 800;
-            margin-bottom: 0.5rem;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.8rem;
         }
-
         .hero .tagline {
-            font-size: 1.3rem;
+            font-size: 1.12rem;
             color: var(--text-secondary);
-            margin: 0.5rem auto 2rem;
-            font-weight: 300;
+            max-width: 640px;
+            margin: 0 auto 1.7rem;
+        }
+        .badges { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; }
+        .badge {
+            font-size: 0.82rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(46, 91, 255, 0.12);
+            border: 1px solid var(--card-border);
+            color: #b9c6ff;
+        }
+        .badge.accent {
+            background: rgba(251, 80, 37, 0.12);
+            border-color: rgba(251, 80, 37, 0.28);
+            color: #ffb6a0;
         }
 
-        /* Features Section */
-        .features {
-            padding: 4rem 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        section { padding: 4.5rem 2rem; max-width: 1040px; margin: 0 auto; }
+        h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+        .section-sub { color: var(--text-secondary); margin-bottom: 2.3rem; }
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .feature-card {
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+        .card {
             background: var(--bg-card);
             border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 1.8rem;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 18px;
+            padding: 1.6rem;
         }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        .card .ico {
+            width: 42px; height: 42px;
+            border-radius: 11px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 0.9rem;
+            background: rgba(46, 91, 255, 0.14);
         }
+        .card.reward .ico { background: rgba(251, 80, 37, 0.14); }
+        .card h3 { font-size: 1.06rem; margin-bottom: 0.35rem; }
+        .card p { color: var(--text-body); font-size: 0.94rem; }
 
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+        .privacy { background: var(--bg-secondary); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
+        .privacy-inner { max-width: 760px; margin: 0 auto; }
+        .pledge { list-style: none; display: grid; gap: 0.9rem; margin-top: 1.5rem; }
+        .pledge li { display: flex; gap: 0.8rem; align-items: flex-start; color: var(--text-body); font-size: 0.97rem; }
+        .pledge .check { color: var(--cobalt-light); font-weight: 700; flex-shrink: 0; }
+        .pledge strong { color: var(--text-primary); }
 
-        .feature-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.7;
-        }
-
-        /* Description Section */
-        .description {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 3rem 2rem 4rem;
-            text-align: center;
-        }
-
-        .description p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .app-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .app-tag {
-            font-size: 0.8rem;
-            padding: 0.4rem 0.9rem;
-            border-radius: 20px;
-            background: rgba(255, 184, 79, 0.1);
-            color: var(--accent-main);
-            border: 1px solid rgba(255, 184, 79, 0.2);
-        }
-
-        /* Contact Section */
-        .contact {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 3rem 2rem 4rem;
-            text-align: center;
-        }
-
-        .contact-card {
-            background: var(--bg-card);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 2.5rem;
-        }
-
-        .contact-card p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-bottom: 1.2rem;
-            line-height: 1.7;
-        }
-
-        .contact-email {
+        .cta { text-align: center; }
+        .cta .note {
             display: inline-block;
-            padding: 0.75rem 2rem;
-            background: var(--accent-gradient);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .contact-email:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 184, 79, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--card-border);
-        }
-
-        footer p {
+            margin-top: 0.6rem;
+            padding: 0.8rem 1.4rem;
+            border-radius: 12px;
+            background: rgba(46, 91, 255, 0.10);
+            border: 1px solid var(--card-border);
             color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: 0.92rem;
         }
+        a.inline { color: var(--cobalt-light); }
 
-        footer a {
-            color: var(--accent-main);
-            text-decoration: none;
-        }
+        footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--card-border); }
+        footer .links { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+        footer a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; }
+        footer a:hover { color: var(--text-primary); }
+        footer p { color: #70708f; font-size: 0.84rem; }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-links {
-            margin-bottom: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        /* i18n visibility */
-        [data-lang-ko] { display: none; }
-        [data-lang-en] { display: inline; }
-        .lang-ko [data-lang-ko] { display: inline; }
-        .lang-ko [data-lang-en] { display: none; }
-
-        /* Block-level i18n */
-        div[data-lang-ko], p[data-lang-ko], span[data-lang-ko] { display: none; }
-        div[data-lang-en], p[data-lang-en], span[data-lang-en] { display: block; }
-        span[data-lang-en] { display: inline; }
-        .lang-ko div[data-lang-ko], .lang-ko p[data-lang-ko] { display: block; }
-        .lang-ko span[data-lang-ko] { display: inline; }
-        .lang-ko div[data-lang-en], .lang-ko p[data-lang-en] { display: none; }
-        .lang-ko span[data-lang-en] { display: none; }
-
-        /* Flex containers for tags */
-        .app-tags[data-lang-ko] { display: none; }
-        .app-tags[data-lang-en] { display: flex; }
-        .lang-ko .app-tags[data-lang-ko] { display: flex; }
-        .lang-ko .app-tags[data-lang-en] { display: none; }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .tagline {
-                font-size: 1.1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .nav-links a {
-                font-size: 0.85rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .features, .description, .contact {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav {
-                padding: 0.8rem 1rem;
-            }
-
-            .nav-right {
-                gap: 0.8rem;
-            }
-
-            .nav-links {
-                gap: 0.7rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .tagline {
-                font-size: 1rem;
-            }
-
-            .app-icon-hero {
-                width: 64px;
-                height: 64px;
-                font-size: 1.6rem;
-            }
+        @media (max-width: 560px) {
+            nav { padding: 0.8rem 1rem; }
+            .nav-links { gap: 0.9rem; }
+            nav a { font-size: 0.85rem; }
+            section { padding: 3.2rem 1.2rem; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
     <nav>
-        <a href="/" class="nav-logo"><img src="../favicon/favicon.png" alt="LuraAI" class="nav-logo-img"></a>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="/">LuraAI Home</a></li>
-                <li><a href="#features"><span data-lang-en>Features</span><span data-lang-ko>Features</span></a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="lang-toggle" id="langToggle" title="Switch language">
-                <span class="globe-icon">&#127760;</span>
-                <span class="lang-label" data-lang-en>KO</span>
-                <span class="lang-label" data-lang-ko>EN</span>
-            </div>
+        <a href="../" class="nav-logo">
+            <img src="icon.png" alt="">
+            <span>kWord</span>
+        </a>
+        <div class="nav-links">
+            <a href="privacy/ko/">개인정보</a>
+            <a href="terms/ko/">약관</a>
+            <a href="support/ko/">지원</a>
+            <a href="../">LuraAI</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="app-icon-hero">kW</div>
-            <h1>kWord</h1>
-            <p class="tagline">
-                <span data-lang-en>Smart Korean Vocabulary with Spaced Repetition</span>
-                <span data-lang-ko>간격 반복 기반 스마트 한국어 단어 학습</span>
+    <header class="hero">
+        <img class="app-icon" src="icon.png" alt="kWord 앱 아이콘">
+        <h1>매일 한국어 학습</h1>
+        <p class="tagline">
+            TOPIK 1~6급 어휘 4,800개 이상을 SM-2 간격 반복으로 익힙니다.
+            계정도, 서버도, 추적도 없이 — 학습 기록은 기기 안에 남습니다.
+        </p>
+        <div class="badges">
+            <span class="badge">iPhone · iPad · Apple&nbsp;Watch</span>
+            <span class="badge">TOPIK 1–6급</span>
+            <span class="badge accent">계정 없음</span>
+        </div>
+    </header>
+
+    <section>
+        <h2>목적이 있는 학습</h2>
+        <p class="section-sub">무작정 외우는 게 아니라, 잊을 때쯤 다시 만나게 합니다.</p>
+        <div class="grid">
+            <div class="card">
+                <div class="ico">🗂️</div>
+                <h3>SM-2 간격 반복</h3>
+                <p>망각 곡선에 맞춰 복습 시점을 잡습니다. 이미 익은 단어는 뒤로 미루고, 흔들리는 단어만 다시 꺼냅니다.</p>
+            </div>
+            <div class="card">
+                <div class="ico">🃏</div>
+                <h3>플래시카드</h3>
+                <p>한국어·로마자·뜻·예문이 한 장에. 탭하면 뒤집히고, 어려움·보통·쉬움으로 스스로 채점합니다.</p>
+            </div>
+            <div class="card">
+                <div class="ico">📝</div>
+                <h3>네 가지 시험 모드</h3>
+                <p>객관식·역방향·타이핑·리스닝. 틀린 단어는 오답 단어장에 자동으로 모입니다.</p>
+            </div>
+            <div class="card">
+                <div class="ico">💬</div>
+                <h3>시나리오 대화</h3>
+                <p>식당·병원·교통·K-팝까지, 실제 상황에서 쓰는 문장으로 연습합니다.</p>
+            </div>
+            <div class="card">
+                <div class="ico">🔊</div>
+                <h3>발음</h3>
+                <p>모든 단어와 예문을 들을 수 있습니다. 발음 평가는 기기 안에서만 처리됩니다.</p>
+            </div>
+            <div class="card">
+                <div class="ico">📊</div>
+                <h3>모의고사와 통계</h3>
+                <p>TOPIK 형식의 모의고사, 그리고 숙련도 분포와 정답률로 지금 실력을 확인합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>계속하게 만드는 장치</h2>
+        <p class="section-sub">하루 몇 분, 이어가는 것 자체가 실력이 됩니다.</p>
+        <div class="grid">
+            <div class="card reward">
+                <div class="ico">🔥</div>
+                <h3>스트릭과 XP</h3>
+                <p>연속 학습 일수와 레벨이 쌓입니다. 하루를 놓쳐도 스트릭 보호가 한 번 막아줍니다.</p>
+            </div>
+            <div class="card reward">
+                <div class="ico">🎯</div>
+                <h3>오늘의 미션</h3>
+                <p>학습 진도에 맞춰 매일 바뀌는 퀘스트. 완료하면 보상을 받습니다.</p>
+            </div>
+            <div class="card reward">
+                <div class="ico">⌚</div>
+                <h3>워치와 위젯</h3>
+                <p>잠금화면 위젯과 Apple Watch에서 오늘 복습할 카드를 바로 확인합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="privacy">
+        <div class="privacy-inner">
+            <h2>프라이버시는 기능입니다</h2>
+            <p class="section-sub">약속이 아니라 구조입니다. kWord에는 회사 서버로 보내는 코드 자체가 없습니다.</p>
+            <ul class="pledge">
+                <li><span class="check">✓</span><span><strong>계정이 없습니다.</strong> 가입 절차 없이 바로 시작합니다.</span></li>
+                <li><span class="check">✓</span><span><strong>회사 서버가 없습니다.</strong> 앱에는 회사로 데이터를 보내는 네트워크 코드가 들어 있지 않습니다.</span></li>
+                <li><span class="check">✓</span><span><strong>추적·광고 SDK가 없습니다.</strong> 제3자 라이브러리를 일절 쓰지 않습니다.</span></li>
+                <li><span class="check">✓</span><span><strong>학습 기록은 기기에 남습니다.</strong> 동기화를 켜면 <em>사용자 본인의</em> iCloud 개인 데이터베이스로만 오갑니다.</span></li>
+                <li><span class="check">✓</span><span><strong>발음 평가는 기기 안에서.</strong> 음성 인식은 온디바이스로만 수행되고, 녹음은 저장되지도 전송되지도 않습니다.</span></li>
+                <li><span class="check">✓</span><span><strong>리그는 선택입니다.</strong> 참여를 켤 때만 자동 생성된 익명 이름과 주간 XP가 공유 순위표에 올라갑니다. 언제든 끌 수 있습니다.</span></li>
+            </ul>
+            <p style="margin-top:1.6rem;">
+                <a class="inline" href="privacy/ko/">개인정보처리방침 전문 읽기 →</a>
             </p>
         </div>
     </section>
 
-    <!-- Description -->
-    <div class="description">
-        <p data-lang-en>
-            kWord helps you master Korean vocabulary the smart way with
-            <strong style="color: var(--accent-main);">SM-2 spaced repetition</strong> based on the Ebbinghaus Forgetting Curve,
-            combined with <strong style="color: var(--accent-main);">TOPIK-level content</strong>
-            and multiple learning modes.
-        </p>
-        <p data-lang-en>
-            From swipe-based flashcards to sentence builders and quiz rooms, kWord offers
-            a scientifically-designed, privacy-first learning experience that works completely offline.
-        </p>
-        <p data-lang-ko>
-            kWord는 에빙하우스 망각 곡선에 기반한
-            <strong style="color: var(--accent-main);">SM-2 간격 반복 알고리즘</strong>과
-            <strong style="color: var(--accent-main);">TOPIK 레벨별 콘텐츠</strong>로
-            한국어 단어를 과학적으로 마스터할 수 있는 앱입니다.
-        </p>
-        <p data-lang-ko>
-            스와이프 플래시카드, 문장 배열, 시험장 모드 등 다양한 학습 방식과
-            오프라인 완벽 지원, 개인정보 수집 없는 안전한 학습 환경을 제공합니다.
-        </p>
-        <div class="app-tags" data-lang-en>
-            <span class="app-tag">Spaced Repetition</span>
-            <span class="app-tag">TOPIK Prep</span>
-            <span class="app-tag">Flashcards</span>
-            <span class="app-tag">Offline</span>
-            <span class="app-tag">Privacy-First</span>
-        </div>
-        <div class="app-tags" data-lang-ko>
-            <span class="app-tag">간격 반복</span>
-            <span class="app-tag">TOPIK 대비</span>
-            <span class="app-tag">플래시카드</span>
-            <span class="app-tag">오프라인</span>
-            <span class="app-tag">개인정보 보호</span>
-        </div>
-    </div>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2 class="section-title">
-            <span data-lang-en>Key Features</span>
-            <span data-lang-ko>주요 기능</span>
-        </h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">&#129504;</div>
-                <h3>
-                    <span data-lang-en>SM-2 Spaced Repetition</span>
-                    <span data-lang-ko>SM-2 간격 반복</span>
-                </h3>
-                <p data-lang-en>Scientifically proven algorithm that dynamically adjusts review intervals based on your performance, ensuring long-term vocabulary retention.</p>
-                <p data-lang-ko>학습 성과에 따라 복습 간격을 자동 조절하는 과학적 알고리즘으로 단어를 장기적으로 기억할 수 있도록 도와줍니다.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">&#128218;</div>
-                <h3>
-                    <span data-lang-en>TOPIK Level Content</span>
-                    <span data-lang-ko>TOPIK 레벨별 콘텐츠</span>
-                </h3>
-                <p data-lang-en>500+ core vocabulary words organized by TOPIK levels 1-6 with example sentences, categorized by themes like food, family, travel, and more.</p>
-                <p data-lang-ko>음식, 가족, 여행 등 주제별로 분류된 TOPIK 1-6급 핵심 단어 500개 이상과 예문을 제공합니다.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">&#128073;</div>
-                <h3>
-                    <span data-lang-en>Swipe Flashcards</span>
-                    <span data-lang-ko>스와이프 플래시카드</span>
-                </h3>
-                <p data-lang-en>Intuitive swipe-based flashcard interface with gesture controls — tap to reveal, swipe to judge, double-tap for TTS pronunciation.</p>
-                <p data-lang-ko>탭으로 뜻 확인, 스와이프로 암기 판단, 더블 탭으로 TTS 발음 듣기 — 직관적인 제스처 기반 플래시카드입니다.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">&#127925;</div>
-                <h3>
-                    <span data-lang-en>Korean TTS</span>
-                    <span data-lang-ko>한국어 TTS 발음</span>
-                </h3>
-                <p data-lang-en>Native Korean pronunciation powered by TTS for every word and example sentence, with adjustable speech rate and pitch.</p>
-                <p data-lang-ko>모든 단어와 예문에 대한 네이티브 한국어 TTS 발음을 제공하며, 속도와 음높이를 조절할 수 있습니다.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">&#128221;</div>
-                <h3>
-                    <span data-lang-en>Multiple Quiz Modes</span>
-                    <span data-lang-ko>다양한 퀴즈 모드</span>
-                </h3>
-                <p data-lang-en>Multiple choice, typing, listening, reverse quiz, and sentence builder modes for comprehensive multi-modal learning.</p>
-                <p data-lang-ko>객관식, 타이핑, 리스닝, 역방향 퀴즈, 문장 배열 등 다양한 학습 모드로 종합적인 멀티모달 학습을 지원합니다.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">&#128274;</div>
-                <h3>
-                    <span data-lang-en>Privacy-First &amp; Offline</span>
-                    <span data-lang-ko>개인정보 보호 &amp; 오프라인</span>
-                </h3>
-                <p data-lang-en>No account required, no data collection, no tracking. All data stays on your device and the app works fully offline.</p>
-                <p data-lang-ko>회원가입 불필요, 개인정보 수집 없음, 추적 없음. 모든 데이터는 기기에만 저장되며 완전 오프라인으로 동작합니다.</p>
-            </div>
-        </div>
+    <section class="cta">
+        <h2>곧 App Store에서</h2>
+        <p class="section-sub">출시 준비 중입니다.</p>
+        <div class="note">문의 · 지원: <a class="inline" href="mailto:contact@luraai.io">contact@luraai.io</a></div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="section-title">
-            <span data-lang-en>Contact Us</span>
-            <span data-lang-ko>문의하기</span>
-        </h2>
-        <div class="contact-card">
-            <p data-lang-en>Have questions, suggestions, or partnership inquiries about kWord?<br>We'd love to hear from you.</p>
-            <p data-lang-ko>kWord에 대한 문의, 제안, 파트너십 등<br>무엇이든 편하게 연락해 주세요.</p>
-            <a href="mailto:contact@luraai.io" class="contact-email">contact@luraai.io</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-links">
-            <a href="/">LuraAI Home</a>
-            <span data-lang-en>
-                <a href="privacy/en/">Privacy Policy</a>
-            </span>
-            <span data-lang-ko>
-                <a href="privacy/ko/">개인정보처리방침</a>
-            </span>
-            <span data-lang-en>
-                <a href="terms/en/">Terms of Service</a>
-            </span>
-            <span data-lang-ko>
-                <a href="terms/ko/">이용약관</a>
-            </span>
+        <div class="links">
+            <a href="privacy/ko/">개인정보처리방침</a>
+            <a href="terms/ko/">이용약관</a>
+            <a href="support/ko/">지원</a>
+            <a href="privacy/en/">English</a>
+            <a href="../">LuraAI</a>
         </div>
-        <p>&copy; 2025 LuraAI. All rights reserved.</p>
+        <p>&copy; 2026 LuraAI. All rights reserved.</p>
     </footer>
-
-    <script>
-        (function() {
-            var body = document.body;
-            var toggle = document.getElementById('langToggle');
-            var saved = localStorage.getItem('kword-lang');
-            if (saved === 'ko') {
-                body.classList.add('lang-ko');
-                document.documentElement.lang = 'ko';
-            }
-            toggle.addEventListener('click', function() {
-                body.classList.toggle('lang-ko');
-                var isKo = body.classList.contains('lang-ko');
-                document.documentElement.lang = isKo ? 'ko' : 'en';
-                localStorage.setItem('kword-lang', isKo ? 'ko' : 'en');
-            });
-        })();
-    </script>
-
 </body>
 </html>
