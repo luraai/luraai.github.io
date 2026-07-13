@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객 지원 - VoxNote</title>
+    <meta name="description" content="VoxNote 고객 지원 — 자주 묻는 질문과 문의 방법. 온디바이스 AI 회의록 앱.">
+    <link rel="icon" type="image/png" href="../favicon/favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Pretendard', Roboto, sans-serif; background: #0a0a1a; color: #f0f0ff; line-height: 1.8; }
+        .container { max-width: 700px; margin: 0 auto; padding: 6rem 2rem 4rem; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(20px); background: rgba(10,10,26,0.8); border-bottom: 1px solid rgba(44,133,105,0.25); z-index: 100; }
+        nav a { color: #a0a0c0; text-decoration: none; font-size: 0.95rem; }
+        nav a:hover { color: #f0f0ff; }
+        h1 { font-size: 2.2rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #3CA98A, #2C8569); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .date { color: #a0a0c0; margin-bottom: 2rem; font-size: 0.9rem; }
+        h2 { font-size: 1.3rem; margin: 2.5rem 0 0.8rem; }
+        p, li { color: #c0c0e0; font-size: 0.95rem; margin-bottom: 1rem; }
+        ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        a { color: #3CA98A; }
+        strong { color: #f0f0ff; }
+        code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 0.88em; color: #d8d8f0; background: rgba(127,127,255,0.10); padding: 0.1rem 0.35rem; border-radius: 4px; }
+        details { border: 1px solid rgba(127,127,255,0.15); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 0.8rem; background: #12122c; }
+        details[open] { border-color: rgba(44,133,105,0.35); }
+        summary { cursor: pointer; font-weight: 600; color: #f0f0ff; }
+        details p { margin: 0.8rem 0 0; }
+        .contact-box { border: 1px solid rgba(44,133,105,0.35); background: rgba(44,133,105,0.08); border-radius: 16px; padding: 1.6rem 1.8rem; margin: 1.5rem 0 2rem; }
+        .contact-box p:last-of-type { margin-bottom: 0; }
+        .cta-btn { display: inline-block; margin-top: 1rem; padding: 0.8rem 2rem; background: linear-gradient(135deg, #3CA98A, #2C8569); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(44,133,105,0.3); }
+        footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(44,133,105,0.25); margin-top: 3rem; }
+        footer p { color: #a0a0c0; font-size: 0.85rem; }
+        @media (max-width: 480px) { nav { padding: 0.8rem 1rem; } nav a { font-size: 0.85rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="./">&larr; VoxNote</a>
+        <div style="display:flex;gap:1.2rem;">
+            <a href="privacy.html">개인정보</a>
+            <a href="terms.html">약관</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>고객 지원</h1>
+        <p class="date">VoxNote &middot; macOS 12+ (Apple Silicon &middot; Intel)</p>
+
+        <div class="contact-box">
+            <p><strong>문의 이메일:</strong> <a href="mailto:contact@luraai.io">contact@luraai.io</a></p>
+            <p>버그 신고, 기능 제안, 사용 중 막히는 부분 &mdash; 무엇이든 환영합니다. 영업일 기준 1~2일 이내에 답변드립니다.</p>
+            <a class="cta-btn" href="mailto:contact@luraai.io?subject=%5BVoxNote%5D%20%EB%AC%B8%EC%9D%98">메일 보내기</a>
+        </div>
+
+        <h2>자주 묻는 질문</h2>
+
+        <details open>
+            <summary>정말 아무것도 서버로 전송되지 않나요?</summary>
+            <p>기본 설정에서는 그렇습니다. 녹음·전사·요약이 모두 기기 안의 AI 모델로 처리됩니다. 인터넷을 꺼도 앱의 모든 기능이 동작합니다.</p>
+            <p>예외는 두 가지입니다. (1) <strong>AI 모델 파일 다운로드</strong> &mdash; 최초 1회, 모델 파일만 받아옵니다. 음성이나 전사문은 전송되지 않습니다. (2) <strong>외부 AI를 직접 켰을 때</strong> &mdash; 이 경우 무엇이 전송되는지 앱이 미리 알려줍니다.</p>
+        </details>
+
+        <details>
+            <summary>지금 로컬로 처리되고 있는지 어떻게 확인하나요?</summary>
+            <p>색으로 알 수 있습니다. <strong>초록색</strong>은 "이 기기 안에서 처리됨", <strong>파란색</strong>은 "데이터가 기기를 떠날 수 있음"을 뜻합니다. 상단의 프라이버시 배지와 AI 프로바이더 화면에서 어떤 엔진이 도는지 언제나 확인할 수 있습니다.</p>
+        </details>
+
+        <details>
+            <summary>어떤 언어를 인식하나요?</summary>
+            <p>한국어와 영어를 함께 인식합니다. 설정에서 주 언어와 보조 언어를 지정하면 그 둘만으로 인식 범위를 좁혀 정확도를 높일 수 있습니다.</p>
+        </details>
+
+        <details>
+            <summary>AI 모델은 왜 따로 받아야 하나요?</summary>
+            <p>온디바이스 AI 모델은 크기가 큽니다(음성 인식 약 74MB~550MB, 요약용 LLM 약 1~3GB). 앱에 모두 포함하면 내려받기가 지나치게 무거워지므로, 필요한 모델만 골라 받도록 했습니다. 설정 → 모델에서 관리합니다.</p>
+        </details>
+
+        <details>
+            <summary>요약 품질이 아쉽습니다.</summary>
+            <p>더 큰 모델을 쓰면 좋아집니다. 로컬 모델은 정직하게 말해 클라우드 모델보다 작고, 그만큼 한계가 있습니다. 앱은 각 모델의 트레이드오프를 화면에 그대로 적어 둡니다("더 빠르지만 정확도는 낮습니다"). 품질이 우선이라면 외부 AI를 켤 수 있고, 그때 무엇이 전송되는지 미리 알려드립니다.</p>
+        </details>
+
+        <details>
+            <summary>녹음 파일만 지우고 전사문은 남길 수 있나요?</summary>
+            <p>가능합니다. 노트 화면의 삭제 아이콘으로 <strong>그 노트의 음성 파일만</strong> 지울 수 있습니다. 전사문과 요약은 그대로 남습니다. 민감한 회의의 원음만 없애고 싶을 때 쓰십시오.</p>
+        </details>
+
+        <details>
+            <summary>회의록을 다른 곳으로 옮기려면?</summary>
+            <p>Markdown, Word(.docx), HTML로 내보낼 수 있습니다. 내보낸 파일은 사용자가 고른 위치에 저장되며 외부로 전송되지 않습니다. HTML은 브라우저에서 열어 인쇄(⌘P) → PDF로 저장할 수 있습니다.</p>
+        </details>
+
+        <details>
+            <summary>데이터를 전부 삭제하려면?</summary>
+            <p>노트는 앱 안에서 휴지통으로 옮긴 뒤 영구 삭제할 수 있습니다. 전체를 지우려면 앱을 삭제하십시오 &mdash; 기기에 저장된 노트·음성·모델이 함께 제거됩니다.</p>
+        </details>
+
+        <details>
+            <summary>iOS/Windows 버전은요?</summary>
+            <p>준비 중입니다. 코어 엔진은 이미 크로스플랫폼(Rust)으로 만들어져 있습니다. 출시 알림을 원하시면 <a href="mailto:contact@luraai.io">contact@luraai.io</a>로 알려주세요.</p>
+        </details>
+
+        <h2>Support (English)</h2>
+        <p>VoxNote is a privacy-first meeting-notes app for macOS 12 or later. Recording, transcription, and summarization all run on your own device &mdash; audio and transcripts do not leave it by default, and the app works with the network turned off. Cloud AI is opt-in, and the app tells you exactly what would be sent before it sends anything.</p>
+        <p>For questions, bug reports, or feature requests, email <a href="mailto:contact@luraai.io">contact@luraai.io</a>. We usually reply within 1&ndash;2 business days. See also the <a href="privacy-en.html">Privacy Policy</a> and <a href="terms-en.html">Terms of Service</a>.</p>
+
+        <h2>제공자 정보</h2>
+        <p><strong>LuraAI</strong><br>
+        이메일: <a href="mailto:contact@luraai.io">contact@luraai.io</a></p>
+    </div>
+    <footer>
+        <p>&copy; 2026 LuraAI. All rights reserved.</p>
+    </footer>
+</body>
+</html>

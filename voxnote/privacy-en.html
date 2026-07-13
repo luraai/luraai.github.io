@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - VoxNote</title>
+    <meta name="description" content="VoxNote records, transcribes, and summarizes entirely on your device. Audio and transcripts do not leave the device by default, and cloud AI only runs if you turn it on.">
+    <link rel="icon" type="image/png" href="../favicon/favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Pretendard', Roboto, sans-serif; background: #0a0a1a; color: #f0f0ff; line-height: 1.8; }
+        .container { max-width: 700px; margin: 0 auto; padding: 6rem 2rem 4rem; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(20px); background: rgba(10,10,26,0.8); border-bottom: 1px solid rgba(44,133,105,0.25); z-index: 100; }
+        nav a { color: #a0a0c0; text-decoration: none; font-size: 0.95rem; }
+        nav a:hover { color: #f0f0ff; }
+        h1 { font-size: 2.2rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #3CA98A, #2C8569); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .date { color: #a0a0c0; margin-bottom: 2rem; font-size: 0.9rem; }
+        h2 { font-size: 1.3rem; margin: 2rem 0 0.8rem; }
+        p, li { color: #c0c0e0; font-size: 0.95rem; margin-bottom: 1rem; }
+        ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        a { color: #3CA98A; }
+        strong { color: #f0f0ff; }
+        .callout { border: 1px solid rgba(44,133,105,0.35); background: rgba(44,133,105,0.08); border-radius: 12px; padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
+        .callout p:last-child { margin-bottom: 0; }
+        code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 0.88em; color: #d8d8f0; background: rgba(127,127,255,0.10); padding: 0.1rem 0.35rem; border-radius: 4px; }
+        footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(44,133,105,0.25); margin-top: 3rem; }
+        footer p { color: #a0a0c0; font-size: 0.85rem; }
+        @media (max-width: 480px) { nav { padding: 0.8rem 1rem; } nav a { font-size: 0.85rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="./">&larr; VoxNote</a>
+        <div style="display:flex;gap:1.2rem;">
+            <a href="terms-en.html">Terms</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">한국어</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p class="date">Last updated: July 13, 2026 &middot; <a href="privacy.html">한국어</a></p>
+
+        <p>VoxNote records, transcribes, and summarizes meetings. All three happen <strong>on your own device</strong>.</p>
+
+        <div class="callout">
+            <p><strong>In short.</strong> Your audio and transcripts do not leave the device by default. We do not receive, store, or read your meetings. The app works with the network turned off.</p>
+        </div>
+
+        <h2>1. Personal data we collect &mdash; none</h2>
+        <p>VoxNote <strong>collects no personal data.</strong></p>
+        <ul>
+            <li>We run no server that receives or stores your audio, transcripts, or summaries.</li>
+            <li>The app contains no analytics or marketing SDKs. We do not track how you use it.</li>
+            <li>We do not collect device or advertising identifiers, and we do not link data to other companies, apps, or websites.</li>
+            <li>There are no ads and no tracking technologies.</li>
+            <li>No account is required. We never ask for your name or email.</li>
+        </ul>
+
+        <h2>2. What the app stores on your device</h2>
+        <p>The following is created by you and stored <strong>only on your device</strong>. We cannot access it, so under Apple's definition this is <strong>not "collection."</strong></p>
+        <ul>
+            <li>Recorded audio files</li>
+            <li>Transcripts and speaker labels</li>
+            <li>AI-generated summaries and documents</li>
+            <li>Note titles, folders, bookmarks, and highlights</li>
+            <li>App settings (recognition language, which AI model to use)</li>
+        </ul>
+        <p>The local database is encrypted on disk (ChaCha20-Poly1305).</p>
+
+        <h2>3. AI processing &mdash; on-device by default</h2>
+        <p>Speech recognition and summarization run using <strong>models downloaded to your device</strong>. Neither your audio nor your transcript leaves the machine during this.</p>
+        <ul>
+            <li>Speech recognition: <code>whisper.cpp</code>, <code>SenseVoice</code> (on-device)</li>
+            <li>Summaries and documents: <code>llama.cpp</code> (on-device)</li>
+        </ul>
+        <p>Model files must be downloaded once. That request goes to the model host (for example Hugging Face) and contains <strong>only the request for the model file</strong> &mdash; never your audio or transcripts.</p>
+
+        <h2>4. Cloud AI &mdash; only if you turn it on</h2>
+        <p>You may choose to use an external AI service such as OpenAI for summaries. This is <strong>off by default.</strong></p>
+        <ul>
+            <li>When you enable it, the app tells you <strong>exactly what will be sent</strong> before it sends it (for example: "the transcript of this note will be sent to OpenAI's servers; audio files and other notes will not").</li>
+            <li>In the interface, <strong>green</strong> means the work happened on this device and <strong>blue</strong> means data may leave it. You can always tell which engine is running.</li>
+            <li>Anything you send is governed by that provider's privacy policy. We neither receive nor relay it &mdash; the app calls the provider directly with your own API key.</li>
+            <li>If you never enable it, <strong>nothing is transmitted.</strong></li>
+        </ul>
+        <p>Your API key is never sent to us. It is stored in your operating system's secure storage (macOS Keychain).</p>
+
+        <h2>5. Device permissions (microphone)</h2>
+        <p>VoxNote requests <strong>microphone</strong> access solely to record meetings, and uses it only while you are recording. Recordings are stored on your device as described in section 2.</p>
+
+        <h2>6. Sharing with third parties &mdash; none</h2>
+        <p>We do not sell, share, or disclose your data to third parties. There is no data for us to share: we never receive any.</p>
+
+        <h2>7. Deleting your data</h2>
+        <ul>
+            <li>Notes can be moved to Trash and then permanently deleted inside the app.</li>
+            <li>You can delete a note's audio on its own, keeping the transcript and summary.</li>
+            <li>To remove everything, delete the app. Your notes, recordings, and downloaded models are removed with it.</li>
+        </ul>
+
+        <h2>8. Children's privacy</h2>
+        <p>VoxNote collects no personal data from anyone, children included.</p>
+
+        <h2>9. Changes to this policy</h2>
+        <p>If this policy changes, we will announce it in an app update and on this page.</p>
+
+        <h2>10. Contact</h2>
+        <p>Questions about this policy?</p>
+        <p><strong>LuraAI</strong><br>
+        Email: <a href="mailto:contact@luraai.io">contact@luraai.io</a></p>
+    </div>
+    <footer>
+        <p>&copy; 2026 LuraAI. All rights reserved.</p>
+    </footer>
+</body>
+</html>
