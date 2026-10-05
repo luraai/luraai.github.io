@@ -1,0 +1,27 @@
+/* text-secondary/tertiary and weekend colors are AA-contrast corrected (>=4.5:1 on bg-app/card); the app (Shared/Theme.swift) uses the same values. */
+:root{
+--ink-900:#1C1B22;--ink-800:#2A2932;--ink-700:#3D3C47;--ink-500:#63616E;--ink-400:#8E8C99;--ink-300:#BDBAC4;--ink-200:#E4DED3;--ink-100:#F5EDE0;--ink-50:#FFF7EC;--white:#FFFFFF;
+--pink-50:#FFF0F5;--pink-100:#FFE3EE;--pink-300:#FFA3C4;--pink-500:#FF4F8B;--pink-600:#E63A76;--pink-700:#8F1440;
+--shift-day:#FFC21A;--shift-day-tint:#FFF3C4;--shift-day-ink:#6B4A00;--shift-day-on:#1C1B22;
+--shift-eve:#FF7A45;--shift-eve-tint:#FFE4D6;--shift-eve-ink:#8A2E0A;--shift-eve-on:#1C1B22;
+--shift-night:#4F46E5;--shift-night-tint:#E4E2FF;--shift-night-ink:#2A2394;--shift-night-on:#FFFFFF;
+--shift-off:#2FCB8A;--shift-off-tint:#D4F7E6;--shift-off-ink:#0A6443;--shift-off-on:#1C1B22;
+--shift-rest:#B9A8F0;--shift-rest-tint:#EEE9FF;--shift-rest-ink:#4A3C8A;--shift-rest-on:#1C1B22;
+--shift-extra:#FF4F8B;--shift-extra-tint:#FFE3EE;--shift-extra-ink:#8F1440;--shift-extra-on:#1C1B22;
+--red-500:#F0413F;--red-tint:#FFE1E0;--blue-500:#3E7BFA;
+--pro-ink:#1C1B22;--pro-gold:#FFC21A;
+--bg-app:var(--ink-50);--surface-card:var(--white);--surface-sunken:var(--ink-100);--surface-overlay:rgba(28,27,34,.4);--surface-glass:rgba(255,247,236,.86);
+--text-primary:var(--ink-900);--text-secondary:#56545F;--text-tertiary:#6C6A77;--text-on-accent:var(--ink-900);--text-sunday:#D92D2B;--text-saturday:#2F66E0;
+--stroke:var(--ink-900);--border-hairline:rgba(28,27,34,.1);--border-strong:rgba(28,27,34,.24);
+--accent:var(--pink-500);--accent-pressed:var(--pink-600);--accent-tint:var(--pink-100);--accent-ink:var(--pink-700);
+--success:var(--shift-off);--warning:var(--shift-day);--danger:var(--red-500);--info:var(--shift-night);
+--focus-ring:0 0 0 3px rgba(255,79,139,.45);
+}
+[data-theme="dark"]{
+--bg-app:#15141B;--surface-card:#23222C;--surface-sunken:#2E2D38;--surface-overlay:rgba(0,0,0,.6);--surface-glass:rgba(21,20,27,.86);
+--text-primary:#F6F2EA;--text-secondary:#B9B6C3;--text-tertiary:#9A98A6;--stroke:#000000;
+--border-hairline:rgba(255,255,255,.08);--border-strong:rgba(255,255,255,.18);
+--accent-tint:rgba(255,79,139,.2);--accent-ink:#FFB3CE;
+--shift-night:#6D66FF;--shift-day-tint:rgba(255,194,26,.18);--shift-day-ink:#FFDD7A;--shift-eve-tint:rgba(255,122,69,.18);--shift-eve-ink:#FFB696;--shift-night-tint:rgba(109,102,255,.22);--shift-night-ink:#C9C6FF;--shift-off-tint:rgba(47,203,138,.18);--shift-off-ink:#8CEBC2;--shift-rest-tint:rgba(185,168,240,.2);--shift-rest-ink:#DCD3FF;--shift-extra-tint:rgba(255,79,139,.2);--shift-extra-ink:#FFB3CE;
+--text-sunday:#FF7A78;--text-saturday:#7FA6FF;
+}

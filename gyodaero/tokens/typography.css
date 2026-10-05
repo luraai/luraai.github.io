@@ -1,0 +1,8 @@
+:root{
+--font-display:"Jua","Pretendard Variable",system-ui,sans-serif;
+--font-sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",system-ui,sans-serif;
+--fw-regular:400;/* @kind font */--fw-medium:500;/* @kind font */--fw-semibold:600;/* @kind font */--fw-bold:700;/* @kind font */--fw-heavy:800;/* @kind font */
+--fs-hero:56px;--lh-hero:1;/* @kind font */--fs-display:34px;--lh-display:41px;--fs-title1:28px;--lh-title1:34px;--fs-title2:22px;--lh-title2:28px;--fs-title3:20px;--lh-title3:25px;
+--fs-headline:17px;--lh-headline:22px;--fs-body:17px;--lh-body:24px;--fs-callout:16px;--lh-callout:22px;--fs-subhead:15px;--lh-subhead:20px;--fs-footnote:13px;--lh-footnote:18px;--fs-caption:12px;--lh-caption:16px;--fs-micro:10px;--lh-micro:12px;
+--ls-tight:-0.025em;--ls-title:-0.02em;--ls-body:-0.01em;--ls-caps:0.04em;
+}
