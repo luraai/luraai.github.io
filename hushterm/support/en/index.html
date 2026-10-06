@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Hushterm | LuraAI</title>
+<meta name="description" content="Hushterm support. Getting started, subscriptions, connection problems, AI and agents, backup, and how to reach us.">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../privacy/en/">Privacy</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>Support</h1>
+<p class="lead">Questions or trouble with Hushterm? We are happy to help.</p>
+<div class="contact"><p class="addr"><a href="mailto:contact@luraai.io">contact@luraai.io</a></p><p>We will reply as soon as we can. Please include your device model, iOS version and app version. Never send passwords or private keys.</p></div>
+<h2>Getting started</h2>
+<div class="faq"><h3>Can I try it without a server?</h3><p>Open the Hosts tab and tap &ldquo;Try it without a server&rdquo;. It opens a server simulated inside the app, so no network is needed and you can safely see what the risky-command guard does with <code>rm -rf</code>.</p></div>
+<div class="faq"><h3>How do I add a real server?</h3><p>Go to Hosts &rsaquo; + and enter the address, port, username and how you sign in (password or key). On the first connection the app shows the host-key fingerprint; compare it with the server&rsquo;s before you trust it.</p></div>
+<div class="faq"><h3>How do I create an SSH key?</h3><p>On the Keys screen you can generate ed25519 and ECDSA keys or import OpenSSH and PEM keys (Pro). Secure Enclave keys are protected by Face ID and never leave the device. Add the public key to <code>~/.ssh/authorized_keys</code> on the server.</p></div>
+<h2>Subscriptions and purchases</h2>
+<div class="faq"><h3>What is free, and what is Pro?</h3><p>Free: SSH, SFTP and the risky-command guard (2 hosts, 3 new connections a day, 2-pane split). Pro: unlimited hosts and connections, on-device AI, 4-pane split, tmux, virtual Linux servers, SFTP folders, key creation, agent approvals and themes. Pro is a monthly or yearly subscription, or a one-time lifetime purchase; prices vary by region.</p></div>
+<div class="faq"><h3>How do I cancel or get a refund?</h3><p>Cancel in Settings &rsaquo; [your name] &rsaquo; Subscriptions. You keep Pro until the paid period ends. Refunds are handled by Apple: <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a></p></div>
+<div class="faq"><h3>How do I restore purchases on a new device?</h3><p>Tap &ldquo;Restore Purchases&rdquo; on the Pro screen (Settings &rsaquo; Hushterm Pro), signed in with the same Apple Account.</p></div>
+<h2>Connection problems</h2>
+<div class="faq"><h3>I get &ldquo;Permission denied&rdquo;.</h3><p>Check the username and password or key, and that the server allows that method (<code>PasswordAuthentication</code>, <code>PubkeyAuthentication</code>). The app&rsquo;s connection diagnosis points to the likely cause.</p></div>
+<div class="faq"><h3>The connection is blocked because the host key changed.</h3><p>This is deliberate: the server may have been reinstalled, or someone may be intercepting the connection. If you changed the server yourself, verify the new fingerprint, tap &ldquo;Forget saved host key&rdquo; in the connection diagnosis and connect again.</p></div>
+<div class="faq"><h3>Connections time out or keep dropping.</h3><p>Check the address, port and firewall. Servers on your own network need the Local Network permission (Settings &rsaquo; Hushterm). With always-attach tmux on for a host, your session carries on after a drop (Pro).</p></div>
+<div class="faq"><h3>The connection drops in the background.</h3><p>iOS limits how long an app can keep a connection while in the background. A Live Activity shows the remaining time, and tmux lets you pick up where you left off.</p></div>
+<h2>AI and agents</h2>
+<div class="faq"><h3>AI features are missing or not working.</h3><p>They need a device that supports Apple Intelligence, with it turned on in Settings &rsaquo; Apple Intelligence. On other devices the rule-based explanations keep working. All AI runs on the device.</p></div>
+<div class="faq"><h3>Does the app run AI-written commands automatically?</h3><p>No. A suggestion only fills the input line and you decide whether to run it. Commands such as <code>rm -rf</code>, <code>dd</code>, <code>mkfs</code>, <code>chmod -R 777</code> or a reboot on production pause before sending.</p></div>
+<div class="faq"><h3>How do I get Claude Code / Codex approval alerts?</h3><p>When an agent in your SSH session asks for approval, Hushterm notifies you by notification, Live Activity and Apple Watch (Pro). Only low-risk requests can be approved from the lock screen; the rest open the app. If you see nothing, turn notifications on in Settings &rsaquo; Notifications.</p></div>
+<h2>Backup and data</h2>
+<div class="faq"><h3>How do I move my hosts to another device?</h3><p>Turn on backup in Settings &rsaquo; iCloud and they restore on devices signed in to the same Apple Account. Passwords come along only if &ldquo;Also keep passwords in iCloud Keychain&rdquo; is on; private keys never leave a device, so import them again on the new one.</p></div>
+<div class="faq"><h3>Where is my data?</h3><p>Only on your device and in your own iCloud. See the <a href="../../privacy/en/">Privacy Policy</a> for details.</p></div>
+<div class="faq"><h3>I found a bug or have an idea.</h3><p>Email <a href="mailto:contact@luraai.io">contact@luraai.io</a> with steps to reproduce. We read everything.</p></div>
+</div>
+<footer><p>&copy; 2026 LuraAI. All rights reserved.</p></footer>
+</body>
+</html>

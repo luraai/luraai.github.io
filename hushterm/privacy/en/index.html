@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Hushterm | LuraAI</title>
+<meta name="description" content="Hushterm privacy policy. No accounts, nothing sent to our servers, AI runs on the device.">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../support/en/">Support</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>Privacy Policy</h1>
+<p class="date">Effective: 6 October 2026 · <a href="../ko/">한국어</a></p>
+<div class="callout"><p>Hushterm has no accounts and sends nothing to LuraAI servers. Your commands and terminal output travel only between your device and the server you choose, and every AI feature runs on the device. There is no analytics, advertising or tracking SDK.</p></div>
+<h2>1. What we collect</h2>
+<p>LuraAI (&ldquo;we&rdquo;) collects <strong>no personal information</strong> through Hushterm (the &ldquo;app&rdquo;).</p>
+<ul>
+<li>There is no sign-up and no login.</li>
+<li>We never ask for or collect a name, email, phone number or location.</li>
+<li>We use no analytics, tracking or advertising frameworks and ship no third-party SDKs.</li>
+<li>The app contains no networking code that sends data to us.</li>
+</ul>
+<h2>2. What is stored on your device</h2>
+<p>The following stays <strong>on your device</strong> and is needed for the app to work:</p>
+<ul>
+<li>Host details (name, address, port, username, tag), folders, port forwards, snippets and recent commands</li>
+<li>SSH passwords and private keys, kept in the iOS Keychain. Secure Enclave keys cannot leave the device, and private keys never leave it.</li>
+<li>Host-key fingerprints of servers you have connected to (confirmed on first use)</li>
+<li>App settings (themes, key bar, scrollback, app lock and so on) and your Pro entitlement</li>
+</ul>
+<h2>3. Server connections and terminal content</h2>
+<p>SSH and SFTP connections go <strong>directly</strong> from your device to the server you specify; no LuraAI relay is involved. We cannot see terminal output or the files you transfer. What happens on the server is governed by that server&rsquo;s operator.</p>
+<h2>4. AI features and voice input</h2>
+<p>Command suggestions, error analysis, long-output summaries and connection diagnosis run <strong>on the device</strong> with Apple Intelligence&rsquo;s on-device model (Foundation Models) and do not use the network. Voice input uses on-device speech recognition only; audio is never sent to a server. The risky-command guard is decided by a rule engine on the device, not by a model.</p>
+<h2>5. iCloud backup — your storage, not ours</h2>
+<p>If you turn on iCloud backup, host details, port forwards, snippets and folders are stored in your own Apple account through Apple&rsquo;s iCloud key-value store. <strong>We cannot access it.</strong> SSH passwords sync through iCloud Keychain only if you turn on &ldquo;Also keep passwords in iCloud Keychain&rdquo; (off by default); private keys are never synced. You can turn it off at any time in Settings &rsaquo; iCloud.</p>
+<h2>6. Notifications, Live Activities, widgets and Apple Watch</h2>
+<p>Approval requests from AI agents such as Claude Code or Codex, and their notifications and Live Activities, are <strong>generated on the device</strong> when the app detects the request in your SSH session. No push server is used. Only low-risk requests can be approved from the lock screen, after device authentication; risky commands and production hosts open the app. Your host list and approval requests go between iPhone and Apple Watch only and do not pass through any server. Live Activities do not use location permission.</p>
+<h2>7. Device permissions</h2>
+<p>Declining a permission only disables the feature that needs it.</p>
+<table>
+<tr><th>Permission</th><th>Why</th></tr>
+<tr><td><strong>Face ID</strong></td><td>App lock and Secure Enclave key use. Biometric data is handled by Apple; the app never receives it.</td></tr>
+<tr><td><strong>Microphone &amp; speech recognition</strong></td><td>Only when you speak a command; processed on the device.</td></tr>
+<tr><td><strong>Local network</strong></td><td>Needed to reach servers on your network over SSH.</td></tr>
+<tr><td><strong>Notifications</strong></td><td>Agent approval requests and connection status, scheduled on the device.</td></tr>
+</table>
+<h2>8. Clipboard</h2>
+<p>The paste guard fixes smart quotes and dashes and asks before a multi-line paste, at the moment you paste, on the device. It does not store or transmit clipboard contents.</p>
+<h2>9. In-app purchases</h2>
+<p>Monthly and yearly subscriptions and the lifetime purchase are sold through Apple&rsquo;s StoreKit. Payment and receipt validation are handled <strong>entirely by Apple</strong>; we never receive payment details or Apple Account information. Manage or cancel subscriptions in your Apple Account settings.</p>
+<h2>10. Sharing and selling</h2>
+<p>We collect no personal information, so there is none to share with or sell to anyone. The app uses no cookies, advertising identifiers (IDFA) or cross-app tracking.</p>
+<h2>11. Encryption</h2>
+<p>The app uses only standard SSH encryption.</p>
+<h2>12. Children</h2>
+<p>We collect no personal information from anyone, including children.</p>
+<h2>13. Deleting your data</h2>
+<p>Deleting the app removes hosts, settings and Keychain items from the device. Data backed up to iCloud can be removed in Settings &rsaquo; [your name] &rsaquo; iCloud &rsaquo; Manage Storage.</p>
+<h2>14. Changes to this policy</h2>
+<p>If this policy changes, the effective date above changes with it, and material changes are announced in the app update notes.</p>
+<h2>15. Contact</h2>
+<p>Questions about privacy: <a href="mailto:contact@luraai.io">contact@luraai.io</a></p>
+</div>
+<footer><p>&copy; 2026 LuraAI. All rights reserved.</p></footer>
+</body>
+</html>
