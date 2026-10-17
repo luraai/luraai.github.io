@@ -18,7 +18,7 @@
 </nav>
 <div class="container">
 <h1>Privacy Policy</h1>
-<p class="date">Effective: 14 October 2026 · <a href="../ko/">한국어</a></p>
+<p class="date">Effective: 17 October 2026 · <a href="../ko/">한국어</a></p>
 <div class="callout"><p>Hushterm has no accounts and sends nothing to LuraAI servers. Your commands and terminal output travel only between your device and the server you choose, and every AI feature runs on the device. There is no analytics, advertising or tracking SDK.</p></div>
 <h2>1. What we collect</h2>
 <p>LuraAI (&ldquo;we&rdquo;) collects <strong>no personal information</strong> through Hushterm (the &ldquo;app&rdquo;).</p>
@@ -34,10 +34,12 @@
 <li>Host details (name, address, port, username, tag), folders, port forwards, snippets and recent commands</li>
 <li>SSH passwords and private keys, kept in the iOS Keychain. Secure Enclave keys cannot leave the device, and private keys never leave it.</li>
 <li>Host-key fingerprints of servers you have connected to (confirmed on first use)</li>
+<li>Server-check reports (the last few per host), the history of AI-agent requests and your decisions, your own server checks, and practice-course progress</li>
 <li>App settings (themes, key bar, scrollback, app lock and so on) and your Pro entitlement</li>
 </ul>
 <h2>3. Server connections and terminal content</h2>
 <p>SSH and SFTP connections go <strong>directly</strong> from your device to the server you specify; no LuraAI relay is involved. We cannot see terminal output or the files you transfer. What happens on the server is governed by that server&rsquo;s operator.</p>
+<p><strong>Server checks.</strong> A server check runs only read-only commands (from a fixed allow-list, or ones you wrote and that passed the same allow-list) on the server you chose, over your own SSH connection. The results are judged on the device and kept on the device; nothing is sent to us or to any other party. The Linux practice course runs on a simulated server inside the app and uses no network.
 <h2>4. AI features and voice input</h2>
 <p>Command suggestions, error analysis, long-output summaries and connection diagnosis run <strong>on the device</strong> with Apple Intelligence&rsquo;s on-device model (Foundation Models) and do not use the network. Voice input uses on-device speech recognition only; audio is never sent to a server. The risky-command guard is decided by a rule engine on the device, not by a model.</p>
 <p><strong>No third-party AI service.</strong> Hushterm does not use, call or share data with any third-party AI service (no OpenAI, Anthropic, Google or similar), and it has no AI server of its own. The text these features read &mdash; your typed command, recent terminal output and the failed command&rsquo;s error message &mdash; is passed only to Apple&rsquo;s on-device model on your iPhone or iPad, stays in memory, is not stored by us and never leaves the device. Because no personal data is sent to any third party for AI, there is nothing to consent to or to share. If this ever changes, the app will first show what data would be sent and to whom, and ask for your permission before sending anything.</p>
