@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hushterm Support | LuraAI</title>
-<meta name="description" content="Hushterm Support">
+<meta name="description" content="Feedback: Settings &gt; Send feedback opens a prefilled email that contains only the app version.">
 <link rel="icon" type="image/png" href="../../icon.png">
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -19,18 +19,22 @@
 <h1>Hushterm Support</h1>
 <div class="langs"><span aria-current="true">English</span> <a href="../ko/" hreflang="ko">한국어</a></div>
 <div class="contact"><p>Contact: <a href="mailto:contact@luraai.io">contact@luraai.io</a></p></div>
+<p class="lead">Feedback: Settings &gt; Send feedback opens a prefilled email that contains only the app version.</p>
 <h2>Getting started</h2>
 <ol><li>Open Hosts and tap "Try it without a server" to explore on a simulated server, or tap + to add an SSH host.</li><li>Choose password or key authentication. Confirm the host key the first time you connect.</li><li>Type in the terminal; the key bar above the keyboard switches between shell, full-screen apps and tmux.</li></ol>
 <h2>Common questions</h2>
 <p><strong>A command is held with a warning.</strong> The risky-command guard stops commands such as <code>rm -rf</code>, <code>dd</code> or <code>chmod -R 777</code> before they are sent. You can still send them after reading the explanation.</p>
 <p><strong>Connection fails.</strong> Open the host's menu and choose Diagnose. It checks DNS, TCP, host key, authentication and shell, step by step.</p>
 <p><strong>The host key changed.</strong> Hushterm blocks the connection. Verify the new fingerprint with the server's owner before accepting it.</p>
+<p><strong>Server check.</strong> In a connected terminal open the ⋯ menu and choose Server check (or long-press a host in the list). It sends only read-only commands, shows what it found with the lines behind it, and shows what changed since the last check on that host. The picker also lets you create your own checks from read-only commands; anything that writes is refused. Use the launcher shortcut "Server check" to jump straight to the last host's check.</p>
+<p><strong>Practice Linux.</strong> Hosts &gt; the box icon &gt; Linux practice course. Each exercise opens a fresh virtual Ubuntu server with a goal and hints; it is free, works offline and keeps your progress on the device only.</p>
+<p><strong>Try an agent without a server.</strong> On the demo server type <code>agent</code>, then open the Sessions tab to approve or deny the simulated agent and see the history.</p>
 <p><strong>Sessions in the background.</strong> While sessions are open, a notification keeps them connected. Close sessions from the Sessions tab or use "Disconnect all" in the notification.</p>
-<p><strong>Agent approvals (Claude Code / Codex).</strong> Pro shows Approve/Deny in notifications and on the watch. Risky or prod requests must be reviewed in the app.</p>
+<p><strong>Agent control (Claude Code, Codex; basic Gemini CLI and aider).</strong> The Sessions tab shows working, waiting for approval, waiting for input or failed, with a history of every request and decision. Pro adds Approve/Deny in notifications and on the watch, plus finished and failed alerts. Risky or prod requests must be reviewed in the app.</p>
 <p><strong>AI is unavailable.</strong> Model-based AI needs a device with an on-device model (AICore). Rule-based explanations work on every device.</p>
 <p><strong>Backup and new phone.</strong> Hosts, snippets, port forwards and settings are in Android Auto Backup. Passwords and private keys are not; export a backup file or re-enter them. Settings &gt; Backup has export and import.</p>
 <p><strong>Subscription.</strong> Manage or cancel in Google Play &gt; Subscriptions. Use "Restore" on the Pro screen after reinstalling.</p>
-<p><strong>Wear OS.</strong> Install Hushterm on the watch from Google Play on your phone. The watch shows hosts, runs safe snippets and handles approvals; it requires the phone app.</p>
+<p><strong>Wear OS.</strong> Install Hushterm on the watch from Google Play on your phone. The watch shows hosts and agent status, runs a basic server check (not on prod hosts) and safe snippets, and handles approvals; it requires the phone app.</p>
 <h2>Contact</h2>
 <p><a href="mailto:contact@luraai.io">contact@luraai.io</a> — please include your Android version, device model and what you were doing.</p>
 </div>

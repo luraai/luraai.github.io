@@ -27,6 +27,29 @@
 <p>You can edit the amount, merchant and category on the confirmation screen, and nothing is saved until you confirm.</p>
 <p><strong>The camera scanner does not open.</strong></p>
 <p>The document scanner is provided by Google Play services. If it is unavailable on your device, choose "Choose a photo" instead, or enter the amount by hand.</p>
+<h2>Receipt details and tools</h2>
+<p><strong>How can I see where an amount came from?</strong></p>
+<p>Open an entry and tap "See where this amount came from". It shows the line read from the receipt, whether reading the total line a second time gave the same amount, the fields you edited and the recognized text. "Receipt vault" can search that text, and "My recognition accuracy" shows how often you saved an amount without editing it. All of it is stored and calculated on your device only.</p>
+<p><strong>I got a warning about a similar entry. What does merging do?</strong></p>
+<p>Before saving, Coinjot compares the amount, time and merchant (and the receipt image) with your existing entries. If one looks like the same purchase, for example a payment message and its receipt, "Merge into existing entry" keeps a single entry instead of two. You can also save it as a separate entry.</p>
+<p><strong>How does the price book work?</strong></p>
+<p>Items read from your receipts are kept on your device. "Price book" shows how an item's price changed since the last time and where you recorded the lowest price. Wrong or missing items can be corrected under "Items" on the confirmation screen.</p>
+<p><strong>How do I split a bill by item?</strong></p>
+<p>On the confirmation screen tap "Split bill", then "Split by item", and tap who had each item. Tax and service charge are shared in proportion, and the option to record only your share saves just your part.</p>
+<p><strong>How do return and warranty reminders work? Why does Coinjot ask for notification permission?</strong></p>
+<p>On the confirmation screen tap "Return / warranty" and set a deadline. Coinjot schedules a notification on your device for 3 days before and for about 9:00 on the day. Android asks for notification permission the first time you add a deadline. If notifications are off, no reminder appears; you can turn them on in Android Settings. Android may deliver reminders a little late to save battery.</p>
+<p><strong>How do I use travel mode?</strong></p>
+<p>Open "Conversion · Travel mode", type the exchange rate yourself and, if you like, a daily travel budget. Coinjot does not look up rates online, so converted amounts are approximate.</p>
+<p><strong>How does "Ask your ledger" work?</strong></p>
+<p>Type or say a question such as "How much did I spend on cafés last month?". The question is understood on your device by rules, the numbers are calculated by the app from your own records, and the records behind the answer are shown. Nothing is sent to a server.</p>
+<p><strong>Live scan asks for the camera. Why?</strong></p>
+<p>"Live scan" shows the camera and picks out the total line on screen, so it needs the camera permission, requested only when you open it. If you decline, use the document scanner or "Choose a photo", which need no permission. Frames are processed on your device and not uploaded. You can change the permission in Android Settings › Apps › Coinjot.</p>
+<p><strong>How does handwriting input work?</strong></p>
+<p>"Handwrite" is experimental. The first time you use it, Google Play services downloads a handwriting language model once (an internet connection is needed for that step). After that it runs on your device, and your handwriting is never stored. Always check the recognized amount on the confirmation screen.</p>
+<p><strong>How do I fix a value by voice?</strong></p>
+<p>On the confirmation screen tap "Fix by voice" and say, for example, "no, make it 19.50". It uses Android's speech recognition after you tap the microphone, and nothing is saved until you confirm.</p>
+<p><strong>How do I send a photo or text from another app?</strong></p>
+<p>Share it to Coinjot from the other app's share sheet. It opens for your review and nothing is saved until you confirm. The shortcuts on the launcher icon (scan receipt, voice, manual entry, ask) and the home-screen widget open Coinjot directly.</p>
 <h2>Wear OS watch</h2>
 <p><strong>Is a record saved right away when I enter it on the watch?</strong></p>
 <p>No. What you say or write on the watch is sent to your phone and shows up under "From your watch" at the top of the Ledger tab, where you confirm it before it is saved.</p>
@@ -45,7 +68,7 @@
 <p><strong>How do I move to a new phone?</strong></p>
 <p>Use Settings › Backup &amp; restore to export a backup file, then import it on the new phone. Android's automatic backup can also restore the app's data when you set up a new device.</p>
 <p><strong>Can I keep more than one ledger or currency?</strong></p>
-<p>Yes, with Pro you can keep several separate ledgers, each with its own currency. Converting between currencies with exchange rates is not available yet.</p>
+<p>Yes, with Pro you can keep several separate ledgers, each with its own currency. In travel mode you enter an exchange rate yourself to see approximate converted amounts; Coinjot does not fetch exchange rates.</p>
 <p><strong>I found a bug or want to suggest a feature.</strong></p>
 <p>Email <a href="mailto:contact@luraai.io">contact@luraai.io</a> with steps to reproduce. We read every message.</p>
 <p>URL: <a href="https://luraai.io/coinjot-android/support/en/">https://luraai.io/coinjot-android/support/en/</a></p>
