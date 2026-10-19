@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy - Framesift</title>
-<meta name="description" content="Framesift analyzes photos and finds them with words only on your iPhone. No account, no server, no analytics; photos, searches and recognized text never leave your device.">
+<meta name="description" content="Framesift analyzes photos and finds them with words or sentences only on your iPhone. No account, no server, no analytics; photos, searches and recognized text never leave your device.">
 <link rel="icon" type="image/png" href="../../icon.png">
 <link rel="alternate" hreflang="ko" href="https://luraai.io/framesift/privacy/ko/">
 <style>
@@ -27,28 +27,25 @@ footer{text-align:center;color:var(--sub);font-size:.85rem;padding:2rem 1rem;bor
 <div class="links"><a href="../../privacy/en/">Privacy Policy</a><a href="../../support/en/">Support</a><a href="../ko/">한국어</a></div></nav>
 <div class="wrap">
 <h1>Privacy Policy</h1>
-<p class="date">Last updated: October 18, 2026</p>
-<div class="callout"><p><strong>Framesift analyzes your photos, and searches them with words, only on your iPhone.</strong> There is no account and no server. Your photos, your searches and any text read from screenshots never leave your device, and we collect no personal information. If you are a Pro user and choose to, the app downloads an AI model file once (section 3).</p></div>
+<p class="date">Last updated: October 19, 2026</p>
+<div class="callout"><p><strong>Framesift analyzes your photos, and finds them with words, only on your iPhone.</strong> There is no account and no server. Your photos, your searches and any text read from photos never leave your device, and we collect no personal information. The app uses the internet only for purchases through Apple.</p></div>
 <h2>1. Information we collect</h2>
-<p>LuraAI (&ldquo;we&rdquo;) does <strong>not collect, transmit or share any personal information</strong> through Framesift (&ldquo;the app&rdquo;). The app has no sign-up, we operate no server, and it contains no analytics, tracking or advertising SDK. The app uses the internet only for purchases through Apple and for the AI model download that a Pro user starts (section 3).</p>
+<p>LuraAI (&ldquo;we&rdquo;) does <strong>not collect, transmit or share any personal information</strong> through Framesift (&ldquo;the app&rdquo;). The app has no sign-up, we operate no server, and it contains no analytics, tracking or advertising SDK. The app uses the internet only for purchases through Apple.</p>
 <h2>2. How the app uses your photos</h2>
 <ul>
-<li><strong>Photo library access</strong> is used to find similar photos, screenshots, blurry photos and large videos, to group photos by date, type, album and scene, and to move photos you confirm to Recently Deleted or add them to an album you create.</li>
-<li><strong>On-device analysis only.</strong> Apple&rsquo;s Vision framework runs on your iPhone to compute image features, sharpness and scene categories, and to read text and barcodes in screenshots so they can be sorted into receipts, tickets, codes and so on.</li>
-<li><strong>Text read from screenshots is not saved.</strong> Only a category (for example &ldquo;receipt&rdquo;) and, if present, a date used to judge whether a screenshot is outdated are kept.</li>
+<li><strong>Photo library access</strong> is used to find similar photos, screenshots, blurry photos and large videos, to group photos by date, type, album and scene, to find photos with words or a sentence, and to move photos you confirm to Recently Deleted or add them to an album you create.</li>
+<li><strong>On-device analysis only.</strong> Apple&rsquo;s Vision framework runs on your iPhone to compute image features, sharpness and scene and object labels, and to read text and barcodes in screenshots and in photos that look like documents, signs or receipts.</li>
+<li><strong>Text that is read is kept on your device for search only.</strong> It lives in the app&rsquo;s own storage on your device and never leaves it. Text from screenshots classified as verification codes or account details is not kept, runs of six or more digits (cards, phone numbers and the like) are removed before saving, and text is not read from photos that look like passports, cards or license plates.</li>
 <li>Photos are never copied, uploaded or shared. Photos you do not confirm are never changed or deleted. Deleted photos go to the Recently Deleted album, where they stay for about 30 days.</li>
 </ul>
-<h2>3. Finding photos with words and the AI model</h2>
+<h2>3. Easy Search</h2>
 <ul>
-<li><strong>Free:</strong> word search by scene, type and date (for example &ldquo;screenshots&rdquo; or &ldquo;last year food&rdquo;) only uses information the app already analyzed on your device. It needs no internet, and <strong>free users never download the AI model.</strong></li>
-<li><strong>Pro:</strong> when you start it yourself in Settings &gt; AI Model, the app downloads, once, the AI model used to search with full sentences (Google EmbeddingGemma 2, about 388 MB). The model is a data file and the app only receives it. <strong>Your photos, searches and device identifiers are not sent.</strong></li>
-<li>The model file is served from Hugging Face (an unmodified copy of Google&rsquo;s public model). As with any web download, connection details such as your IP address may appear in Hugging Face&rsquo;s access logs. We do not receive or use those logs, and Hugging Face&rsquo;s privacy policy applies to them.</li>
-<li>After the download everything runs on your device. The app feeds small versions of your photos to the model and stores the resulting lists of numbers (the search index) on your device; your search words are turned into numbers on the device and compared there. The search index contains no photo files or images.</li>
-<li>You can delete the model and the search index any time in Settings &gt; AI Model. Both are excluded from device backups and are removed when you delete the app.</li>
+<li>You find photos with words or a sentence such as &ldquo;receipt&rdquo;, &ldquo;dog&rdquo;, &ldquo;starbucks&rdquo; or &ldquo;last year food&rdquo;. The app compares what you type with the scene and object labels, the text it read, the screenshot type and the date that it stored on your device.</li>
+<li>It is free, and <strong>nothing extra, such as an AI model, is downloaded.</strong> It needs no internet, and your searches never leave your device.</li>
 <li>Search results are a guide. Nothing is deleted from the results: you add photos to Candidates and confirm in the Candidates tray.</li>
 </ul>
 <h2>4. Information stored on your device</h2>
-<p>The app keeps analysis results (image features, sharpness score, scene and screenshot category), your Keep/Candidate choices, settings and cleanup totals in its own storage on your device. If you downloaded the model in Pro, the model file and the search index are on your device too. It contains no photo files or thumbnails. You can erase analysis data in the app&rsquo;s Settings &gt; Reset analysis data, and deleting the app removes everything.</p>
+<p>The app keeps analysis results (image features, sharpness score, scene and screenshot category, scene and object labels, and the text read for search), your Keep/Candidate choices, settings and cleanup totals in its own storage on your device. It contains no photo files or thumbnails. You can erase analysis data, including labels and text, in the app&rsquo;s Settings &gt; Reset analysis data, and deleting the app removes everything.</p>
 <h2>5. Apple Watch</h2>
 <p>The companion Watch app shows numbers only (candidate count, estimated size, last scan time) sent from your iPhone. No photos or photo identifiers are sent.</p>
 <h2>6. Purchases</h2>
