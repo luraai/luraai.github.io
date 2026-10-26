@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Ondam | LuraAI</title>
+<meta name="description" content="Ondam Support">
+<link rel="alternate" hreflang="ko" href="https://luraai.io/ondam/support/ko/">
+<link rel="alternate" hreflang="en" href="https://luraai.io/ondam/support/en/">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<span class="brand">Ondam</span>
+<div class="nav-links">
+<a href="../../privacy/en/">Privacy Policy</a>
+<select aria-label="Language" onchange="location.href='../'+this.value+'/'"><option value="ko">한국어</option><option value="en" selected>English</option></select>
+</div>
+</nav>
+<div class="container">
+<h1>Support</h1>
+<p class="lead">Answers to common questions and troubleshooting for Ondam.</p>
+<div class="contact"><p class="addr"><a href="mailto:contact@luraai.io">contact@luraai.io</a></p><p>If the answers below do not help, email us. Please do not put session content or client information in the email.</p></div>
+<h2>Getting started</h2>
+<div class="faq"><h3>What do I do first?</h3><p>On the Today screen tap 'New session' (새 회기), enter a client pseudonym and type, open the session, choose a consent method, collect both consents (recording and health data) and tap the consent stamp to start recording.</p></div>
+<div class="faq"><h3>Can I use it without recording?</h3><p>Choose 'oral after session' as the consent method. Nothing is recorded and you write the note by hand afterwards.</p></div>
+<h2>Recording and speech recognition</h2>
+<div class="faq"><h3>Recording does not start.</h3><p>Check Settings > Ondam and make sure Microphone and Speech Recognition are allowed.</p></div>
+<div class="faq"><h3>No live transcript appears.</h3><p>Install 'Korean speech recognition' on the Security (보안·보관) screen. If it is unavailable or the device does not support it, the app records only and converts the audio afterwards with the fallback recognizer (download it on the same screen).</p></div>
+<div class="faq"><h3>Are speakers separated automatically?</h3><p>No. Tap the counselor / client / guardian button when the speaker changes.</p></div>
+<h2>AI drafts</h2>
+<div class="faq"><h3>How are drafts made?</h3><p>Apple Intelligence (on device) writes first; if it is unavailable or declines, a downloaded open-source model writes; if neither is available a rule-based skeleton is used. The review screen shows which step wrote the draft.</p></div>
+<div class="faq"><h3>A draft is empty or some sentences are missing.</h3><p>Sentences with no support in the conversation, and sentences that read like a diagnosis or risk rating, are removed. Add anything missing with 'Rewrite' (고쳐 쓰기).</p></div>
+<div class="faq"><h3>Why is Assessment (A) empty?</h3><p>Only the counselor writes the assessment; the AI never does. Once you write 5 or more characters you can seal the note.</p></div>
+<div class="faq"><h3>How do I download an open-source model?</h3><p>Security > Local open-source models > Download. A confirmation appears and the top counter rises only while downloading. We recommend Qwen3 4B for devices with 8 GB or more of memory and Kanana 1.5 2.1B for 6 GB devices. You can delete models at any time.</p></div>
+<h2>Subscription</h2>
+<div class="faq"><h3>What requires a subscription?</h3><p>Recording new sessions and creating transcripts and drafts. There is a 1-month free trial. Viewing, exporting to PDF and deleting existing records never requires a subscription.</p></div>
+<div class="faq"><h3>How do I cancel?</h3><p>Settings > Apple Account > Subscriptions > Ondam. Cancelling during the free trial means you are not charged.</p></div>
+<div class="faq"><h3>My subscription is not restored.</h3><p>Tap 'Restore purchases' on the subscription screen, signed in with the same Apple Account.</p></div>
+<h2>Records and retention</h2>
+<div class="faq"><h3>Where are records stored?</h3><p>Only on this device, encrypted. Nothing is uploaded to a server or iCloud.</p></div>
+<div class="faq"><h3>Can I move records to a new device?</h3><p>No, because the encryption key is bound to the device. Export any record you need to keep as a PDF.</p></div>
+<div class="faq"><h3>When are records deleted?</h3><p>When the retention period you chose for the session (1, 3 or 5 years) ends, records are deleted automatically on app launch. You can delete earlier with 'Delete now' in the archive. Content cannot be recovered; only the hash and date remain.</p></div>
+<div class="faq"><h3>What does the 'needs review' flag mean?</h3><p>When the conversation contains a phrase such as 'I want to die', that phrase is quoted verbatim and flagged. The app does not assess or score risk; review and response are the counselor's responsibility.</p></div>
+</div>
+<footer><p>&copy; 2026 LuraAI. All rights reserved. · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (Apple standard EULA)</a></p></footer>
+</body>
+</html>
