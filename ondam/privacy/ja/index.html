@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー — Ondam | LuraAI</title>
+<meta name="description" content="Ondam プライバシーポリシー">
+<link rel="alternate" hreflang="ko" href="https://luraai.io/ondam/privacy/ko/">
+<link rel="alternate" hreflang="en" href="https://luraai.io/ondam/privacy/en/">
+<link rel="alternate" hreflang="ja" href="https://luraai.io/ondam/privacy/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://luraai.io/ondam/privacy/zh/">
+<link rel="alternate" hreflang="vi" href="https://luraai.io/ondam/privacy/vi/">
+<link rel="alternate" hreflang="fr" href="https://luraai.io/ondam/privacy/fr/">
+<link rel="alternate" hreflang="it" href="https://luraai.io/ondam/privacy/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://luraai.io/ondam/privacy/pt/">
+<link rel="alternate" hreflang="id" href="https://luraai.io/ondam/privacy/id/">
+<link rel="alternate" hreflang="ms" href="https://luraai.io/ondam/privacy/ms/">
+<link rel="alternate" hreflang="th" href="https://luraai.io/ondam/privacy/th/">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<span class="brand">Ondam</span>
+<div class="nav-links">
+<a href="../../support/ja/">サポート</a>
+<select aria-label="Language" onchange="location.href='../'+this.value+'/'"><option value="ko">한국어</option><option value="en">English</option><option value="ja" selected>日本語</option><option value="zh">简体中文</option><option value="vi">Tiếng Việt</option><option value="fr">Français</option><option value="it">Italiano</option><option value="pt">Português (Brasil)</option><option value="id">Bahasa Indonesia</option><option value="ms">Bahasa Melayu</option><option value="th">ไทย</option></select>
+</div>
+</nav>
+<div class="container">
+<h1>プライバシーポリシー</h1>
+<p class="date">施行日: 2026年10月26日</p>
+<div class="callout"><p>Ondamは、LuraAIが個人情報を一切収集しないアプリです。サーバー、アカウント、分析ツール、広告はありません。録音・逐語録・記録がお使いの端末の外に出ることはありません。</p></div>
+<h2>1. 収集する情報</h2>
+<p>LuraAIは、Ondamを通じてユーザーやクライアントの個人情報を収集しません。以下の情報はすべて<strong>お使いの端末の中だけ</strong>に保存されます。</p><ul><li>クライアントの仮名、セッションの日程と相談の種類</li><li>同意の記録(同意の方法、録音への同意・健康情報への別途の同意の有無、保管期間、押印時刻)</li><li>逐語録とノート(S・O・A・P)、押印の署名ハッシュ</li><li>カウンセラーの氏名・所属先(任意入力、PDFのヘッダーにのみ使用)</li></ul><p>クライアントは実名ではなく仮名で入力するようご案内しています。</p><p>Ondamは iPhone、iPad、Mac で動作します。どの端末でも、データはその端末の中だけに保存されます。</p>
+<h2>2. 端末内の暗号化、保管、削除</h2>
+<ul><li>逐語録・ノート・同意の記録はAES-256-GCMで暗号化して保存します。暗号鍵はこの端末のキーチェーンの外に出ません(iCloudキーチェーンでは同期しません)。</li><li>iPhone・iPadでは、端末がロックされている間は保存ファイルにアクセスできないよう、データ保護(Complete)を使用します。Macではアプリのサンドボックスを使用し、FileVaultの利用をおすすめします。</li><li>録音の元データは、音声の文字起こしと下書き作成が終わった時点ですぐに削除します。</li><li>保管期間(1年・3年・5年)は、セッションごとに同意を得るときに決めます。期間を過ぎた記録はアプリを開いたときに自動的に完全削除され、削除した事実・日付・署名ハッシュだけが残ります。期間の前でも、アプリからすぐに削除できます。</li></ul>
+<h2>3. 音声認識とAI</h2>
+<ul><li><strong>音声認識</strong>: Appleの端末内音声認識(SpeechTranscriber)を使用します。選択した言語の認識データは、オペレーティングシステムがAppleからダウンロードしてインストールします。代替の認識エンジン(Whisper)を使う場合も、認識は端末の中で行われます。</li><li><strong>画面の言語とセッションの言語</strong>: アプリの画面の言語は端末の言語に従います(11言語: 韓国語、英語、日本語、簡体字中国語、ベトナム語、フランス語、イタリア語、ブラジルポルトガル語、インドネシア語、マレー語、タイ語)。面接(セッション)の言語は、設定またはセッションごとに別に選びます。音声認識、AI下書きの言語、匿名化と危機表現のルール、検索は、選んだセッションの言語で動作します。</li><li><strong>下書きの作成</strong>: まずApple Intelligenceの端末内モデルを使い、利用できない場合や下書きを作れない場合は、端末の中で動くオープンソースモデル(Qwen3、Kananaなど)が引き継ぎます。</li><li><strong>モデルのダウンロード(任意)</strong>: 音声認識の言語データは、システムまたはユーザーが明示的に同意したときにだけダウンロードされます。オープンソースモデルのファイルは、ユーザーが確認したうえで、huggingface.coから一度だけダウンロードします。このとき、端末のIPアドレスなどの一般的な接続情報が相手のサーバーに伝わることがあり、ダウンロードしたファイルはSHA-256で検証します。これ以外に、端末の外へ出るデータはありません。録音・逐語録・記録は送信されません。アプリ上部の送信量の表示は、アプリが実際に外へ送ったデータ量です。</li><li><strong>AIの限界</strong>: AIは下書きだけを書き、アセスメント(A)・診断・リスクの判断は行いません。危機的な表現は解釈せず、会話の文言をそのまま引用して「要確認」と表示するだけです。下書きの品質は言語によって異なります。下書きは誤りや抜けを含むことがある鉛筆書きの下書きなので、カウンセラーが必ず内容を確認し、修正してから確定する必要があります。</li></ul>
+<h2>4. 権限</h2>
+<p><p>マイク(セッションの録音)と音声認識(逐語録への変換)の権限を求めます。許可しない場合でも、録音せずに記録を手で作成できます。</p></p>
+<h2>5. 相談記録と同意についての責任</h2>
+<p><p>Ondamは記録ツールです。クライアントの個人情報を取り扱う主体はカウンセラー(または所属先)であり、録音への同意、健康情報の取り扱いへの別途の同意、未成年のクライアントの保護者の同意など、法令や職業倫理が求める同意は、カウンセラーが得る必要があります。Ondamは同意の方法と項目を記録する機能を提供しますが、同意を代わりに得ることはありません。Ondamは医療機器ではなく、診断も治療も行いません。</p></p>
+<h2>6. 購入</h2>
+<p><p>サブスクリプションはAppleの決済システムで処理され、LuraAIは支払い情報にアクセスしません。サブスクリプションの状態は、Appleが提供するStoreKitで確認します。サブスクリプションがなくても、作成済みの記録の閲覧、PDF書き出し、削除はいつでも行えます。</p></p>
+<h2>7. 販売および第三者への提供</h2>
+<p><p>LuraAIは、いかなる情報も販売せず、第三者に提供せず、ユーザーを追跡しません。広告識別子や分析ツールは使用しません。</p></p>
+<h2>8. 子ども</h2>
+<p><p>Ondamの利用者はカウンセラーなどの成人であり、子どもを対象としていません。子どもや青少年のクライアントの記録は、上記5項のとおり、カウンセラーが責任を持って管理します。</p></p>
+<h2>9. 削除と端末の変更</h2>
+<ul><li>アプリを削除すると、端末に保存された記録も一緒に削除されます。</li><li>暗号鍵がこの端末に結び付いているため、<strong>端末を変更しても記録を移すことはできません。</strong>保管が必要な記録は、PDFで書き出しておいてください。</li></ul>
+<h2>10. ポリシーの変更</h2>
+<p><p>ポリシーが変わった場合は、このページの施行日と内容を更新します。</p></p>
+<h2>11. お問い合わせ</h2>
+<p><p><a href="mailto:contact@luraai.io">contact@luraai.io</a></p></p>
+</div>
+<footer><p>&copy; 2026 LuraAI. All rights reserved. · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">利用規約(Apple標準EULA)</a></p></footer>
+</body>
+</html>

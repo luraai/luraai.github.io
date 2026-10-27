@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ms" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dasar Privasi — Ondam | LuraAI</title>
+<meta name="description" content="Ondam Dasar Privasi">
+<link rel="alternate" hreflang="ko" href="https://luraai.io/ondam/privacy/ko/">
+<link rel="alternate" hreflang="en" href="https://luraai.io/ondam/privacy/en/">
+<link rel="alternate" hreflang="ja" href="https://luraai.io/ondam/privacy/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://luraai.io/ondam/privacy/zh/">
+<link rel="alternate" hreflang="vi" href="https://luraai.io/ondam/privacy/vi/">
+<link rel="alternate" hreflang="fr" href="https://luraai.io/ondam/privacy/fr/">
+<link rel="alternate" hreflang="it" href="https://luraai.io/ondam/privacy/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://luraai.io/ondam/privacy/pt/">
+<link rel="alternate" hreflang="id" href="https://luraai.io/ondam/privacy/id/">
+<link rel="alternate" hreflang="ms" href="https://luraai.io/ondam/privacy/ms/">
+<link rel="alternate" hreflang="th" href="https://luraai.io/ondam/privacy/th/">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<span class="brand">Ondam</span>
+<div class="nav-links">
+<a href="../../support/ms/">Sokongan</a>
+<select aria-label="Language" onchange="location.href='../'+this.value+'/'"><option value="ko">한국어</option><option value="en">English</option><option value="ja">日本語</option><option value="zh">简体中文</option><option value="vi">Tiếng Việt</option><option value="fr">Français</option><option value="it">Italiano</option><option value="pt">Português (Brasil)</option><option value="id">Bahasa Indonesia</option><option value="ms" selected>Bahasa Melayu</option><option value="th">ไทย</option></select>
+</div>
+</nav>
+<div class="container">
+<h1>Dasar Privasi</h1>
+<p class="date">Berkuat kuasa 26 Oktober 2026</p>
+<div class="callout"><p>Ondam ialah aplikasi yang tidak mengumpul sebarang data peribadi oleh LuraAI. Tiada pelayan, tiada akaun, tiada analitik dan tiada iklan. Rakaman, transkrip dan catatan tidak pernah keluar dari peranti anda.</p></div>
+<h2>1. Maklumat yang dikumpulkan</h2>
+<p>LuraAI tidak mengumpul sebarang data peribadi tentang anda atau klien anda melalui Ondam. Perkara berikut berada <strong>hanya di dalam peranti anda</strong>:</p><ul><li>Nama samaran klien, jadual dan jenis sesi</li><li>Rekod persetujuan (kaedah, persetujuan rakaman dan maklumat kesihatan, tempoh pengekalan, masa meterai)</li><li>Transkrip dan catatan (S/O/A/P) serta cincangan (hash) tandatangan meterai</li><li>Nama dan pusat anda (pilihan, hanya digunakan pada pengepala PDF)</li></ul><p>Aplikasi meminta anda memasukkan klien dengan nama samaran, bukan nama sebenar.</p><p>Ondam berjalan pada iPhone, iPad dan Mac. Pada ketiga-tiga peranti, data hanya disimpan di dalam peranti yang sedang anda gunakan.</p>
+<h2>2. Penyulitan, pengekalan dan pemadaman di dalam peranti</h2>
+<ul><li>Transkrip, catatan dan rekod persetujuan disimpan dalam bentuk tersulit dengan AES-256-GCM. Kunci kekal dalam Keychain peranti ini (tanpa penyegerakan Keychain iCloud).</li><li>Pada iPhone dan iPad, aplikasi menggunakan Data Protection (Complete), jadi fail yang disimpan tidak boleh diakses semasa peranti dikunci. Pada Mac, aplikasi menggunakan sandbox aplikasi; FileVault disyorkan.</li><li>Audio asal dipadam sebaik sahaja transkripsi dan penulisan draf selesai.</li><li>Anda memilih tempoh pengekalan (1, 3 atau 5 tahun) bagi setiap sesi semasa persetujuan diberikan. Rekod yang tamat tempoh dipadam secara automatik apabila aplikasi dibuka; hanya fakta pemadaman, tarikh dan cincangan tandatangan yang kekal. Anda juga boleh memadam lebih awal dari dalam aplikasi.</li></ul>
+<h2>3. Pengecaman suara, bahasa dan AI</h2>
+<ul><li><strong>Pengecaman suara</strong>: menggunakan pengecaman suara pada peranti milik Apple (SpeechTranscriber). Data pengecaman bagi bahasa sesi yang dipilih dimuat turun daripada Apple oleh sistem pengendalian. Jika pengecam sandaran (Whisper) digunakan, pengecaman juga berjalan di dalam peranti.</li><li><strong>Bahasa</strong>: bahasa skrin mengikut bahasa peranti (11 bahasa disokong: Korea, Inggeris, Jepun, Cina Ringkas, Vietnam, Perancis, Itali, Portugis Brazil, Indonesia, Melayu dan Thai). Bahasa kaunseling/sesi (pengecaman suara, bahasa draf AI, peraturan penyahnamaan dan frasa krisis, carian) dipilih berasingan dalam Tetapan atau bagi setiap sesi.</li><li><strong>Penulisan draf</strong>: model pada peranti Apple Intelligence dicuba dahulu; jika tidak tersedia atau tidak dapat menghasilkan draf, model sumber terbuka yang berjalan di dalam peranti (seperti Qwen3 atau Kanana) mengambil alih.</li><li><strong>Muat turun model (pilihan)</strong>: selepas anda mengesahkan, fail model sumber terbuka dimuat turun sekali daripada huggingface.co. Maklumat sambungan am seperti alamat IP anda mungkin sampai ke pelayan tersebut. Muat turun disahkan dengan SHA-256. Rakaman, transkrip dan catatan tidak pernah dihantar. Data pengecaman suara dimuat turun oleh sistem dan model AI setempat dimuat turun dengan persetujuan jelas anda; tiada yang lain keluar dari peranti. Pembilang di bahagian atas aplikasi menunjukkan bait yang benar-benar dihantar keluar oleh aplikasi.</li><li><strong>Had AI</strong>: AI hanya menulis draf. Ia tidak pernah menulis penilaian (A), tidak pernah mendiagnosis dan tidak pernah menilai risiko. Frasa krisis dipetik terus daripada perbualan dan hanya ditandakan untuk disemak. Kualiti draf AI berbeza mengikut bahasa; draf ialah draf pensel yang boleh tersilap atau tidak lengkap, dan kaunselor mesti menyemak, menyunting dan memuktamadkannya.</li></ul>
+<h2>4. Kebenaran</h2>
+<p><p>Aplikasi meminta akses mikrofon (rakaman sesi) dan pengecaman suara (transkripsi). Jika anda menolak, anda masih boleh menulis catatan secara manual tanpa rakaman.</p></p>
+<h2>5. Tanggungjawab terhadap rekod dan persetujuan</h2>
+<p><p>Ondam ialah alat pendokumenan. Kaunselor (atau pusatnya) ialah pihak yang memproses data peribadi klien dan mesti mendapatkan persetujuan yang dikehendaki oleh undang-undang dan etika profesional, seperti persetujuan rakaman, persetujuan berasingan untuk data kesihatan, dan persetujuan penjaga bagi klien di bawah umur yang ditetapkan jika berkenaan. Ondam merekodkan kaedah dan perkara persetujuan tetapi tidak mendapatkan persetujuan bagi pihak anda. Ondam bukan peranti perubatan dan tidak mendiagnosis atau merawat.</p></p>
+<h2>6. Pembelian</h2>
+<p><p>Langganan diproses oleh Apple; LuraAI tidak mempunyai akses kepada maklumat pembayaran. Status langganan disemak dengan StoreKit Apple. Walaupun tanpa langganan, anda sentiasa boleh melihat, mengeksport ke PDF dan memadam rekod sedia ada.</p></p>
+<h2>7. Penjualan dan perkongsian</h2>
+<p><p>LuraAI tidak menjual atau berkongsi sebarang maklumat dengan pihak ketiga dan tidak menjejaki anda. Aplikasi tidak menggunakan pengecam pengiklanan dan tiada analitik.</p></p>
+<h2>8. Kanak-kanak</h2>
+<p><p>Ondam ditujukan kepada kaunselor dan orang dewasa lain, bukan kanak-kanak. Rekod klien kanak-kanak dan remaja ialah tanggungjawab kaunselor mengikut bahagian 5.</p></p>
+<h2>9. Pemadaman dan menukar peranti</h2>
+<ul><li>Memadam aplikasi akan memadam rekod yang disimpan pada peranti.</li><li>Oleh kerana kunci penyulitan terikat pada peranti ini, <strong>rekod tidak boleh dipindahkan ke peranti baharu.</strong> Eksport rekod yang perlu anda simpan sebagai PDF.</li></ul>
+<h2>10. Perubahan</h2>
+<p><p>Jika dasar ini berubah, kami akan mengemas kini kandungan dan tarikh berkuat kuasa halaman ini.</p></p>
+<h2>11. Hubungi kami</h2>
+<p><p><a href="mailto:contact@luraai.io">contact@luraai.io</a></p></p>
+</div>
+<footer><p>&copy; 2026 LuraAI. All rights reserved. · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terma Penggunaan (EULA standard Apple)</a></p></footer>
+</body>
+</html>

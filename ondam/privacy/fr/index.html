@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — Ondam | LuraAI</title>
+<meta name="description" content="Ondam Politique de confidentialité">
+<link rel="alternate" hreflang="ko" href="https://luraai.io/ondam/privacy/ko/">
+<link rel="alternate" hreflang="en" href="https://luraai.io/ondam/privacy/en/">
+<link rel="alternate" hreflang="ja" href="https://luraai.io/ondam/privacy/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://luraai.io/ondam/privacy/zh/">
+<link rel="alternate" hreflang="vi" href="https://luraai.io/ondam/privacy/vi/">
+<link rel="alternate" hreflang="fr" href="https://luraai.io/ondam/privacy/fr/">
+<link rel="alternate" hreflang="it" href="https://luraai.io/ondam/privacy/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://luraai.io/ondam/privacy/pt/">
+<link rel="alternate" hreflang="id" href="https://luraai.io/ondam/privacy/id/">
+<link rel="alternate" hreflang="ms" href="https://luraai.io/ondam/privacy/ms/">
+<link rel="alternate" hreflang="th" href="https://luraai.io/ondam/privacy/th/">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<span class="brand">Ondam</span>
+<div class="nav-links">
+<a href="../../support/fr/">Assistance</a>
+<select aria-label="Language" onchange="location.href='../'+this.value+'/'"><option value="ko">한국어</option><option value="en">English</option><option value="ja">日本語</option><option value="zh">简体中文</option><option value="vi">Tiếng Việt</option><option value="fr" selected>Français</option><option value="it">Italiano</option><option value="pt">Português (Brasil)</option><option value="id">Bahasa Indonesia</option><option value="ms">Bahasa Melayu</option><option value="th">ไทย</option></select>
+</div>
+</nav>
+<div class="container">
+<h1>Politique de confidentialité</h1>
+<p class="date">En vigueur : 26 octobre 2026</p>
+<div class="callout"><p>Ondam est une app pour laquelle LuraAI ne collecte aucune donnée personnelle. Il n'y a ni serveur, ni compte, ni outil d'analyse, ni publicité. Les enregistrements, verbatims et notes ne quittent jamais votre appareil.</p></div>
+<h2>1. Informations collectées</h2>
+<p>Via Ondam, LuraAI ne collecte aucune donnée personnelle vous concernant ni concernant vos clients. Les éléments suivants restent <strong>uniquement sur votre appareil</strong> :</p><ul><li>Les pseudonymes des clients, le calendrier et le type des séances</li><li>Les enregistrements de consentement (mode, consentement à l'enregistrement et relatif aux données de santé, durée de conservation, heure du sceau)</li><li>Les verbatims et les notes (S/O/A/P) ainsi que l'empreinte de la signature du sceau</li><li>Votre nom et votre structure (facultatifs, utilisés uniquement dans l'en-tête des PDF)</li></ul><p>L'app vous demande de saisir les clients sous un pseudonyme et non sous leur nom réel.</p>
+<h2>2. Chiffrement sur l'appareil, conservation et suppression</h2>
+<ul><li>Les verbatims, les notes et les enregistrements de consentement sont stockés chiffrés avec AES-256-GCM. La clé reste dans le trousseau (Keychain) de cet appareil, sans synchronisation avec le trousseau iCloud.</li><li>Sur iPhone et iPad, l'app utilise la protection des données (Complète) : les fichiers stockés sont inaccessibles lorsque l'appareil est verrouillé. Sur Mac, elle s'appuie sur le bac à sable (sandbox) de l'app ; l'activation de FileVault est recommandée.</li><li>L'audio d'origine est supprimé dès que la transcription et la rédaction du brouillon sont terminées.</li><li>Vous choisissez une durée de conservation (1, 3 ou 5 ans) pour chaque séance au moment du consentement. Les notes arrivées à échéance sont supprimées automatiquement à l'ouverture de l'app ; seuls le fait de la suppression, la date et l'empreinte de la signature sont conservés. Vous pouvez aussi supprimer plus tôt depuis l'app.</li></ul>
+<h2>3. Reconnaissance vocale et IA</h2>
+<ul><li><strong>Reconnaissance vocale</strong> : l'app utilise la reconnaissance vocale d'Apple exécutée sur l'appareil (SpeechTranscriber). Le système d'exploitation télécharge auprès d'Apple les données de reconnaissance de la langue de séance choisie. Si le moteur de secours (Whisper) est utilisé, la reconnaissance s'effectue également sur l'appareil.</li><li><strong>Rédaction des brouillons</strong> : le modèle sur l'appareil d'Apple Intelligence est essayé en premier ; s'il n'est pas disponible ou ne parvient pas à produire de brouillon, un modèle open source exécuté sur l'appareil (par exemple Qwen3 ou Kanana) prend le relais.</li><li><strong>Téléchargement de modèles (facultatif)</strong> : après votre confirmation, les fichiers des modèles open source sont téléchargés une seule fois depuis huggingface.co. Des informations de connexion générales, comme votre adresse IP, peuvent parvenir à ce serveur. Les téléchargements sont vérifiés par SHA-256. Les enregistrements, verbatims et notes ne sont jamais envoyés. Le compteur en haut de l'app indique les octets réellement envoyés par l'app.</li><li><strong>Limites de l'IA</strong> : l'IA ne rédige que des brouillons. Elle n'écrit jamais l'évaluation (A), ne pose aucun diagnostic et n'estime aucun niveau de risque. Les expressions de crise sont citées telles quelles dans la conversation et simplement signalées pour vérification. Un brouillon peut être inexact ou incomplet ; sa qualité varie selon la langue de la séance. Il s'agit d'un brouillon au crayon que le praticien doit relire, corriger et valider.</li></ul>
+<h2>4. Appareils et langues</h2>
+<ul><li>Ondam fonctionne sur iPhone, iPad et Mac.</li><li>La langue de l'écran suit la langue de l'appareil (11 langues : coréen, anglais, japonais, chinois simplifié, vietnamien, français, italien, portugais du Brésil, indonésien, malais et thaï).</li><li>La langue de la séance (reconnaissance vocale, langue du brouillon IA, règles d'anonymisation et d'expressions de crise, recherche) se choisit séparément : par défaut dans « Sécurité et conservation > Langue de séance », puis séance par séance à la création de la séance.</li><li>Les données de langue de la reconnaissance vocale sur l'appareil sont téléchargées par le système, et les modèles d'IA locaux le sont uniquement avec votre accord explicite. Rien d'autre ne quitte l'appareil.</li></ul>
+<h2>5. Autorisations</h2>
+<p><p>L'app demande l'accès au microphone (enregistrement des séances) et à la reconnaissance vocale (transcription). Si vous refusez, vous pouvez tout de même rédiger vos notes à la main, sans enregistrement.</p></p>
+<h2>6. Responsabilité des notes et du consentement</h2>
+<p><p>Ondam est un outil de documentation. Le praticien (ou sa structure) est la personne qui traite les données personnelles des clients ; il lui appartient de recueillir les consentements exigés par la loi et la déontologie, tels que le consentement à l'enregistrement, le consentement distinct pour les données de santé et, le cas échéant, celui du responsable légal pour les clients mineurs. Ondam consigne le mode et les éléments du consentement, mais ne recueille pas le consentement à votre place. Ondam n'est pas un dispositif médical et ne pose aucun diagnostic ni ne propose aucun traitement.</p></p>
+<h2>7. Achats</h2>
+<p><p>Les abonnements sont traités par Apple ; LuraAI n'a accès à aucune information de paiement. L'état de l'abonnement est vérifié auprès d'Apple via StoreKit. Même sans abonnement, vous pouvez toujours consulter, exporter en PDF et supprimer les notes existantes.</p></p>
+<h2>8. Vente et partage</h2>
+<p><p>LuraAI ne vend ni ne partage aucune information avec des tiers et ne vous suit pas. L'app n'utilise aucun identifiant publicitaire et aucun outil d'analyse.</p></p>
+<h2>9. Enfants</h2>
+<p><p>Ondam s'adresse aux praticiens et autres adultes, pas aux enfants. Les notes concernant des clients enfants ou adolescents relèvent de la responsabilité du praticien, conformément à la section 6.</p></p>
+<h2>10. Suppression et changement d'appareil</h2>
+<ul><li>La désinstallation de l'app supprime les notes stockées sur l'appareil.</li><li>La clé de chiffrement étant liée à cet appareil, <strong>les notes ne peuvent pas être transférées vers un nouvel appareil.</strong> Exportez en PDF toute note que vous souhaitez conserver.</li></ul>
+<h2>11. Modifications</h2>
+<p><p>Si cette politique change, nous mettrons à jour le contenu et la date d'entrée en vigueur de cette page.</p></p>
+<h2>12. Contact</h2>
+<p><p><a href="mailto:contact@luraai.io">contact@luraai.io</a></p></p>
+</div>
+<footer><p>&copy; 2026 LuraAI. All rights reserved. · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Conditions d'utilisation (CLUF standard d'Apple)</a></p></footer>
+</body>
+</html>

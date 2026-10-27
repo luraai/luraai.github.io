@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informativa sulla privacy — Ondam | LuraAI</title>
+<meta name="description" content="Ondam Informativa sulla privacy">
+<link rel="alternate" hreflang="ko" href="https://luraai.io/ondam/privacy/ko/">
+<link rel="alternate" hreflang="en" href="https://luraai.io/ondam/privacy/en/">
+<link rel="alternate" hreflang="ja" href="https://luraai.io/ondam/privacy/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://luraai.io/ondam/privacy/zh/">
+<link rel="alternate" hreflang="vi" href="https://luraai.io/ondam/privacy/vi/">
+<link rel="alternate" hreflang="fr" href="https://luraai.io/ondam/privacy/fr/">
+<link rel="alternate" hreflang="it" href="https://luraai.io/ondam/privacy/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://luraai.io/ondam/privacy/pt/">
+<link rel="alternate" hreflang="id" href="https://luraai.io/ondam/privacy/id/">
+<link rel="alternate" hreflang="ms" href="https://luraai.io/ondam/privacy/ms/">
+<link rel="alternate" hreflang="th" href="https://luraai.io/ondam/privacy/th/">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<span class="brand">Ondam</span>
+<div class="nav-links">
+<a href="../../support/it/">Assistenza</a>
+<select aria-label="Language" onchange="location.href='../'+this.value+'/'"><option value="ko">한국어</option><option value="en">English</option><option value="ja">日本語</option><option value="zh">简体中文</option><option value="vi">Tiếng Việt</option><option value="fr">Français</option><option value="it" selected>Italiano</option><option value="pt">Português (Brasil)</option><option value="id">Bahasa Indonesia</option><option value="ms">Bahasa Melayu</option><option value="th">ไทย</option></select>
+</div>
+</nav>
+<div class="container">
+<h1>Informativa sulla privacy</h1>
+<p class="date">In vigore dal 26 ottobre 2026</p>
+<div class="callout"><p>Ondam è un'app per la quale LuraAI non raccoglie alcun dato personale. Non c'è nessun server, nessun account, nessuna analisi d'uso e nessuna pubblicità. Registrazioni, trascrizioni e note non lasciano mai il tuo dispositivo.</p></div>
+<h2>1. Informazioni che raccogliamo</h2>
+<p>Tramite Ondam, LuraAI non raccoglie alcun dato personale su di te o sui tuoi clienti. Quanto segue resta <strong>solo sul tuo dispositivo</strong>:</p><ul><li>Pseudonimi dei clienti, calendario e tipo delle sedute</li><li>Registri del consenso (modalità, consenso alla registrazione e ai dati sulla salute, periodo di conservazione, momento del sigillo)</li><li>Trascrizioni e note (S/O/A/P) e hash della firma del sigillo</li><li>Il tuo nome e il tuo centro (facoltativi, usati solo nell'intestazione del PDF)</li></ul><p>L'app ti chiede di inserire i clienti con uno pseudonimo, non con il nome reale.</p>
+<h2>2. Cifratura sul dispositivo, conservazione ed eliminazione</h2>
+<ul><li>Trascrizioni, note e registri del consenso sono salvati con cifratura AES-256-GCM. La chiave resta nel Portachiavi di questo dispositivo (senza sincronizzazione con il Portachiavi iCloud).</li><li>Su iPhone e iPad l'app usa la protezione dei dati (Completa): i file salvati non sono accessibili quando il dispositivo è bloccato. Su Mac usa la sandbox dell'app; si consiglia FileVault.</li><li>L'audio originale viene eliminato non appena terminano trascrizione e bozza.</li><li>Scegli un periodo di conservazione (1, 3 o 5 anni) per ogni seduta nel momento in cui viene dato il consenso. Le note scadute vengono eliminate in automatico all'apertura dell'app; restano solo il fatto dell'eliminazione, la data e l'hash della firma. Puoi anche eliminarle prima, dall'interno dell'app.</li></ul>
+<h2>3. Dispositivi, lingue, riconoscimento vocale e IA</h2>
+<ul><li><strong>Dispositivi</strong>: Ondam funziona su iPhone, iPad e Mac, con le stesse regole di privacy su tutti e tre.</li><li><strong>Lingue</strong>: la lingua dello schermo segue la lingua del dispositivo (11 lingue). La lingua della consulenza, cioè quella della seduta (riconoscimento vocale, lingua della bozza IA, regole di anonimizzazione e delle frasi di crisi, ricerca), si sceglie a parte nelle Impostazioni o per ogni seduta.</li><li><strong>Riconoscimento vocale</strong>: usa il riconoscimento vocale sul dispositivo di Apple (SpeechTranscriber). I dati di riconoscimento per la lingua della seduta vengono scaricati da Apple dal sistema operativo. Se si usa il riconoscitore di riserva (Whisper), anche il riconoscimento avviene sul dispositivo.</li><li><strong>Bozza</strong>: si prova prima il modello sul dispositivo di Apple Intelligence; se non è disponibile o non riesce a produrre una bozza, subentra un modello open source eseguito sul dispositivo (come Qwen3 o Kanana).</li><li><strong>Scaricamento dei modelli (facoltativo)</strong>: solo dopo la tua conferma esplicita, i file dei modelli open source vengono scaricati una volta da huggingface.co. Informazioni di connessione generali, come il tuo indirizzo IP, possono raggiungere quel server. I download sono verificati con SHA-256. Oltre ai dati di riconoscimento vocale scaricati dal sistema e ai modelli che scegli di scaricare, nient'altro esce dal dispositivo: registrazioni, trascrizioni e note non vengono mai inviate. L'indicatore in alto nell'app mostra i byte che l'app ha davvero inviato all'esterno.</li><li><strong>Limiti dell'IA</strong>: l'IA scrive solo bozze. Non scrive mai la valutazione (A), non fa diagnosi e non stima il rischio. Le frasi di crisi sono citate alla lettera dalla conversazione e solo segnalate per la verifica. La qualità della bozza varia da una lingua all'altra; è una bozza a matita che può essere errata o incompleta, e il professionista deve rivederla, correggerla e confermarla.</li></ul>
+<h2>4. Autorizzazioni</h2>
+<p><p>L'app richiede l'accesso al microfono (registrazione della seduta) e al riconoscimento vocale (trascrizione). Se rifiuti, puoi comunque scrivere le note a mano senza registrare.</p></p>
+<h2>5. Responsabilità per note e consenso</h2>
+<p><p>Ondam è uno strumento di documentazione. Il professionista (o il suo centro) è il soggetto che tratta i dati personali dei clienti e deve ottenere i consensi richiesti dalla legge e dall'etica professionale, come il consenso alla registrazione, il consenso separato per i dati sulla salute e il consenso dei genitori o tutori per i clienti minorenni, dove previsto. Ondam registra la modalità e le voci del consenso, ma non raccoglie il consenso al tuo posto. Ondam non è un dispositivo medico e non fa diagnosi né terapia.</p></p>
+<h2>6. Acquisti</h2>
+<p><p>Gli abbonamenti sono gestiti da Apple; LuraAI non ha accesso ai dati di pagamento. Lo stato dell'abbonamento viene verificato con StoreKit di Apple. Anche senza abbonamento puoi sempre consultare, esportare in PDF ed eliminare le note esistenti.</p></p>
+<h2>7. Vendita e condivisione</h2>
+<p><p>LuraAI non vende né condivide alcuna informazione con terzi e non ti traccia. L'app non usa alcun identificatore pubblicitario né strumenti di analisi.</p></p>
+<h2>8. Minori</h2>
+<p><p>Ondam è destinata a professionisti e ad altri adulti, non ai bambini. Le note sui clienti bambini e adolescenti sono responsabilità del professionista, come indicato nella sezione 5.</p></p>
+<h2>9. Eliminazione e cambio di dispositivo</h2>
+<ul><li>Eliminando l'app si eliminano le note salvate sul dispositivo.</li><li>Poiché la chiave di cifratura è legata a questo dispositivo, <strong>le note non possono essere trasferite su un nuovo dispositivo.</strong> Esporta in PDF quelle che devi conservare.</li></ul>
+<h2>10. Modifiche</h2>
+<p><p>Se questa informativa cambia, aggiorneremo il contenuto e la data di entrata in vigore di questa pagina.</p></p>
+<h2>11. Contatti</h2>
+<p><p><a href="mailto:contact@luraai.io">contact@luraai.io</a></p></p>
+</div>
+<footer><p>&copy; 2026 LuraAI. All rights reserved. · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Condizioni d'uso (EULA standard di Apple)</a></p></footer>
+</body>
+</html>

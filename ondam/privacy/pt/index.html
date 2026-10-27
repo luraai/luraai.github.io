@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade — Ondam | LuraAI</title>
+<meta name="description" content="Ondam Política de Privacidade">
+<link rel="alternate" hreflang="ko" href="https://luraai.io/ondam/privacy/ko/">
+<link rel="alternate" hreflang="en" href="https://luraai.io/ondam/privacy/en/">
+<link rel="alternate" hreflang="ja" href="https://luraai.io/ondam/privacy/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://luraai.io/ondam/privacy/zh/">
+<link rel="alternate" hreflang="vi" href="https://luraai.io/ondam/privacy/vi/">
+<link rel="alternate" hreflang="fr" href="https://luraai.io/ondam/privacy/fr/">
+<link rel="alternate" hreflang="it" href="https://luraai.io/ondam/privacy/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://luraai.io/ondam/privacy/pt/">
+<link rel="alternate" hreflang="id" href="https://luraai.io/ondam/privacy/id/">
+<link rel="alternate" hreflang="ms" href="https://luraai.io/ondam/privacy/ms/">
+<link rel="alternate" hreflang="th" href="https://luraai.io/ondam/privacy/th/">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<span class="brand">Ondam</span>
+<div class="nav-links">
+<a href="../../support/pt/">Suporte</a>
+<select aria-label="Language" onchange="location.href='../'+this.value+'/'"><option value="ko">한국어</option><option value="en">English</option><option value="ja">日本語</option><option value="zh">简体中文</option><option value="vi">Tiếng Việt</option><option value="fr">Français</option><option value="it">Italiano</option><option value="pt" selected>Português (Brasil)</option><option value="id">Bahasa Indonesia</option><option value="ms">Bahasa Melayu</option><option value="th">ไทย</option></select>
+</div>
+</nav>
+<div class="container">
+<h1>Política de Privacidade</h1>
+<p class="date">Em vigor desde 26 de outubro de 2026</p>
+<div class="callout"><p>O Ondam é um app em que a LuraAI não coleta nenhum dado pessoal. Não há servidor, conta, análise de uso nem anúncios. Gravações, transcrições e notas nunca saem do seu aparelho.</p></div>
+<h2>1. Informações que coletamos</h2>
+<p>A LuraAI não coleta nenhum dado pessoal seu ou de seus clientes por meio do Ondam. O que segue fica <strong>somente no seu aparelho</strong>:</p><ul><li>Pseudônimos dos clientes, agenda e tipo das sessões</li><li>Registros de consentimento (forma, consentimento para gravação e para dados de saúde, prazo de guarda, horário do selo)</li><li>Transcrições e notas (S/O/A/P) e o hash da assinatura do selo</li><li>Seu nome e seu local de atendimento (opcionais, usados apenas no cabeçalho do PDF)</li></ul><p>O app pede que você cadastre os clientes por pseudônimo, e não pelo nome real.</p><p>O Ondam funciona em iPhone, iPad e Mac, com as mesmas regras de privacidade nos três.</p>
+<h2>2. Criptografia no aparelho, guarda e exclusão</h2>
+<ul><li>Transcrições, notas e registros de consentimento são armazenados com criptografia AES-256-GCM. A chave fica no Keychain deste aparelho (sem sincronização com o Keychain do iCloud).</li><li>No iPhone e no iPad, o app usa a Proteção de Dados (Completa), então os arquivos ficam inacessíveis enquanto o aparelho está bloqueado. No Mac, usa o sandbox do app; recomendamos ativar o FileVault.</li><li>O áudio original é excluído assim que a transcrição e o rascunho ficam prontos.</li><li>Você escolhe um prazo de guarda (1, 3 ou 5 anos) para cada sessão ao registrar o consentimento. Registros vencidos são excluídos automaticamente quando o app é aberto; permanecem apenas o fato da exclusão, a data e o hash da assinatura. Você também pode excluir antes, dentro do app.</li></ul>
+<h2>3. Reconhecimento de voz e IA</h2>
+<ul><li><strong>Idiomas</strong>: o idioma da tela segue o idioma do aparelho (11 idiomas: coreano, inglês, japonês, chinês simplificado, vietnamita, francês, italiano, português do Brasil, indonésio, malaio e tailandês). O idioma do atendimento, ou seja, da sessão (reconhecimento de voz, idioma do rascunho da IA, anonimização, regras de frases de crise e busca), é escolhido separadamente nos Ajustes ou em cada sessão.</li><li><strong>Reconhecimento de voz</strong>: usa o reconhecimento de voz no aparelho da Apple (SpeechTranscriber). Os dados do idioma de reconhecimento são baixados pelo sistema operacional, a partir da Apple. Se o reconhecedor alternativo (Whisper) for usado, o reconhecimento também ocorre no aparelho.</li><li><strong>Rascunho</strong>: o modelo do Apple Intelligence no aparelho é tentado primeiro; se estiver indisponível ou não conseguir gerar o rascunho, um modelo de código aberto executado no aparelho (como Qwen3 ou Kanana) assume.</li><li><strong>Download de modelos (opcional)</strong>: depois da sua confirmação, os arquivos dos modelos de código aberto são baixados uma vez de huggingface.co. Informações gerais de conexão, como seu endereço IP, podem chegar a esse servidor. Os downloads são verificados com SHA-256. Fora esses downloads feitos com o seu consentimento explícito e os dados de idioma baixados pelo sistema, nada sai do aparelho: gravações, transcrições e notas nunca são enviadas. O contador no topo do app mostra os bytes que o app realmente enviou.</li><li><strong>Limites da IA</strong>: a IA escreve apenas rascunhos. Ela nunca escreve a avaliação (A), nunca faz diagnóstico e nunca classifica risco. Frases de crise são citadas literalmente da conversa e apenas marcadas para revisão. A qualidade do rascunho varia conforme o idioma e funciona como um rascunho a lápis: pode estar errado ou incompleto, e o terapeuta deve revisar, editar e confirmar.</li></ul>
+<h2>4. Permissões</h2>
+<p><p>O app pede acesso ao microfone (gravação da sessão) e ao reconhecimento de voz (transcrição). Se você recusar, ainda poderá escrever as notas à mão, sem gravar.</p></p>
+<h2>5. Responsabilidade pelos registros e pelo consentimento</h2>
+<p><p>O Ondam é uma ferramenta de documentação. O terapeuta (ou o local onde atende) é quem trata os dados pessoais dos clientes e deve obter os consentimentos exigidos pela lei e pela ética profissional, como o consentimento para gravação, o consentimento separado para dados de saúde e, quando aplicável, o consentimento do responsável legal para clientes menores. O Ondam registra a forma e os itens do consentimento, mas não obtém o consentimento por você. O Ondam não é um dispositivo médico e não faz diagnóstico nem tratamento.</p></p>
+<h2>6. Compras</h2>
+<p><p>As assinaturas são processadas pela Apple; a LuraAI não tem acesso a dados de pagamento. A situação da assinatura é verificada com o StoreKit da Apple. Mesmo sem assinatura, você pode sempre ver, exportar em PDF e excluir os registros já existentes.</p></p>
+<h2>7. Venda e compartilhamento</h2>
+<p><p>A LuraAI não vende nem compartilha nenhuma informação com terceiros e não rastreia você. O app não usa identificador de publicidade nem ferramentas de análise.</p></p>
+<h2>8. Crianças</h2>
+<p><p>O Ondam é destinado a terapeutas e outros adultos, não a crianças. Os registros de clientes crianças e adolescentes são de responsabilidade do terapeuta, conforme a seção 5.</p></p>
+<h2>9. Exclusão e troca de aparelho</h2>
+<ul><li>Ao excluir o app, os registros guardados no aparelho são excluídos.</li><li>Como a chave de criptografia está vinculada a este aparelho, <strong>os registros não podem ser transferidos para um aparelho novo.</strong> Exporte em PDF o que precisar manter.</li></ul>
+<h2>10. Alterações</h2>
+<p><p>Se esta política mudar, atualizaremos o conteúdo e a data de vigência desta página.</p></p>
+<h2>11. Contato</h2>
+<p><p><a href="mailto:contact@luraai.io">contact@luraai.io</a></p></p>
+</div>
+<footer><p>&copy; 2026 LuraAI. All rights reserved. · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Termos de Uso (EULA padrão da Apple)</a></p></footer>
+</body>
+</html>

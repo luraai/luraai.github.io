@@ -7,6 +7,15 @@
 <meta name="description" content="Ondam Privacy Policy">
 <link rel="alternate" hreflang="ko" href="https://luraai.io/ondam/privacy/ko/">
 <link rel="alternate" hreflang="en" href="https://luraai.io/ondam/privacy/en/">
+<link rel="alternate" hreflang="ja" href="https://luraai.io/ondam/privacy/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://luraai.io/ondam/privacy/zh/">
+<link rel="alternate" hreflang="vi" href="https://luraai.io/ondam/privacy/vi/">
+<link rel="alternate" hreflang="fr" href="https://luraai.io/ondam/privacy/fr/">
+<link rel="alternate" hreflang="it" href="https://luraai.io/ondam/privacy/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://luraai.io/ondam/privacy/pt/">
+<link rel="alternate" hreflang="id" href="https://luraai.io/ondam/privacy/id/">
+<link rel="alternate" hreflang="ms" href="https://luraai.io/ondam/privacy/ms/">
+<link rel="alternate" hreflang="th" href="https://luraai.io/ondam/privacy/th/">
 <link rel="icon" type="image/png" href="../../icon.png">
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -15,7 +24,7 @@
 <span class="brand">Ondam</span>
 <div class="nav-links">
 <a href="../../support/en/">Support</a>
-<select aria-label="Language" onchange="location.href='../'+this.value+'/'"><option value="ko">한국어</option><option value="en" selected>English</option></select>
+<select aria-label="Language" onchange="location.href='../'+this.value+'/'"><option value="ko">한국어</option><option value="en" selected>English</option><option value="ja">日本語</option><option value="zh">简体中文</option><option value="vi">Tiếng Việt</option><option value="fr">Français</option><option value="it">Italiano</option><option value="pt">Português (Brasil)</option><option value="id">Bahasa Indonesia</option><option value="ms">Bahasa Melayu</option><option value="th">ไทย</option></select>
 </div>
 </nav>
 <div class="container">
@@ -23,15 +32,15 @@
 <p class="date">Effective: October 26, 2026</p>
 <div class="callout"><p>Ondam is an app for which LuraAI collects no personal data. There is no server, no account, no analytics and no ads. Recordings, transcripts and notes never leave your device.</p></div>
 <h2>1. Information we collect</h2>
-<p>LuraAI does not collect any personal data about you or your clients through Ondam. The following stays <strong>on your device only</strong>:</p><ul><li>Client pseudonyms, session schedule and type</li><li>Consent records (method, recording and health-data consent, retention period, stamp time)</li><li>Transcripts and notes (S/O/A/P) and the seal signature hash</li><li>Your name and center (optional, used only in the PDF header)</li></ul><p>The app asks you to enter clients by pseudonym, not by real name.</p>
+<p>LuraAI does not collect any personal data about you or your clients through Ondam. The following stays <strong>on your device only</strong>:</p><ul><li>Client pseudonyms, session schedule and type</li><li>Consent records (method, recording and health-data consent, retention period, stamp time)</li><li>Transcripts and notes (S/O/A/P) and the seal signature hash</li><li>Your name and organization (optional, used only in the PDF header)</li></ul><p>The app asks you to enter clients by pseudonym, not by real name. Ondam runs on iPhone, iPad and Mac, and the same rules apply on all three.</p>
 <h2>2. On-device encryption, retention and deletion</h2>
 <ul><li>Transcripts, notes and consent records are stored encrypted with AES-256-GCM. The key stays in this device's Keychain (no iCloud Keychain sync).</li><li>On iPhone and iPad the app uses Data Protection (Complete), so stored files are inaccessible while the device is locked. On Mac it uses the app sandbox; FileVault is recommended.</li><li>The original audio is deleted as soon as transcription and drafting finish.</li><li>You choose a retention period (1, 3 or 5 years) per session when consent is given. Expired records are deleted automatically when the app opens; only the fact of deletion, the date and the signature hash remain. You can also delete earlier from within the app.</li></ul>
-<h2>3. Speech recognition and AI</h2>
-<ul><li><strong>Speech recognition</strong>: uses Apple's on-device speech recognition (SpeechTranscriber). The operating system downloads the Korean recognition data from Apple. If the fallback recognizer (Whisper) is used, recognition also runs on the device.</li><li><strong>Drafting</strong>: Apple Intelligence's on-device model is tried first; if it is unavailable or cannot produce a draft, an open-source model running on the device (such as Qwen3 or Kanana) takes over.</li><li><strong>Model download (optional)</strong>: after you confirm, open-source model files are downloaded once from huggingface.co. General connection information such as your IP address may reach that server. Downloads are verified with SHA-256. Recordings, transcripts and notes are never sent. The counter at the top of the app shows the bytes the app has actually sent out.</li><li><strong>Limits of AI</strong>: the AI only writes drafts. It never writes the assessment (A), never diagnoses and never rates risk. Crisis phrases are quoted verbatim from the conversation and only marked for review. Drafts can be wrong or incomplete; the counselor must review, edit and confirm them.</li></ul>
+<h2>3. Languages, speech recognition and AI</h2>
+<ul><li><strong>Languages</strong>: the app screens follow your device's language. Ondam supports 11 languages: Korean, English, Japanese, Simplified Chinese, Vietnamese, French, Italian, Brazilian Portuguese, Indonesian, Malay and Thai. The counseling (session) language is chosen separately, in Settings or per session. It determines the speech recognition language, the language of the AI draft, the anonymization and crisis-phrase rules, and search.</li><li><strong>Speech recognition</strong>: uses Apple's on-device speech recognition (SpeechTranscriber). The operating system downloads the recognition language data for your session language from Apple. If the fallback recognizer (Whisper) is used, recognition also runs on the device.</li><li><strong>Drafting</strong>: Apple Intelligence's on-device model is tried first; if it is unavailable or cannot produce a draft, an open-source model running on the device (such as Qwen3 or Kanana) takes over.</li><li><strong>Downloads (system and optional)</strong>: speech recognition language data is downloaded by the operating system, and open-source model files are downloaded once from huggingface.co only after you explicitly confirm. General connection information such as your IP address may reach those servers. Model downloads are verified with SHA-256. Nothing else leaves the device: recordings, transcripts and notes are never sent. The counter at the top of the app shows the bytes the app has actually sent out.</li><li><strong>Limits of AI</strong>: the AI only writes drafts. It never writes the assessment (A), never diagnoses and never rates risk. Crisis phrases are quoted verbatim from the conversation and only marked for review. Draft quality varies by language, and drafts can be wrong or incomplete. A draft is a pencil draft: the counselor must review, edit and confirm it.</li></ul>
 <h2>4. Permissions</h2>
 <p><p>The app asks for the microphone (session recording) and speech recognition (transcription). If you decline, you can still write notes by hand without recording.</p></p>
 <h2>5. Responsibility for records and consent</h2>
-<p><p>Ondam is a documentation tool. The counselor (or their center) is the party that processes clients' personal data and must obtain the consent that law and professional ethics require, such as recording consent, separate consent for health data, and guardian consent for clients under 14 where applicable. Ondam records the method and items of consent but does not obtain consent for you. Ondam is not a medical device and does not diagnose or treat.</p></p>
+<p><p>Ondam is a documentation tool. The counselor (or their organization) is the party that processes clients' personal data and must obtain the consent that applicable law and professional ethics require, such as recording consent, separate consent for health data, and guardian consent for minors where applicable. Ondam records the method and items of consent but does not obtain consent for you. Ondam is not a medical device and does not diagnose or treat.</p></p>
 <h2>6. Purchases</h2>
 <p><p>Subscriptions are processed by Apple; LuraAI has no access to payment information. Subscription status is checked with Apple's StoreKit. Even without a subscription you can always view, export to PDF and delete existing records.</p></p>
 <h2>7. Sale and sharing</h2>
