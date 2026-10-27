@@ -1,0 +1,55 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Política de Privacidade do Perimeter</title>
+<style>:root{--paper:#F5F3EC;--ink:#13171A;--sub:#4B5258;--rule:#D9D5C8;--chip:#ECE9DF}body{font:16px/1.75 -apple-system,"Apple SD Gothic Neo","Helvetica Neue",sans-serif;max-width:720px;margin:0 auto;padding:40px 20px 64px;color:var(--ink);background:var(--paper)}h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 6px;padding-top:16px;border-top:1px solid var(--rule)}h3{font-size:16px;margin:20px 0 2px}p,li{margin:6px 0}ul{padding-left:20px}.meta{color:var(--sub);font-size:14px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--chip)}a{color:inherit}code{font-family:ui-monospace,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:3px}@media(prefers-color-scheme:dark){:root{--paper:#121416;--ink:#ECEAE3;--sub:#A7ACB1;--rule:#2C3136;--chip:#1E2226}}</style></head><body>
+<h1>Política de Privacidade do Perimeter</h1>
+<p class="meta">Em vigor desde: 27 de outubro de 2026 · Operado pela LuraAI · Contato: contact@luraai.io<br>A página em coreano/inglês é o original; esta é uma tradução de cortesia.</p>
+<p><b>Em resumo.</b> O Perimeter (exibido como 상담노트 na Coreia) não tem servidor do desenvolvedor. O conteúdo das reuniões é processado e armazenado apenas no seu iPhone, iPad, Mac e Apple Watch; o desenvolvedor não pode coletá-lo nem lê-lo. Não há SDKs de análise, SDKs de anúncios nem contas.</p>
+
+<h2>1. O que o app trata e onde</h2>
+<table>
+<tr><th>Informação</th><th>Processamento</th><th>Armazenamento</th></tr>
+<tr><td>Voz do briefing</td><td>Reconhecimento de fala da Apple no próprio aparelho (SpeechAnalyzer no iOS, iPadOS e macOS 26)</td><td>Mantida apenas como arquivo temporário e apagada quando o processamento termina; a exclusão é registrada no livro-razão</td></tr>
+<tr><td>Texto do briefing, cartões de necessidade, rascunhos de mensagem</td><td>No aparelho (modelo de linguagem da Apple no aparelho ou dicionários baseados em regras)</td><td>Criptografados com AES-GCM no aparelho</td></tr>
+<tr><td>Nomes de clientes</td><td>No aparelho</td><td>Salvos apenas como pseudônimo, como "김○○"; o nome original não é armazenado</td></tr>
+<tr><td>Registros de selos e de compartilhamento (livro-razão de evidências)</td><td>No aparelho</td><td>Somente hashes, categorias e assinaturas; as frases da reunião não entram no livro-razão</td></tr>
+<tr><td>Eventos de hoje do calendário (opcional)</td><td>No aparelho, somente leitura</td><td>Os nomes nos títulos são trocados por pseudônimos antes de salvar</td></tr>
+</table>
+
+<h2>2. O que não coletamos</h2>
+<p>O desenvolvedor não coleta nada: nem nomes, dados de contato, localização, identificadores de dispositivo, dados de uso ou registros de falhas. O app não rastreia você. Sua etiqueta de privacidade na App Store é "Dados não coletados".</p>
+
+<h2>3. Permissões</h2>
+<ul>
+<li><b>Microfone</b>: usado apenas para transcrever o briefing que o próprio corretor faz após a reunião, inclusive no Apple Watch e no Mac.</li>
+<li><b>Reconhecimento de fala</b>: converte o briefing em texto no aparelho. O sistema operacional pode baixar da Apple os recursos de fala em coreano na primeira vez; nenhuma voz nem conteúdo de reunião é enviado nesse processo.</li>
+<li><b>Calendário (opcional)</b>: lê os eventos de hoje, somente leitura. Sem ele, você pode adicionar reuniões manualmente.</li>
+<li><b>Notificações (opcional)</b>: agenda um lembrete local de "dois minutos antes de esquecer" quando uma reunião termina, e lembretes dos prazos prometidos no briefing. A notificação mostra o pseudônimo (por exemplo, 김○○) e a descrição curta da tarefa que você falou. Ela não passa por servidor.</li>
+</ul>
+
+<h2>4. O que sai do seu aparelho</h2>
+<p>Somente depois que você sela os Artigos 17, 19 e 22 e confirma o "envio pelo KakaoTalk", o texto da mensagem, já com o filtro de publicidade, é entregue ao app que você escolher pela folha de compartilhamento do sistema. Logo antes, a tela mostra o que sai e o que fica, e a contagem de bytes só é registrada no livro-razão se o compartilhamento realmente for concluído. O app não envia mais nada por conta própria. O que acontece depois da entrega segue a política do app escolhido (por exemplo, o KakaoTalk).</p>
+
+<h2>5. Apple Watch e Mac</h2>
+<p>O app do relógio apenas grava o briefing. O arquivo é transferido para o seu iPhone e removido do relógio quando a transferência termina. O app para Mac usa o mesmo espaço de trabalho do app para iPad e roda somente nesse Mac; seus registros ficam dentro do sandbox do app nesse Mac. Os registros não são sincronizados entre iPhone, iPad e Mac. As complicações mostram números sem informações de clientes, como a contagem de selos, os bytes enviados para fora e o horário da próxima reunião.</p>
+
+<h2>6. IA no aparelho</h2>
+<p>A extração de necessidades, a detecção de promessas (tarefas), a correção de termos do reconhecimento de fala e a redação das frases da mensagem de acompanhamento usam o modelo de linguagem da Apple no aparelho (onde o dispositivo o suporta) ou um dicionário baseado em regras, e não chamam nenhum serviço de IA externo. O app não baixa nenhum modelo de IA próprio. Dados sensíveis, como histórico de saúde e números de telefone, são mascarados antes de qualquer coisa chegar ao modelo. Todo resultado de IA é identificado como estimativa do aparelho ou mostra a origem do rascunho (IA no aparelho ou regras), e só passa a ser confirmado depois que você o confirma. As correções das regras de publicidade são feitas por regras fixas, não por IA, e o app não recomenda produtos.</p>
+
+<h2>7. Retenção e exclusão</h2>
+<ul>
+<li>"Apagar todos os registros deste aparelho", em Ajustes, exclui reuniões, necessidades, rascunhos e registros do livro-razão. Não é possível desfazer.</li>
+<li>Excluir o app remove os dados que estão dentro dele. A chave usada para assinar o livro-razão fica no Chaveiro e pode permanecer no aparelho depois que o app for excluído. Ela não contém conteúdo de reuniões.</li>
+<li>Se o iCloud ou o backup do aparelho estiver ativado, os dados do app podem ser incluídos no backup da Apple. Isso é uma configuração entre você e a Apple; o desenvolvedor não tem acesso. Desative o app nos ajustes de backup do aparelho se não quiser isso (no Mac, exclua-o do Time Machine).</li>
+</ul>
+
+<h2>8. Crianças</h2>
+<p>O Perimeter é uma ferramenta para consultas de seguros e não é voltado a crianças. Como o app não coleta informações de ninguém, também não coleta de crianças.</p>
+
+<h2>9. Não é assessoria jurídica</h2>
+<p>O Perimeter é um auxílio de registro. Não dá assessoria jurídica nem recomenda produtos de seguro. O cumprimento dos Artigos 17, 19 e 22 da Lei Coreana de Proteção ao Consumidor Financeiro é um julgamento seu e um padrão da sua empresa. Você é responsável por inserir, armazenar e compartilhar informações de clientes no app.</p>
+
+<h2>10. Alterações</h2>
+<p>Se esta política mudar, a data de vigência acima será atualizada. Qualquer mudança no modelo sem servidor também será informada nas notas de atualização do app.</p>
+
+<h2>11. Contato</h2>
+<p>contact@luraai.io</p>
+</body></html>

@@ -1,0 +1,55 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Perimeter – Politique de confidentialité</title>
+<style>:root{--paper:#F5F3EC;--ink:#13171A;--sub:#4B5258;--rule:#D9D5C8;--chip:#ECE9DF}body{font:16px/1.75 -apple-system,"Apple SD Gothic Neo","Helvetica Neue",sans-serif;max-width:720px;margin:0 auto;padding:40px 20px 64px;color:var(--ink);background:var(--paper)}h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 6px;padding-top:16px;border-top:1px solid var(--rule)}h3{font-size:16px;margin:20px 0 2px}p,li{margin:6px 0}ul{padding-left:20px}.meta{color:var(--sub);font-size:14px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--chip)}a{color:inherit}code{font-family:ui-monospace,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:3px}@media(prefers-color-scheme:dark){:root{--paper:#121416;--ink:#ECEAE3;--sub:#A7ACB1;--rule:#2C3136;--chip:#1E2226}}</style></head><body>
+<h1>Politique de confidentialité de Perimeter</h1>
+<p class="meta">Cette page est une traduction de courtoisie ; la version coréenne/anglaise fait foi.<br>En vigueur depuis le 27 octobre 2026 · Exploité par LuraAI · Contact : contact@luraai.io</p>
+<p><b>En une phrase.</b> Perimeter (affiché sous le nom 상담노트 en Corée) n’a aucun serveur côté développeur. Le contenu de vos entretiens est traité et stocké uniquement sur votre iPhone, iPad, Mac et Apple Watch ; le développeur ne peut ni le collecter ni le lire. Il n’y a ni SDK d’analyse, ni SDK publicitaire, ni compte.</p>
+
+<h2>1. Ce que l’application traite, et où</h2>
+<table>
+<tr><th>Information</th><th>Traitement</th><th>Stockage</th></tr>
+<tr><td>Voix du briefing</td><td>Reconnaissance vocale d’Apple sur l’appareil (SpeechAnalyzer sous iOS, iPadOS et macOS 26)</td><td>Conservée uniquement dans un fichier temporaire, supprimé à la fin du traitement ; la suppression est inscrite au registre</td></tr>
+<tr><td>Texte du briefing, cartes besoin, brouillons de message</td><td>Sur l’appareil (modèle de langage d’Apple sur l’appareil ou dictionnaires à base de règles)</td><td>Chiffrés en AES-GCM sur l’appareil</td></tr>
+<tr><td>Noms des clients</td><td>Sur l’appareil</td><td>Enregistrés uniquement sous la forme d’un pseudonyme tel que « 김○○ » ; le nom d’origine n’est pas conservé</td></tr>
+<tr><td>Enregistrements de sceaux et de partage (registre de preuves)</td><td>Sur l’appareil</td><td>Hachages, catégories et signatures uniquement ; les phrases des entretiens ne sont pas inscrites au registre</td></tr>
+<tr><td>Événements du jour du calendrier (facultatif)</td><td>Sur l’appareil, en lecture seule</td><td>Les noms figurant dans les titres sont remplacés par des pseudonymes avant l’enregistrement</td></tr>
+</table>
+
+<h2>2. Ce que nous ne collectons pas</h2>
+<p>Le développeur ne collecte rien : ni noms, ni coordonnées, ni position, ni identifiants d’appareil, ni données d’usage, ni rapports de plantage. L’application ne vous suit pas. Sa fiche de confidentialité sur l’App Store indique « Aucune donnée collectée ».</p>
+
+<h2>3. Autorisations</h2>
+<ul>
+<li><b>Micro</b> : utilisé uniquement pour transcrire le briefing du conseiller après son entretien, y compris sur Apple Watch et Mac.</li>
+<li><b>Reconnaissance vocale</b> : transforme le briefing en texte sur l’appareil. Le système peut télécharger les ressources vocales coréennes auprès d’Apple lors de la première utilisation ; ni voix ni contenu d’entretien n’est envoyé à ce moment-là.</li>
+<li><b>Calendrier (facultatif)</b> : lit les événements du jour, en lecture seule. Vous pouvez ajouter des entretiens à la main sans cette autorisation.</li>
+<li><b>Notifications (facultatif)</b> : programme un rappel local « 2 minutes avant d’oublier » à la fin d’un entretien, ainsi que des rappels pour les échéances promises dans un briefing. Une notification affiche le pseudonyme (par exemple 김○○) et la courte formulation de la tâche que vous avez dictée. Elle ne passe par aucun serveur.</li>
+</ul>
+
+<h2>4. Ce qui quitte votre appareil</h2>
+<p>Uniquement après que vous avez scellé les articles 17, 19 et 22 et confirmé vous-même « envoyer via KakaoTalk », le texte du message, passé par le filtre publicitaire, est transmis à l’application de votre choix via la feuille de partage du système. Juste avant, l’écran montre ce qui sort et ce qui reste, et le nombre d’octets n’est inscrit au registre que si le partage aboutit réellement. L’application n’envoie rien d’autre de sa propre initiative. Ce qui se passe après la transmission relève de la politique de l’application choisie (par exemple KakaoTalk).</p>
+
+<h2>5. Apple Watch et Mac</h2>
+<p>L’app de la montre se limite à enregistrer le briefing. Le fichier est transféré vers votre iPhone puis supprimé de la montre une fois le transfert terminé. L’app Mac utilise le même espace de travail que l’app iPad et fonctionne uniquement sur ce Mac ; ses enregistrements sont conservés dans le bac à sable de l’app sur ce Mac. Les enregistrements ne sont pas synchronisés entre iPhone, iPad et Mac. Les complications affichent des chiffres qui ne contiennent aucune information client, comme le nombre de sceaux, les octets envoyés et l’heure du prochain entretien.</p>
+
+<h2>6. IA sur l’appareil</h2>
+<p>L’extraction des besoins, la détection des engagements (tâches à faire), la correction des termes de la reconnaissance vocale et la rédaction des phrases du message de suivi utilisent le modèle de langage d’Apple sur l’appareil (lorsque l’appareil le permet) ou un dictionnaire à base de règles, et n’appellent aucun service d’IA externe. L’application ne télécharge aucun modèle d’IA qui lui soit propre. Les informations sensibles, comme les antécédents médicaux et les numéros de téléphone, sont masquées avant d’atteindre le modèle. Chaque résultat d’IA est présenté comme une estimation de l’appareil ou indique la source du brouillon (IA sur l’appareil ou règles), et ne devient confirmé qu’après votre confirmation. Les corrections liées aux règles publicitaires sont faites par des règles fixes, non par l’IA, et l’application ne recommande aucun produit.</p>
+
+<h2>7. Conservation et suppression</h2>
+<ul>
+<li>« Effacer tous les enregistrements de cet appareil » dans les Réglages supprime les entretiens, besoins, brouillons et enregistrements du registre. Cette action est irréversible.</li>
+<li>La suppression de l’app efface les données qu’elle contient. La clé servant à signer le registre est conservée dans le Trousseau et peut subsister sur l’appareil après la suppression de l’app. Elle ne contient aucun contenu d’entretien.</li>
+<li>Si iCloud ou la sauvegarde de l’appareil est activé(e), les données de l’app peuvent être incluses dans la sauvegarde d’Apple. C’est un réglage entre vous et Apple ; le développeur n’y a pas accès. Désactivez l’app dans les réglages de sauvegarde de l’appareil si vous ne le souhaitez pas (sur Mac, excluez-la de Time Machine).</li>
+</ul>
+
+<h2>8. Enfants</h2>
+<p>Perimeter est un outil destiné aux entretiens d’assurance et ne s’adresse pas aux enfants. L’application ne collectant d’information auprès de personne, elle n’en collecte pas auprès des enfants.</p>
+
+<h2>9. Pas de conseil juridique</h2>
+<p>Perimeter est une aide à la tenue de dossiers. Elle ne donne aucun conseil juridique et ne recommande aucun produit d’assurance. Le respect des articles 17, 19 et 22 de la loi coréenne sur la protection des consommateurs financiers relève de votre propre jugement et des normes de votre entreprise. Vous êtes responsable de la saisie, de la conservation et du partage des informations clients avec l’application.</p>
+
+<h2>10. Modifications</h2>
+<p>Si cette politique change, la date d’entrée en vigueur ci-dessus est mise à jour. Toute modification de l’absence de serveur est également indiquée dans les notes de mise à jour de l’app.</p>
+
+<h2>11. Contact</h2>
+<p>contact@luraai.io</p>
+</body></html>

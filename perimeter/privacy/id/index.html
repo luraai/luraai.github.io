@@ -1,0 +1,55 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kebijakan Privasi Perimeter</title>
+<style>:root{--paper:#F5F3EC;--ink:#13171A;--sub:#4B5258;--rule:#D9D5C8;--chip:#ECE9DF}body{font:16px/1.75 -apple-system,"Apple SD Gothic Neo","Helvetica Neue",sans-serif;max-width:720px;margin:0 auto;padding:40px 20px 64px;color:var(--ink);background:var(--paper)}h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 6px;padding-top:16px;border-top:1px solid var(--rule)}h3{font-size:16px;margin:20px 0 2px}p,li{margin:6px 0}ul{padding-left:20px}.meta{color:var(--sub);font-size:14px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--chip)}a{color:inherit}code{font-family:ui-monospace,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:3px}@media(prefers-color-scheme:dark){:root{--paper:#121416;--ink:#ECEAE3;--sub:#A7ACB1;--rule:#2C3136;--chip:#1E2226}}</style></head><body>
+<h1>Kebijakan Privasi Perimeter</h1>
+<p class="meta">Berlaku: 27 Oktober 2026 · Dioperasikan oleh LuraAI · Kontak: contact@luraai.io<br>Halaman berbahasa Korea/Inggris adalah versi aslinya; halaman ini adalah terjemahan untuk kemudahan.</p>
+<p><b>Singkatnya.</b> Perimeter (tampil sebagai 상담노트 di Korea) tidak memiliki server pengembang. Isi konsultasi diproses dan disimpan hanya di iPhone, iPad, Mac, dan Apple Watch Anda; pengembang tidak dapat mengumpulkan atau membacanya. Tidak ada SDK analitik, SDK iklan, maupun akun.</p>
+
+<h2>1. Apa yang ditangani aplikasi dan di mana</h2>
+<table>
+<tr><th>Informasi</th><th>Diproses</th><th>Disimpan</th></tr>
+<tr><td>Suara briefing</td><td>Pengenalan suara di perangkat milik Apple (SpeechAnalyzer di iOS, iPadOS, dan macOS 26)</td><td>Hanya disimpan sebagai berkas sementara dan dihapus saat pemrosesan selesai; penghapusan dicatat di buku besar</td></tr>
+<tr><td>Teks briefing, kartu kebutuhan, draf pesan</td><td>Di perangkat (model bahasa di perangkat milik Apple atau kamus berbasis aturan)</td><td>Dienkripsi dengan AES-GCM di perangkat</td></tr>
+<tr><td>Nama klien</td><td>Di perangkat</td><td>Hanya disimpan sebagai nama samaran seperti "김○○"; nama asli tidak disimpan</td></tr>
+<tr><td>Catatan segel dan berbagi (buku besar bukti)</td><td>Di perangkat</td><td>Hanya hash, kategori, dan tanda tangan; kalimat konsultasi tidak dimasukkan ke buku besar</td></tr>
+<tr><td>Jadwal kalender hari ini (opsional)</td><td>Di perangkat, hanya dibaca</td><td>Nama pada judul diganti dengan nama samaran sebelum disimpan</td></tr>
+</table>
+
+<h2>2. Apa yang tidak kami kumpulkan</h2>
+<p>Pengembang tidak mengumpulkan apa pun: tidak ada nama, informasi kontak, lokasi, pengenal perangkat, data penggunaan, atau log kerusakan. Aplikasi tidak melacak Anda. Label privasi App Store-nya adalah "Data Tidak Dikumpulkan".</p>
+
+<h2>3. Izin</h2>
+<ul>
+<li><b>Mikrofon</b>: hanya digunakan untuk mentranskripsikan briefing pasca-konsultasi dari suara perencana sendiri, termasuk di Apple Watch dan Mac.</li>
+<li><b>Pengenalan suara</b>: mengubah briefing menjadi teks di dalam perangkat. Sistem operasi dapat mengunduh aset suara bahasa Korea dari Apple saat pertama kali; saat itu tidak ada suara atau isi konsultasi yang dikirim.</li>
+<li><b>Kalender (opsional)</b>: membaca jadwal hari ini, hanya baca. Tanpa izin ini, Anda tetap dapat menambah konsultasi secara manual.</li>
+<li><b>Notifikasi (opsional)</b>: menjadwalkan pengingat lokal "dua menit sebelum lupa" setelah konsultasi berakhir, serta pengingat untuk tenggat yang Anda janjikan dalam briefing. Notifikasi menampilkan nama samaran (misalnya 김○○) dan kata-kata singkat tugas yang Anda ucapkan. Notifikasi tidak melewati server.</li>
+</ul>
+
+<h2>4. Apa yang keluar dari perangkat Anda</h2>
+<p>Hanya setelah Anda membubuhkan segel Pasal 17, 19, dan 22 dan mengonfirmasi sendiri "kirim lewat KakaoTalk", teks pesan yang sudah melewati filter iklan diserahkan ke aplikasi pilihan Anda melalui lembar berbagi sistem. Tepat sebelumnya, layar menunjukkan apa yang keluar dan apa yang tetap tinggal, dan jumlah byte dicatat di buku besar hanya jika berbagi benar-benar selesai. Aplikasi tidak mengirim hal lain secara mandiri. Apa yang terjadi setelah penyerahan mengikuti kebijakan aplikasi yang Anda pilih (misalnya KakaoTalk).</p>
+
+<h2>5. Apple Watch dan Mac</h2>
+<p>Aplikasi jam hanya merekam briefing. Berkas dipindahkan ke iPhone Anda dan dihapus dari jam setelah pemindahan selesai. Aplikasi Mac memakai ruang kerja yang sama dengan aplikasi iPad dan hanya berjalan di Mac tersebut; catatannya disimpan di dalam sandbox aplikasi pada Mac itu. Catatan tidak disinkronkan antara iPhone, iPad, dan Mac. Komplikasi menampilkan angka yang tidak berisi informasi klien, seperti jumlah segel, byte yang dikirim keluar, dan waktu konsultasi berikutnya.</p>
+
+<h2>6. AI di perangkat</h2>
+<p>Ekstraksi kebutuhan, pencarian janji (daftar tugas), koreksi istilah pengenalan suara, dan penyusunan kalimat untuk pesan tindak lanjut memakai model bahasa di perangkat milik Apple (jika perangkat mendukung) atau kamus berbasis aturan, dan tidak memanggil layanan AI eksternal. Aplikasi tidak mengunduh model AI miliknya sendiri. Rincian sensitif seperti riwayat medis dan nomor telepon disamarkan sebelum apa pun sampai ke model. Setiap hasil AI diberi label perkiraan perangkat atau menampilkan sumber draf (AI di perangkat atau aturan), dan baru terkonfirmasi setelah Anda mengonfirmasinya. Koreksi aturan iklan dilakukan oleh aturan tetap, bukan AI, dan aplikasi tidak merekomendasikan produk.</p>
+
+<h2>7. Penyimpanan dan penghapusan</h2>
+<ul>
+<li>"Hapus semua catatan di perangkat ini" di Pengaturan menghapus konsultasi, kebutuhan, draf, dan catatan buku besar. Tindakan ini tidak dapat dibatalkan.</li>
+<li>Menghapus aplikasi menghapus data di dalamnya. Kunci yang dipakai untuk menandatangani buku besar disimpan di Keychain dan dapat tetap ada di perangkat setelah aplikasi dihapus. Kunci itu tidak berisi isi konsultasi.</li>
+<li>Jika iCloud atau pencadangan perangkat aktif, data aplikasi dapat termasuk dalam pencadangan Apple. Itu adalah pengaturan antara Anda dan Apple; pengembang tidak punya akses. Matikan aplikasi di pengaturan pencadangan perangkat jika Anda tidak menginginkannya (di Mac, kecualikan dari Time Machine).</li>
+</ul>
+
+<h2>8. Anak-anak</h2>
+<p>Perimeter adalah alat untuk konsultasi asuransi dan tidak ditujukan bagi anak-anak. Karena aplikasi tidak mengumpulkan informasi dari siapa pun, aplikasi juga tidak mengumpulkannya dari anak-anak.</p>
+
+<h2>9. Bukan nasihat hukum</h2>
+<p>Perimeter adalah alat bantu pencatatan. Aplikasi ini tidak memberi nasihat hukum dan tidak merekomendasikan produk asuransi. Kepatuhan terhadap Pasal 17, 19, dan 22 Undang-Undang Perlindungan Konsumen Keuangan Korea adalah penilaian Anda sendiri dan standar perusahaan Anda. Anda bertanggung jawab atas penginputan, penyimpanan, dan pembagian informasi klien dengan aplikasi.</p>
+
+<h2>10. Perubahan</h2>
+<p>Jika kebijakan ini berubah, tanggal berlaku di atas diperbarui. Perubahan apa pun pada rancangan tanpa server juga dinyatakan dalam catatan pembaruan aplikasi.</p>
+
+<h2>11. Kontak</h2>
+<p>contact@luraai.io</p>
+</body></html>

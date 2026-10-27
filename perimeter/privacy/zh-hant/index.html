@@ -1,0 +1,55 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Perimeter 隱私權政策</title>
+<style>:root{--paper:#F5F3EC;--ink:#13171A;--sub:#4B5258;--rule:#D9D5C8;--chip:#ECE9DF}body{font:16px/1.75 -apple-system,"PingFang TC","Apple SD Gothic Neo","Helvetica Neue",sans-serif;max-width:720px;margin:0 auto;padding:40px 20px 64px;color:var(--ink);background:var(--paper)}h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 6px;padding-top:16px;border-top:1px solid var(--rule)}h3{font-size:16px;margin:20px 0 2px}p,li{margin:6px 0}ul{padding-left:20px}.meta{color:var(--sub);font-size:14px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--chip)}a{color:inherit}code{font-family:ui-monospace,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:3px}@media(prefers-color-scheme:dark){:root{--paper:#121416;--ink:#ECEAE3;--sub:#A7ACB1;--rule:#2C3136;--chip:#1E2226}}</style></head><body>
+<h1>Perimeter 隱私權政策</h1>
+<p class="meta">本頁以韓文／英文版為準，此為方便閱讀的翻譯版本。<br>生效日：2026 年 10 月 27 日 · 營運者：LuraAI · 聯絡方式：contact@luraai.io</p>
+<p><b>一句話說明。</b>Perimeter（在韓國顯示為 상담노트）沒有開發者伺服器。面談內容僅在您的 iPhone、iPad、Mac 與 Apple Watch 上處理與儲存，開發者無法收集或讀取。沒有分析 SDK、廣告 SDK，也沒有帳號。</p>
+
+<h2>1. App 處理哪些資料、在哪裡處理</h2>
+<table>
+<tr><th>資訊</th><th>處理方式</th><th>儲存方式</th></tr>
+<tr><td>簡述語音</td><td>Apple 的裝置端語音辨識（iOS、iPadOS 與 macOS 26 的 SpeechAnalyzer）</td><td>僅暫存為檔案，處理結束即刪除；刪除動作會記錄在帳本中</td></tr>
+<tr><td>簡述文字、需求卡片、訊息草稿</td><td>在裝置上處理（Apple 的裝置端語言模型或規則式詞典）</td><td>在裝置上以 AES-GCM 加密</td></tr>
+<tr><td>客戶姓名</td><td>在裝置上處理</td><td>僅以「김○○」這類化名儲存，不保存原始姓名</td></tr>
+<tr><td>蓋章與分享紀錄（證據帳本）</td><td>在裝置上處理</td><td>僅含雜湊值、類別與簽章；面談的句子不會寫入帳本</td></tr>
+<tr><td>今天的行事曆行程（選用）</td><td>在裝置上處理，僅供讀取</td><td>儲存前會將標題中的姓名換成化名</td></tr>
+</table>
+
+<h2>2. 我們不收集的資料</h2>
+<p>開發者不收集任何資料：沒有姓名、聯絡方式、位置、裝置識別碼、使用資料或當機記錄。本 App 不會追蹤您。其 App Store 隱私權標籤為「未收集資料」。</p>
+
+<h2>3. 權限</h2>
+<ul>
+<li><b>麥克風</b>：僅用於聽寫業務員本人在面談後的簡述，包括 Apple Watch 與 Mac。</li>
+<li><b>語音辨識</b>：在裝置上將簡述轉成文字。作業系統首次使用時，可能會從 Apple 下載韓語語音資源；下載過程不會傳送任何語音或面談內容。</li>
+<li><b>行事曆（選用）</b>：讀取今天的行程，僅供讀取。不使用也可以手動新增面談。</li>
+<li><b>通知（選用）</b>：在面談結束後排程本機的「趁還記得，2 分鐘」提醒，以及簡述中約定期限的提醒。通知會顯示化名（例如 김○○）與您說出的簡短待辦文字，不會經過任何伺服器。</li>
+</ul>
+
+<h2>4. 哪些內容會離開您的裝置</h2>
+<p>只有在您蓋完第 17、19、22 條的章，並親自確認「用 KakaoTalk 傳送」之後，經過廣告過濾的訊息文字才會透過系統分享選單交給您選擇的 App。在此之前，畫面會顯示哪些內容會傳出、哪些會留下；只有分享確實完成時，位元組數才會記錄到帳本。App 不會自行傳送其他任何內容。交出之後的處理，依您所選 App（例如 KakaoTalk）的政策為準。</p>
+
+<h2>5. Apple Watch 與 Mac</h2>
+<p>手錶 App 只負責錄製簡述。檔案會傳到您的 iPhone，傳送完成後即從手錶移除。Mac App 與 iPad App 使用相同的工作區，且只在該部 Mac 上執行，紀錄保存在該部 Mac 的 App 沙箱內。iPhone、iPad 與 Mac 之間不會同步紀錄。錶盤複雜功能只顯示不含客戶資訊的數字，例如蓋章數、傳出的位元組數與下一場面談時間。</p>
+
+<h2>6. 裝置端 AI</h2>
+<p>需求擷取、找出約定（待辦事項）、語音辨識的術語修正，以及跟進訊息的草稿句子，都使用 Apple 的裝置端語言模型（裝置支援時）或規則式詞典，不會呼叫任何外部 AI 服務。本 App 不會自行下載任何 AI 模型。病史與電話號碼等敏感細節，在送入模型前就會先遮蔽。所有 AI 結果都會標示為裝置推測，或標明草稿的來源（裝置端 AI 或規則），並在您確認後才算確認。廣告規範的修正是以固定規則進行，而非 AI，且本 App 不會推薦商品。</p>
+
+<h2>7. 保存與刪除</h2>
+<ul>
+<li>在「設定」中選擇「清除這部裝置上的所有紀錄」，會刪除面談、需求、草稿與帳本紀錄，且無法復原。</li>
+<li>刪除 App 會移除 App 內的資料。用來簽署帳本的金鑰存放在鑰匙圈中，App 刪除後可能仍留在裝置上，其中不含任何面談內容。</li>
+<li>若開啟 iCloud 或裝置備份，App 資料可能包含在 Apple 的備份中。這是您與 Apple 之間的設定，開發者無法存取。若不希望如此，請在裝置的備份設定中關閉此 App（Mac 上則請從 Time Machine 排除）。</li>
+</ul>
+
+<h2>8. 兒童</h2>
+<p>Perimeter 是用於保險諮詢的工具，並非以兒童為對象。由於本 App 不向任何人收集資訊，因此也不會向兒童收集。</p>
+
+<h2>9. 非法律諮詢</h2>
+<p>Perimeter 是輔助記錄的工具，不提供法律諮詢，也不推薦保險商品。是否符合韓國金融消費者保護法第 17、19、22 條，由您本人判斷並依公司標準而定。您須自行負責在 App 中輸入、儲存與分享客戶資訊。</p>
+
+<h2>10. 變更</h2>
+<p>本政策如有變更，上方的生效日會隨之更新。任何對「無伺服器」設計的變更，也會寫在 App 的更新說明中。</p>
+
+<h2>11. 聯絡方式</h2>
+<p>contact@luraai.io</p>
+</body></html>

@@ -1,0 +1,55 @@
+<!doctype html><html lang="ms"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dasar Privasi Perimeter</title>
+<style>:root{--paper:#F5F3EC;--ink:#13171A;--sub:#4B5258;--rule:#D9D5C8;--chip:#ECE9DF}body{font:16px/1.75 -apple-system,"Apple SD Gothic Neo","Helvetica Neue",sans-serif;max-width:720px;margin:0 auto;padding:40px 20px 64px;color:var(--ink);background:var(--paper)}h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 6px;padding-top:16px;border-top:1px solid var(--rule)}h3{font-size:16px;margin:20px 0 2px}p,li{margin:6px 0}ul{padding-left:20px}.meta{color:var(--sub);font-size:14px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--chip)}a{color:inherit}code{font-family:ui-monospace,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:3px}@media(prefers-color-scheme:dark){:root{--paper:#121416;--ink:#ECEAE3;--sub:#A7ACB1;--rule:#2C3136;--chip:#1E2226}}</style></head><body>
+<h1>Dasar Privasi Perimeter</h1>
+<p class="meta">Halaman bahasa Korea/Inggeris ialah teks asal; ini ialah terjemahan untuk kemudahan.<br>Berkuat kuasa: 27 Oktober 2026 · Dikendalikan oleh LuraAI · Hubungi: contact@luraai.io</p>
+<p><b>Ringkasnya.</b> Perimeter (dipaparkan sebagai 상담노트 di Korea) tidak mempunyai pelayan pembangun. Kandungan pertemuan diproses dan disimpan pada iPhone, iPad, Mac dan Apple Watch anda sahaja; pembangun tidak boleh mengumpul atau membacanya. Tiada SDK analitik, SDK iklan atau akaun.</p>
+
+<h2>1. Apa yang dikendalikan aplikasi dan di mana</h2>
+<table>
+<tr><th>Maklumat</th><th>Diproses</th><th>Disimpan</th></tr>
+<tr><td>Suara taklimat</td><td>Pengecaman suara pada peranti oleh Apple (SpeechAnalyzer pada iOS, iPadOS dan macOS 26)</td><td>Disimpan sebagai fail sementara sahaja dan dipadam apabila pemprosesan selesai; pemadaman itu dilog dalam lejar</td></tr>
+<tr><td>Teks taklimat, kad keperluan, draf mesej</td><td>Pada peranti (model bahasa pada peranti Apple atau kamus berasaskan peraturan)</td><td>Disulitkan dengan AES-GCM pada peranti</td></tr>
+<tr><td>Nama klien</td><td>Pada peranti</td><td>Disimpan sebagai nama samaran sahaja, seperti "김○○"; nama asal tidak disimpan</td></tr>
+<tr><td>Rekod meterai dan perkongsian (lejar bukti)</td><td>Pada peranti</td><td>Cincang, kategori dan tandatangan sahaja; ayat pertemuan tidak dimasukkan ke dalam lejar</td></tr>
+<tr><td>Acara kalendar hari ini (pilihan)</td><td>Pada peranti, baca sahaja</td><td>Nama dalam tajuk digantikan dengan nama samaran sebelum disimpan</td></tr>
+</table>
+
+<h2>2. Apa yang tidak kami kumpulkan</h2>
+<p>Pembangun tidak mengumpul apa-apa: tiada nama, butiran hubungan, lokasi, pengecam peranti, data penggunaan atau log ranap. Aplikasi ini tidak menjejaki anda. Label privasi App Store-nya ialah "Data Tidak Dikumpulkan".</p>
+
+<h2>3. Kebenaran</h2>
+<ul>
+<li><b>Mikrofon</b>: digunakan hanya untuk mentranskripsi taklimat perancang sendiri selepas pertemuan, termasuk pada Apple Watch dan Mac.</li>
+<li><b>Pengecaman suara</b>: menukar taklimat kepada teks pada peranti. Sistem pengendalian mungkin memuat turun aset suara bahasa Korea daripada Apple buat kali pertama; tiada suara atau kandungan pertemuan dihantar apabila ini berlaku.</li>
+<li><b>Kalendar (pilihan)</b>: membaca acara hari ini, baca sahaja. Anda boleh menambah pertemuan secara manual tanpanya.</li>
+<li><b>Pemberitahuan (pilihan)</b>: menjadualkan peringatan tempatan "dua minit sebelum anda lupa" selepas pertemuan tamat, dan peringatan untuk tarikh akhir yang anda janjikan dalam taklimat. Pemberitahuan memaparkan nama samaran (contohnya 김○○) dan ringkasan tugas yang anda sebut. Ia tidak melalui pelayan.</li>
+</ul>
+
+<h2>4. Apa yang keluar dari peranti anda</h2>
+<p>Hanya selepas anda memeterai Perkara 17, 19 dan 22 dan mengesahkan sendiri "hantar melalui KakaoTalk", teks mesej yang telah ditapis iklan diserahkan kepada aplikasi pilihan anda melalui helaian kongsi sistem. Sebelum itu, skrin menunjukkan apa yang keluar dan apa yang kekal, dan jumlah bait hanya direkodkan dalam lejar jika perkongsian benar-benar selesai. Aplikasi tidak menghantar apa-apa lagi dengan sendirinya. Apa yang berlaku selepas penyerahan tertakluk pada dasar aplikasi yang anda pilih (contohnya KakaoTalk).</p>
+
+<h2>5. Apple Watch dan Mac</h2>
+<p>Aplikasi jam tangan hanya merakam taklimat. Fail dipindahkan ke iPhone anda dan dibuang daripada jam tangan setelah pemindahan selesai. Aplikasi Mac menggunakan ruang kerja yang sama dengan aplikasi iPad dan berjalan pada Mac itu sahaja; rekodnya disimpan di dalam kotak pasir aplikasi pada Mac itu. Rekod tidak disegerakkan antara iPhone, iPad dan Mac. Komplikasi memaparkan nombor yang tidak mengandungi maklumat klien, seperti bilangan meterai, bait yang dihantar keluar dan masa pertemuan seterusnya.</p>
+
+<h2>6. AI pada peranti</h2>
+<p>Pengekstrakan keperluan, pencarian janji (senarai tugas), pembetulan istilah pengecaman suara dan penulisan ayat untuk mesej susulan menggunakan model bahasa pada peranti Apple (jika peranti menyokongnya) atau kamus berasaskan peraturan, dan tidak memanggil sebarang perkhidmatan AI luar. Aplikasi tidak memuat turun sebarang model AI sendiri. Butiran sensitif seperti sejarah kesihatan dan nombor telefon ditutup sebelum sampai ke model. Setiap hasil AI dilabelkan sebagai agakan peranti atau menunjukkan sumber draf (AI pada peranti atau peraturan), dan hanya disahkan selepas anda mengesahkannya. Pembetulan peraturan pengiklanan dibuat mengikut peraturan tetap, bukan oleh AI, dan aplikasi tidak mengesyorkan produk.</p>
+
+<h2>7. Penyimpanan dan pemadaman</h2>
+<ul>
+<li>"Padam semua rekod pada peranti ini" dalam Tetapan memadam pertemuan, keperluan, draf dan rekod lejar. Ia tidak boleh dibuat asal.</li>
+<li>Memadam aplikasi akan membuang data di dalamnya. Kunci yang digunakan untuk menandatangani lejar disimpan dalam Keychain dan mungkin kekal pada peranti selepas aplikasi dipadam. Ia tidak mengandungi kandungan pertemuan.</li>
+<li>Jika iCloud atau sandaran peranti dihidupkan, data aplikasi boleh disertakan dalam sandaran Apple. Itu ialah tetapan antara anda dengan Apple; pembangun tiada akses. Matikan aplikasi dalam tetapan sandaran peranti jika anda tidak mahu ini (pada Mac, kecualikannya daripada Time Machine).</li>
+</ul>
+
+<h2>8. Kanak-kanak</h2>
+<p>Perimeter ialah alat untuk perundingan insurans dan tidak ditujukan kepada kanak-kanak. Oleh sebab aplikasi tidak mengumpul maklumat daripada sesiapa, ia tidak mengumpul daripada kanak-kanak.</p>
+
+<h2>9. Bukan nasihat undang-undang</h2>
+<p>Perimeter ialah alat bantu merekod. Ia tidak memberi nasihat undang-undang dan tidak mengesyorkan produk insurans. Pematuhan Perkara 17, 19 dan 22 Akta Perlindungan Pengguna Kewangan Korea ialah pertimbangan anda sendiri dan piawaian syarikat anda. Anda bertanggungjawab atas pemasukan, penyimpanan dan perkongsian maklumat klien dengan aplikasi ini.</p>
+
+<h2>10. Perubahan</h2>
+<p>Jika dasar ini berubah, tarikh berkuat kuasa di atas akan dikemas kini. Sebarang perubahan pada reka bentuk tanpa pelayan juga dinyatakan dalam nota kemas kini aplikasi.</p>
+
+<h2>11. Hubungi</h2>
+<p>contact@luraai.io</p>
+</body></html>
