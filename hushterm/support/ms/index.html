@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sokongan — Hushterm | LuraAI</title>
+<meta name="description" content="Sokongan Hushterm. Bermula, langganan, masalah sambungan, AI dan ejen, sandaran, dan cara menghubungi kami.">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../privacy/ms/">Privasi</a>
+<a href="../en/" hreflang="en">English</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>Sokongan</h1>
+<p class="lead">Ada soalan atau masalah dengan Hushterm? Kami sedia membantu.</p>
+<div class="contact"><p class="addr"><a href="mailto:contact@luraai.io">contact@luraai.io</a></p><p>Kami akan membalas secepat mungkin. Sila sertakan model peranti, versi iOS dan versi apl anda. Jangan sekali-kali menghantar kata laluan atau kunci peribadi.</p></div>
+<h2>Bermula</h2>
+<div class="faq"><h3>Bolehkah saya mencubanya tanpa pelayan?</h3><p>Buka tab Host dan ketik &ldquo;Cuba tanpa pelayan&rdquo;. Ia membuka pelayan simulasi di dalam apl, jadi tiada rangkaian diperlukan dan anda boleh melihat dengan selamat apa yang dilakukan oleh amaran arahan berisiko terhadap <code>rm -rf</code>.</p></div>
+<div class="faq"><h3>Bagaimana saya menambah pelayan sebenar?</h3><p>Pergi ke Host &rsaquo; + dan masukkan alamat, port, nama pengguna serta cara anda log masuk (kata laluan atau kunci). Pada sambungan pertama, apl memaparkan cap jari kunci host; bandingkannya dengan cap jari pada pelayan sebelum anda mempercayainya.</p></div>
+<div class="faq"><h3>Bagaimana saya mencipta kunci SSH?</h3><p>Pada skrin Kunci, anda boleh menjana kunci ed25519 dan ECDSA atau mengimport kunci OpenSSH dan PEM (Pro). Kunci Secure Enclave dilindungi oleh Face ID dan tidak pernah meninggalkan peranti. Tambahkan kunci awam ke <code>~/.ssh/authorized_keys</code> pada pelayan.</p></div>
+<h2>Langganan dan pembelian</h2>
+<div class="faq"><h3>Apakah yang percuma, dan apakah Pro?</h3><p>Percuma: SSH, SFTP dan amaran arahan berisiko (2 host, 3 sambungan baharu sehari, skrin pisah 2 panel). Pro: host dan sambungan tanpa had, AI pada peranti, skrin pisah 4 panel, tmux, pelayan Linux maya, folder SFTP, penciptaan kunci, kelulusan ejen dan tema. Pro ialah langganan bulanan atau tahunan, atau pembelian seumur hidup sekali bayar; harga berbeza mengikut rantau.</p></div>
+<div class="faq"><h3>Bagaimana saya membatalkan atau mendapatkan bayaran balik?</h3><p>Batalkan dalam Tetapan &rsaquo; [nama anda] &rsaquo; Langganan. Anda mengekalkan Pro sehingga tempoh yang dibayar tamat. Bayaran balik dikendalikan oleh Apple: <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a></p></div>
+<div class="faq"><h3>Bagaimana saya memulihkan pembelian pada peranti baharu?</h3><p>Ketik &ldquo;Pulihkan pembelian&rdquo; pada skrin Pro (Tetapan &rsaquo; Hushterm Pro), dengan log masuk menggunakan Akaun Apple yang sama.</p></div>
+<h2>Masalah sambungan</h2>
+<div class="faq"><h3>Saya mendapat &ldquo;Permission denied&rdquo;.</h3><p>Semak nama pengguna dan kata laluan atau kunci, serta sama ada pelayan membenarkan kaedah itu (<code>PasswordAuthentication</code>, <code>PubkeyAuthentication</code>). Diagnosis sambungan dalam apl menunjukkan kemungkinan puncanya.</p></div>
+<div class="faq"><h3>Sambungan disekat kerana kunci host telah berubah.</h3><p>Ini disengajakan: pelayan mungkin telah dipasang semula, atau seseorang mungkin memintas sambungan. Jika anda sendiri yang mengubah pelayan, sahkan cap jari baharu, ketik &ldquo;Lupakan kunci host tersimpan&rdquo; dalam diagnosis sambungan dan sambung semula.</p></div>
+<div class="faq"><h3>Sambungan tamat masa atau terus terputus.</h3><p>Semak alamat, port dan firewall. Pelayan pada rangkaian anda sendiri memerlukan kebenaran Rangkaian Setempat (Tetapan &rsaquo; Hushterm). Dengan tmux sentiasa dilampirkan dihidupkan bagi sesuatu host, sesi anda diteruskan selepas sambungan terputus (Pro).</p></div>
+<div class="faq"><h3>Sambungan terputus di latar belakang.</h3><p>iOS menghadkan berapa lama sesebuah apl boleh mengekalkan sambungan semasa di latar belakang. tmux membolehkan anda menyambung semula dari tempat anda berhenti.</p></div>
+<h2>AI dan ejen</h2>
+<div class="faq"><h3>Ciri AI tiada atau tidak berfungsi.</h3><p>Ia memerlukan peranti yang menyokong Apple Intelligence, dengan ciri itu dihidupkan dalam Tetapan &rsaquo; Apple Intelligence. Pada peranti lain, penjelasan berasaskan peraturan terus berfungsi. Semua AI berjalan pada peranti.</p></div>
+<div class="faq"><h3>Adakah apl menjalankan arahan yang ditulis oleh AI secara automatik?</h3><p>Tidak. Cadangan hanya mengisi baris input dan anda yang memutuskan sama ada hendak menjalankannya. Arahan seperti <code>rm -rf</code>, <code>dd</code>, <code>mkfs</code>, <code>chmod -R 777</code> atau but semula pada production berhenti dahulu sebelum dihantar.</p></div>
+<div class="faq"><h3>Bagaimana saya meluluskan permintaan Claude Code / Codex?</h3><p>Apabila ejen dalam sesi SSH anda meminta kebenaran, Hushterm mengesan gesaan itu dalam terminal dan memaparkan butang Luluskan / Tolak dalam apl. iOS tidak mengekalkan sambungan SSH lama di latar belakang, jadi ini berfungsi semasa apl dibuka; dengan Pro, pemberitahuan setempat mungkin muncul untuk seketika selepas anda meninggalkan apl. Jika anda tidak melihat apa-apa, hidupkan pemberitahuan dalam Tetapan &rsaquo; Pemberitahuan.</p></div>
+<h2>Sandaran dan data</h2>
+<div class="faq"><h3>Bagaimana saya memindahkan host saya ke peranti lain?</h3><p>Hidupkan sandaran dalam Tetapan &rsaquo; iCloud dan host dipulihkan pada peranti yang log masuk dengan Akaun Apple yang sama. Kata laluan turut dibawa hanya jika &ldquo;Simpan juga kata laluan dalam Rantai Kunci iCloud&rdquo; dihidupkan; kunci peribadi tidak pernah meninggalkan sesebuah peranti, jadi import semula pada peranti baharu.</p></div>
+<div class="faq"><h3>Di manakah data saya?</h3><p>Hanya pada peranti anda dan dalam iCloud anda sendiri. Lihat <a href="../../privacy/ms/">Dasar Privasi</a> untuk butirannya.</p></div>
+<div class="faq"><h3>Saya menemui pepijat atau mempunyai idea.</h3><p>E-mel <a href="mailto:contact@luraai.io">contact@luraai.io</a> dengan langkah untuk menghasilkannya semula. Kami membaca semuanya.</p></div>
+</div>
+<footer><p>&copy; 2026 LuraAI. Hak cipta terpelihara.</p></footer>
+</body>
+</html>

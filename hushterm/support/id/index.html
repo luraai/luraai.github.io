@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dukungan — Hushterm | LuraAI</title>
+<meta name="description" content="Dukungan Hushterm. Memulai, langganan, masalah koneksi, AI dan agen, pencadangan, dan cara menghubungi kami.">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../privacy/id/">Privasi</a>
+<a href="../en/" hreflang="en">English</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>Dukungan</h1>
+<p class="lead">Ada pertanyaan atau kendala dengan Hushterm? Kami siap membantu.</p>
+<div class="contact"><p class="addr"><a href="mailto:contact@luraai.io">contact@luraai.io</a></p><p>Kami akan membalas secepat mungkin. Sertakan model perangkat, versi iOS, dan versi aplikasi. Jangan pernah mengirim kata sandi atau kunci privat.</p></div>
+<h2>Memulai</h2>
+<div class="faq"><h3>Bisakah saya mencobanya tanpa server?</h3><p>Buka tab Host dan ketuk &ldquo;Coba tanpa server&rdquo;. Ini membuka server simulasi di dalam aplikasi, sehingga tidak perlu jaringan dan Anda bisa melihat dengan aman apa yang dilakukan peringatan perintah berisiko terhadap <code>rm -rf</code>.</p></div>
+<div class="faq"><h3>Bagaimana cara menambahkan server sungguhan?</h3><p>Buka Host &rsaquo; + lalu masukkan alamat, port, nama pengguna, dan cara masuk (kata sandi atau kunci). Pada koneksi pertama, aplikasi menampilkan fingerprint kunci host; bandingkan dengan fingerprint dari server sebelum Anda mempercayainya.</p></div>
+<div class="faq"><h3>Bagaimana cara membuat kunci SSH?</h3><p>Di layar Kunci, Anda dapat membuat kunci ed25519 dan ECDSA atau mengimpor kunci OpenSSH dan PEM (Pro). Kunci Secure Enclave dilindungi Face ID dan tidak pernah meninggalkan perangkat. Tambahkan kunci publik ke <code>~/.ssh/authorized_keys</code> di server.</p></div>
+<h2>Langganan dan pembelian</h2>
+<div class="faq"><h3>Apa yang gratis, dan apa yang termasuk Pro?</h3><p>Gratis: SSH, SFTP, dan peringatan perintah berisiko (2 host, 3 koneksi baru per hari, layar terbagi 2 panel). Pro: host dan koneksi tanpa batas, AI di perangkat, layar terbagi 4 panel, tmux, server Linux virtual, folder SFTP, pembuatan kunci, persetujuan agen, dan tema. Pro tersedia sebagai langganan bulanan atau tahunan, atau pembelian seumur hidup sekali bayar; harga berbeda di tiap wilayah.</p></div>
+<div class="faq"><h3>Bagaimana cara membatalkan atau meminta pengembalian dana?</h3><p>Batalkan di Pengaturan &rsaquo; [nama Anda] &rsaquo; Langganan. Pro tetap aktif sampai periode yang sudah dibayar berakhir. Pengembalian dana ditangani oleh Apple: <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a></p></div>
+<div class="faq"><h3>Bagaimana cara memulihkan pembelian di perangkat baru?</h3><p>Ketuk &ldquo;Pulihkan pembelian&rdquo; di layar Pro (Pengaturan &rsaquo; Hushterm Pro), dengan masuk menggunakan Akun Apple yang sama.</p></div>
+<h2>Masalah koneksi</h2>
+<div class="faq"><h3>Saya mendapat &ldquo;Permission denied&rdquo;.</h3><p>Periksa nama pengguna dan kata sandi atau kunci, serta pastikan server mengizinkan metode tersebut (<code>PasswordAuthentication</code>, <code>PubkeyAuthentication</code>). Diagnosis koneksi di aplikasi menunjukkan kemungkinan penyebabnya.</p></div>
+<div class="faq"><h3>Koneksi diblokir karena kunci host berubah.</h3><p>Ini disengaja: server mungkin telah diinstal ulang, atau seseorang mungkin sedang menyadap koneksi. Jika Anda sendiri yang mengubah server, verifikasi fingerprint baru, ketuk &ldquo;Lupakan kunci host tersimpan&rdquo; di diagnosis koneksi, lalu hubungkan lagi.</p></div>
+<div class="faq"><h3>Koneksi habis waktu atau terus terputus.</h3><p>Periksa alamat, port, dan firewall. Server di jaringan Anda sendiri memerlukan izin Jaringan Lokal (Pengaturan &rsaquo; Hushterm). Dengan opsi &ldquo;Selalu hubungkan dengan tmux&rdquo; aktif untuk sebuah host, sesi Anda tetap berlanjut setelah koneksi terputus (Pro).</p></div>
+<div class="faq"><h3>Koneksi terputus di latar belakang.</h3><p>iOS membatasi berapa lama aplikasi dapat mempertahankan koneksi saat berada di latar belakang. tmux memungkinkan Anda melanjutkan dari titik terakhir.</p></div>
+<h2>AI dan agen</h2>
+<div class="faq"><h3>Fitur AI tidak ada atau tidak berfungsi.</h3><p>Fitur ini memerlukan perangkat yang mendukung Apple Intelligence, dan harus diaktifkan di Pengaturan &rsaquo; Apple Intelligence. Di perangkat lain, penjelasan berbasis aturan tetap berfungsi. Semua AI berjalan di perangkat.</p></div>
+<div class="faq"><h3>Apakah aplikasi menjalankan perintah buatan AI secara otomatis?</h3><p>Tidak. Saran hanya mengisi baris input dan Anda sendiri yang memutuskan apakah akan menjalankannya. Perintah seperti <code>rm -rf</code>, <code>dd</code>, <code>mkfs</code>, <code>chmod -R 777</code>, atau reboot di produksi dijeda sebelum dikirim.</p></div>
+<div class="faq"><h3>Bagaimana cara menyetujui permintaan Claude Code / Codex?</h3><p>Ketika agen di sesi SSH Anda meminta izin, Hushterm mendeteksi permintaan itu di terminal dan menampilkan tombol Setujui / Tolak di aplikasi. iOS tidak mempertahankan koneksi SSH dalam waktu lama di latar belakang, jadi ini berfungsi saat aplikasi terbuka; dengan Pro, notifikasi lokal dapat muncul untuk waktu singkat setelah Anda meninggalkan aplikasi. Jika tidak ada yang muncul, aktifkan notifikasi di Pengaturan &rsaquo; Notifikasi.</p></div>
+<h2>Cadangan dan data</h2>
+<div class="faq"><h3>Bagaimana cara memindahkan host ke perangkat lain?</h3><p>Aktifkan pencadangan di Pengaturan &rsaquo; iCloud, maka host akan dipulihkan di perangkat yang masuk dengan Akun Apple yang sama. Kata sandi ikut hanya jika &ldquo;Simpan juga kata sandi di Rantai Kunci iCloud&rdquo; aktif; kunci privat tidak pernah meninggalkan perangkat, jadi impor ulang di perangkat baru.</p></div>
+<div class="faq"><h3>Di mana data saya?</h3><p>Hanya di perangkat Anda dan di iCloud Anda sendiri. Lihat <a href="../../privacy/id/">Kebijakan Privasi</a> untuk detailnya.</p></div>
+<div class="faq"><h3>Saya menemukan bug atau punya ide.</h3><p>Kirim email ke <a href="mailto:contact@luraai.io">contact@luraai.io</a> beserta langkah untuk mereproduksinya. Kami membaca semuanya.</p></div>
+</div>
+<footer><p>&copy; 2026 LuraAI. Hak cipta dilindungi undang-undang.</p></footer>
+</body>
+</html>

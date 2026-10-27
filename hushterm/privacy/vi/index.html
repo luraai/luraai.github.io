@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chính sách quyền riêng tư — Hushterm | LuraAI</title>
+<meta name="description" content="Chính sách quyền riêng tư của Hushterm. Không có tài khoản, không gửi gì tới máy chủ của chúng tôi, AI chạy ngay trên thiết bị.">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../support/vi/">Hỗ trợ</a>
+<a href="../en/" hreflang="en">English</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>Chính sách quyền riêng tư</h1>
+<p class="date">Có hiệu lực từ: ngày 17 tháng 10 năm 2026 · <a href="../en/" hreflang="en">English</a> · <a href="../ko/" hreflang="ko">한국어</a></p>
+<div class="callout"><p>Hushterm không có tài khoản và không gửi gì tới máy chủ của LuraAI. Lệnh và đầu ra terminal của bạn chỉ đi giữa thiết bị của bạn và máy chủ mà bạn chọn, và mọi tính năng AI đều chạy trên thiết bị. Ứng dụng không có SDK phân tích, quảng cáo hay theo dõi.</p></div>
+<h2>1. Chúng tôi thu thập gì</h2>
+<p>LuraAI (“chúng tôi”) <strong>không thu thập thông tin cá nhân</strong> nào thông qua Hushterm (“ứng dụng”).</p>
+<ul>
+<li>Không có đăng ký và không có đăng nhập.</li>
+<li>Chúng tôi không bao giờ yêu cầu hay thu thập họ tên, email, số điện thoại hoặc vị trí.</li>
+<li>Chúng tôi không dùng khung phân tích, theo dõi hay quảng cáo nào và không đi kèm SDK của bên thứ ba.</li>
+<li>Ứng dụng không chứa mã mạng nào gửi dữ liệu cho chúng tôi.</li>
+</ul>
+<h2>2. Những gì được lưu trên thiết bị của bạn</h2>
+<p>Những mục sau nằm lại <strong>trên thiết bị của bạn</strong> và cần thiết để ứng dụng hoạt động:</p>
+<ul>
+<li>Thông tin máy chủ (tên, địa chỉ, cổng, tên người dùng, thẻ), thư mục, chuyển tiếp cổng, đoạn lệnh và các lệnh gần đây</li>
+<li>Mật khẩu SSH và khóa riêng, được lưu trong Chuỗi khóa của iOS. Khóa Secure Enclave không thể rời khỏi thiết bị, và khóa riêng không bao giờ rời khỏi thiết bị.</li>
+<li>Dấu vân tay khóa máy chủ của các máy chủ bạn đã kết nối (được xác nhận ở lần dùng đầu tiên)</li>
+<li>Báo cáo kiểm tra máy chủ (vài báo cáo gần nhất cho mỗi máy chủ), lịch sử các yêu cầu của AI agent và quyết định của bạn, các mục kiểm tra máy chủ do bạn tự tạo, và tiến độ khóa luyện tập</li>
+<li>Cài đặt ứng dụng (chủ đề, thanh phím, bộ đệm cuộn, khóa ứng dụng, v.v.) và quyền sử dụng Pro của bạn</li>
+</ul>
+<h2>3. Kết nối máy chủ và nội dung terminal</h2>
+<p>Các kết nối SSH và SFTP đi <strong>trực tiếp</strong> từ thiết bị của bạn tới máy chủ bạn chỉ định; không có máy chủ trung chuyển nào của LuraAI. Chúng tôi không thể thấy đầu ra terminal hay các tệp bạn truyền. Những gì xảy ra trên máy chủ do bên vận hành máy chủ đó quản lý.</p>
+<p><strong>Kiểm tra máy chủ.</strong> Một lần kiểm tra máy chủ chỉ chạy các lệnh chỉ đọc (từ một danh sách cho phép cố định, hoặc những lệnh bạn tự viết và đã vượt qua cùng danh sách cho phép đó) trên máy chủ bạn đã chọn, qua chính kết nối SSH của bạn. Kết quả được đánh giá trên thiết bị và giữ lại trên thiết bị; không có gì được gửi cho chúng tôi hay bất kỳ bên nào khác. Khóa luyện tập Linux chạy trên một máy chủ mô phỏng bên trong ứng dụng và không dùng mạng.</p>
+<h2>4. Tính năng AI và nhập bằng giọng nói</h2>
+<p>Gợi ý lệnh, phân tích lỗi, tóm tắt đầu ra dài và chẩn đoán kết nối chạy <strong>trên thiết bị</strong> bằng mô hình trên thiết bị của Apple Intelligence (Foundation Models) và không dùng mạng. Nhập bằng giọng nói chỉ dùng nhận dạng giọng nói trên thiết bị; âm thanh không bao giờ được gửi tới máy chủ. Cảnh báo lệnh nguy hiểm do một công cụ quy tắc trên thiết bị quyết định, không phải do mô hình.</p>
+<p><strong>Không có dịch vụ AI của bên thứ ba.</strong> Hushterm không dùng, không gọi và không chia sẻ dữ liệu với bất kỳ dịch vụ AI nào của bên thứ ba (không có OpenAI, Anthropic, Google hay tương tự), và cũng không có máy chủ AI riêng. Văn bản mà các tính năng này đọc &mdash; lệnh bạn gõ, đầu ra terminal gần đây và thông báo lỗi của lệnh thất bại &mdash; chỉ được chuyển cho mô hình trên thiết bị của Apple trên iPhone hoặc iPad của bạn, nằm trong bộ nhớ, không được chúng tôi lưu và không bao giờ rời khỏi thiết bị. Vì không có dữ liệu cá nhân nào được gửi cho bên thứ ba để dùng AI, nên không có gì cần đồng ý hay chia sẻ. Nếu điều này thay đổi, ứng dụng sẽ trước tiên hiển thị dữ liệu nào sẽ được gửi và gửi cho ai, rồi xin phép bạn trước khi gửi bất cứ thứ gì.</p>
+<h2>5. Sao lưu iCloud — bộ nhớ của bạn, không phải của chúng tôi</h2>
+<p>Nếu bạn bật sao lưu iCloud, thông tin máy chủ, chuyển tiếp cổng, đoạn lệnh và thư mục được lưu trong chính tài khoản Apple của bạn thông qua kho khóa-giá trị iCloud của Apple. <strong>Chúng tôi không thể truy cập.</strong> Mật khẩu SSH chỉ đồng bộ qua Chuỗi khóa iCloud nếu bạn bật “Lưu cả mật khẩu vào Chuỗi khóa iCloud” (mặc định tắt); khóa riêng không bao giờ được đồng bộ. Bạn có thể tắt bất cứ lúc nào trong Cài đặt &rsaquo; iCloud.</p>
+<h2>6. Duyệt yêu cầu của AI agent, tiện ích và Apple Watch</h2>
+<p>Khi một AI coding agent như Claude Code hoặc Codex chạy <em>bên trong phiên SSH của chính bạn</em> xin quyền, Hushterm phát hiện lời nhắc trong văn bản terminal ngay trên thiết bị và hiển thị các nút Duyệt / Từ chối trong ứng dụng. Bản thân Hushterm không bao giờ liên hệ với các agent đó hay nhà cung cấp của chúng. Với Pro, một thông báo cục bộ có thể xuất hiện trên thiết bị trong thời gian ngắn sau khi bạn rời ứng dụng. Không dùng máy chủ đẩy thông báo nào. Danh sách máy chủ và các yêu cầu duyệt của bạn chỉ đi giữa iPhone và Apple Watch, không đi qua máy chủ nào.</p>
+<h2>7. Quyền của thiết bị</h2>
+<p>Từ chối một quyền chỉ tắt tính năng cần quyền đó.</p>
+<table>
+<tr><th>Quyền</th><th>Lý do</th></tr>
+<tr><td><strong>Face ID</strong></td><td>Khóa ứng dụng và việc dùng khóa Secure Enclave. Dữ liệu sinh trắc học do Apple xử lý; ứng dụng không bao giờ nhận được.</td></tr>
+<tr><td><strong>Micrô và nhận dạng giọng nói</strong></td><td>Chỉ khi bạn đọc một lệnh; được xử lý trên thiết bị.</td></tr>
+<tr><td><strong>Mạng cục bộ</strong></td><td>Cần để kết nối SSH tới các máy chủ trong mạng của bạn.</td></tr>
+<tr><td><strong>Thông báo</strong></td><td>Các yêu cầu duyệt của agent và trạng thái kết nối, được lên lịch ngay trên thiết bị.</td></tr>
+</table>
+<h2>8. Bộ nhớ tạm</h2>
+<p>Tính năng bảo vệ khi dán sửa dấu nháy thông minh và dấu gạch ngang, đồng thời hỏi trước khi chạy một đoạn dán nhiều dòng, ngay lúc bạn dán và ngay trên thiết bị. Nó không lưu hay truyền nội dung bộ nhớ tạm.</p>
+<h2>9. Giao dịch mua trong ứng dụng</h2>
+<p>Gói đăng ký theo tháng và theo năm cùng gói mua trọn đời được bán qua StoreKit của Apple. Việc thanh toán và xác thực biên nhận được <strong>hoàn toàn do Apple xử lý</strong>; chúng tôi không bao giờ nhận thông tin thanh toán hay thông tin Tài khoản Apple. Quản lý hoặc hủy gói đăng ký trong cài đặt Tài khoản Apple của bạn.</p>
+<h2>10. Chia sẻ và bán</h2>
+<p>Chúng tôi không thu thập thông tin cá nhân, nên không có gì để chia sẻ hay bán cho bất kỳ ai. Ứng dụng không dùng cookie, mã định danh quảng cáo (IDFA) hay theo dõi giữa các ứng dụng.</p>
+<h2>11. Mã hóa</h2>
+<p>Ứng dụng chỉ dùng mã hóa SSH tiêu chuẩn.</p>
+<h2>12. Trẻ em</h2>
+<p>Chúng tôi không thu thập thông tin cá nhân từ bất kỳ ai, kể cả trẻ em.</p>
+<h2>13. Xóa dữ liệu của bạn</h2>
+<p>Xóa ứng dụng sẽ gỡ máy chủ, cài đặt và các mục Chuỗi khóa khỏi thiết bị. Dữ liệu đã sao lưu lên iCloud có thể được xóa trong Cài đặt &rsaquo; [tên của bạn] &rsaquo; iCloud &rsaquo; Quản lý dung lượng.</p>
+<h2>14. Thay đổi chính sách này</h2>
+<p>Nếu chính sách này thay đổi, ngày có hiệu lực ở trên sẽ thay đổi theo, và các thay đổi quan trọng sẽ được thông báo trong ghi chú cập nhật của ứng dụng.</p>
+<h2>15. Liên hệ</h2>
+<p>Câu hỏi về quyền riêng tư: <a href="mailto:contact@luraai.io">contact@luraai.io</a></p>
+</div>
+<footer><p>&copy; 2026 LuraAI. Bảo lưu mọi quyền.</p></footer>
+</body>
+</html>

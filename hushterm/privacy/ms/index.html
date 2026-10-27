@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dasar Privasi — Hushterm | LuraAI</title>
+<meta name="description" content="Dasar privasi Hushterm. Tiada akaun, tiada apa dihantar ke pelayan kami, AI berjalan pada peranti.">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../support/ms/">Sokongan</a>
+<a href="../en/" hreflang="en">English</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>Dasar Privasi</h1>
+<p class="date">Berkuat kuasa: 17 Oktober 2026 · <a href="../en/">English</a> · <a href="../ko/">한국어</a></p>
+<div class="callout"><p>Hushterm tidak mempunyai akaun dan tidak menghantar apa-apa ke pelayan LuraAI. Arahan dan output terminal anda hanya bergerak antara peranti anda dengan pelayan yang anda pilih, dan setiap ciri AI berjalan pada peranti. Tiada analitik, pengiklanan atau SDK penjejakan.</p></div>
+<h2>1. Apa yang kami kumpulkan</h2>
+<p>LuraAI (&ldquo;kami&rdquo;) <strong>tidak mengumpulkan maklumat peribadi</strong> melalui Hushterm (&ldquo;apl&rdquo;).</p>
+<ul>
+<li>Tiada pendaftaran dan tiada log masuk.</li>
+<li>Kami tidak pernah meminta atau mengumpulkan nama, e-mel, nombor telefon atau lokasi.</li>
+<li>Kami tidak menggunakan rangka kerja analitik, penjejakan atau pengiklanan dan tidak menyertakan SDK pihak ketiga.</li>
+<li>Apl ini tidak mengandungi kod rangkaian yang menghantar data kepada kami.</li>
+</ul>
+<h2>2. Apa yang disimpan pada peranti anda</h2>
+<p>Perkara berikut kekal <strong>pada peranti anda</strong> dan diperlukan supaya apl berfungsi:</p>
+<ul>
+<li>Butiran host (nama, alamat, port, nama pengguna, tag), folder, penerusan port, snippet dan arahan terkini</li>
+<li>Kata laluan SSH dan kunci peribadi, disimpan dalam Rantai Kunci iOS. Kunci Secure Enclave tidak boleh meninggalkan peranti, dan kunci peribadi tidak pernah meninggalkannya.</li>
+<li>Cap jari kunci host bagi pelayan yang pernah anda sambungi (disahkan pada penggunaan pertama)</li>
+<li>Laporan semakan pelayan (beberapa yang terakhir bagi setiap host), sejarah permintaan ejen AI dan keputusan anda, semakan pelayan anda sendiri, dan kemajuan kursus latihan</li>
+<li>Tetapan apl (tema, bar kekunci, penimbal tatal, kunci apl dan sebagainya) serta hak Pro anda</li>
+</ul>
+<h2>3. Sambungan pelayan dan kandungan terminal</h2>
+<p>Sambungan SSH dan SFTP pergi <strong>terus</strong> dari peranti anda ke pelayan yang anda nyatakan; tiada geganti LuraAI terlibat. Kami tidak dapat melihat output terminal atau fail yang anda pindahkan. Apa yang berlaku pada pelayan diselia oleh pengendali pelayan itu.</p>
+<p><strong>Semakan pelayan.</strong> Semakan pelayan hanya menjalankan arahan baca sahaja (daripada senarai benar yang tetap, atau arahan yang anda tulis dan lulus senarai benar yang sama) pada pelayan yang anda pilih, melalui sambungan SSH anda sendiri. Keputusan dinilai pada peranti dan disimpan pada peranti; tiada apa dihantar kepada kami atau mana-mana pihak lain. Kursus latihan Linux berjalan pada pelayan simulasi di dalam apl dan tidak menggunakan rangkaian.</p>
+<h2>4. Ciri AI dan input suara</h2>
+<p>Cadangan arahan, analisis ralat, ringkasan output panjang dan diagnosis sambungan berjalan <strong>pada peranti</strong> dengan model pada peranti Apple Intelligence (Foundation Models) dan tidak menggunakan rangkaian. Input suara hanya menggunakan pengecaman pertuturan pada peranti; audio tidak pernah dihantar ke pelayan. Amaran arahan berisiko diputuskan oleh enjin peraturan pada peranti, bukan oleh model.</p>
+<p><strong>Tiada perkhidmatan AI pihak ketiga.</strong> Hushterm tidak menggunakan, memanggil atau berkongsi data dengan mana-mana perkhidmatan AI pihak ketiga (tiada OpenAI, Anthropic, Google atau yang serupa), dan ia tidak mempunyai pelayan AI sendiri. Teks yang dibaca oleh ciri ini &mdash; arahan yang anda taip, output terminal terkini dan mesej ralat bagi arahan yang gagal &mdash; hanya diserahkan kepada model pada peranti Apple pada iPhone atau iPad anda, kekal dalam memori, tidak disimpan oleh kami dan tidak pernah meninggalkan peranti. Oleh sebab tiada data peribadi dihantar kepada mana-mana pihak ketiga untuk AI, tiada apa yang perlu dipersetujui atau dikongsi. Jika ini berubah, apl akan terlebih dahulu menunjukkan data apa yang akan dihantar dan kepada siapa, dan meminta kebenaran anda sebelum menghantar apa-apa.</p>
+<h2>5. Sandaran iCloud — storan anda, bukan storan kami</h2>
+<p>Jika anda menghidupkan sandaran iCloud, butiran host, penerusan port, snippet dan folder disimpan dalam akaun Apple anda sendiri melalui stor nilai-kunci iCloud Apple. <strong>Kami tidak dapat mengaksesnya.</strong> Kata laluan SSH disegerakkan melalui Rantai Kunci iCloud hanya jika anda menghidupkan &ldquo;Simpan juga kata laluan dalam Rantai Kunci iCloud&rdquo; (mati secara lalai); kunci peribadi tidak pernah disegerakkan. Anda boleh mematikannya pada bila-bila masa dalam Tetapan &rsaquo; iCloud.</p>
+<h2>6. Kelulusan ejen AI, widget dan Apple Watch</h2>
+<p>Apabila ejen pengekodan AI seperti Claude Code atau Codex yang berjalan <em>di dalam sesi SSH anda sendiri</em> meminta kebenaran, Hushterm mengesan gesaan itu dalam teks terminal pada peranti dan memaparkan butang Luluskan / Tolak dalam apl. Hushterm sendiri tidak pernah menghubungi ejen tersebut atau penyedianya. Dengan Pro, pemberitahuan setempat mungkin muncul pada peranti untuk seketika selepas anda meninggalkan apl. Tiada pelayan push digunakan. Senarai host dan permintaan kelulusan anda hanya bergerak antara iPhone dan Apple Watch dan tidak melalui mana-mana pelayan.</p>
+<h2>7. Kebenaran peranti</h2>
+<p>Menolak sesuatu kebenaran hanya melumpuhkan ciri yang memerlukannya.</p>
+<table>
+<tr><th>Kebenaran</th><th>Sebab</th></tr>
+<tr><td><strong>Face ID</strong></td><td>Kunci apl dan penggunaan kunci Secure Enclave. Data biometrik dikendalikan oleh Apple; apl tidak pernah menerimanya.</td></tr>
+<tr><td><strong>Mikrofon &amp; pengecaman pertuturan</strong></td><td>Hanya apabila anda menyebut arahan; diproses pada peranti.</td></tr>
+<tr><td><strong>Rangkaian setempat</strong></td><td>Diperlukan untuk mencapai pelayan pada rangkaian anda melalui SSH.</td></tr>
+<tr><td><strong>Pemberitahuan</strong></td><td>Permintaan kelulusan ejen dan status sambungan, dijadualkan pada peranti.</td></tr>
+</table>
+<h2>8. Papan klip</h2>
+<p>Perlindungan tampal membetulkan petikan pintar dan sengkang serta bertanya sebelum tampalan berbilang baris, pada saat anda menampal, pada peranti. Ia tidak menyimpan atau menghantar kandungan papan klip.</p>
+<h2>9. Pembelian dalam apl</h2>
+<p>Langganan bulanan dan tahunan serta pembelian seumur hidup dijual melalui StoreKit Apple. Pembayaran dan pengesahan resit dikendalikan <strong>sepenuhnya oleh Apple</strong>; kami tidak pernah menerima butiran pembayaran atau maklumat Akaun Apple. Urus atau batalkan langganan dalam tetapan Akaun Apple anda.</p>
+<h2>10. Perkongsian dan penjualan</h2>
+<p>Kami tidak mengumpulkan maklumat peribadi, jadi tiada apa yang boleh dikongsi dengan atau dijual kepada sesiapa. Apl ini tidak menggunakan kuki, pengecam pengiklanan (IDFA) atau penjejakan merentas apl.</p>
+<h2>11. Penyulitan</h2>
+<p>Apl ini hanya menggunakan penyulitan SSH standard.</p>
+<h2>12. Kanak-kanak</h2>
+<p>Kami tidak mengumpulkan maklumat peribadi daripada sesiapa, termasuk kanak-kanak.</p>
+<h2>13. Memadam data anda</h2>
+<p>Memadam apl akan mengalih keluar host, tetapan dan item Rantai Kunci daripada peranti. Data yang disandarkan ke iCloud boleh dialih keluar dalam Tetapan &rsaquo; [nama anda] &rsaquo; iCloud &rsaquo; Urus Storan.</p>
+<h2>14. Perubahan pada dasar ini</h2>
+<p>Jika dasar ini berubah, tarikh berkuat kuasa di atas turut berubah, dan perubahan yang ketara akan diumumkan dalam nota kemas kini apl.</p>
+<h2>15. Hubungi kami</h2>
+<p>Soalan tentang privasi: <a href="mailto:contact@luraai.io">contact@luraai.io</a></p>
+</div>
+<footer><p>&copy; 2026 LuraAI. Hak cipta terpelihara.</p></footer>
+</body>
+</html>

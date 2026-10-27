@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assistance — Hushterm | LuraAI</title>
+<meta name="description" content="Assistance Hushterm. Prise en main, abonnements, problèmes de connexion, IA et agents, sauvegarde, et comment nous contacter.">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../privacy/fr/">Confidentialité</a>
+<a href="../en/" hreflang="en">English</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>Assistance</h1>
+<p class="lead">Une question ou un problème avec Hushterm ? Nous serons ravis de vous aider.</p>
+<div class="contact"><p class="addr"><a href="mailto:contact@luraai.io">contact@luraai.io</a></p><p>Nous répondrons dès que possible. Indiquez le modèle de votre appareil, la version d’iOS et la version de l’app. N’envoyez jamais de mots de passe ni de clés privées.</p></div>
+<h2>Prise en main</h2>
+<div class="faq"><h3>Puis-je essayer sans serveur ?</h3><p>Ouvrez l’onglet Hôtes et touchez « Essayer sans serveur ». Cela ouvre un serveur simulé dans l’app : aucun réseau n’est nécessaire et vous pouvez voir sans risque ce que l’alerte de commandes risquées fait de <code>rm -rf</code>.</p></div>
+<div class="faq"><h3>Comment ajouter un vrai serveur ?</h3><p>Allez dans Hôtes &rsaquo; + et saisissez l’adresse, le port, le nom d’utilisateur et le mode de connexion (mot de passe ou clé). À la première connexion, l’app affiche l’empreinte de la clé d’hôte ; comparez-la à celle du serveur avant de lui faire confiance.</p></div>
+<div class="faq"><h3>Comment créer une clé SSH ?</h3><p>Sur l’écran Clés, vous pouvez générer des clés ed25519 et ECDSA ou importer des clés OpenSSH et PEM (Pro). Les clés Secure Enclave sont protégées par Face ID et ne quittent jamais l’appareil. Ajoutez la clé publique à <code>~/.ssh/authorized_keys</code> sur le serveur.</p></div>
+<h2>Abonnements et achats</h2>
+<div class="faq"><h3>Qu’est-ce qui est gratuit, et qu’est-ce que Pro ?</h3><p>Gratuit : SSH, SFTP et l’alerte de commandes risquées (2 hôtes, 3 nouvelles connexions par jour, écran partagé en 2 panneaux). Pro : hôtes et connexions illimités, IA sur l’appareil, écran partagé en 4 panneaux, tmux, serveurs Linux virtuels, dossiers SFTP, création de clés, approbations des agents et thèmes. Pro est un abonnement mensuel ou annuel, ou un achat unique à vie ; les prix varient selon le pays ou la région.</p></div>
+<div class="faq"><h3>Comment annuler ou obtenir un remboursement ?</h3><p>Annulez dans Réglages &rsaquo; [votre nom] &rsaquo; Abonnements. Vous conservez Pro jusqu’à la fin de la période payée. Les remboursements sont gérés par Apple : <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a></p></div>
+<div class="faq"><h3>Comment restaurer mes achats sur un nouvel appareil ?</h3><p>Touchez « Restaurer les achats » sur l’écran Pro (Réglages &rsaquo; Hushterm Pro), en étant connecté au même compte Apple.</p></div>
+<h2>Problèmes de connexion</h2>
+<div class="faq"><h3>J’obtiens « Permission denied ».</h3><p>Vérifiez le nom d’utilisateur et le mot de passe ou la clé, ainsi que l’autorisation de cette méthode par le serveur (<code>PasswordAuthentication</code>, <code>PubkeyAuthentication</code>). Le diagnostic de connexion de l’app indique la cause probable.</p></div>
+<div class="faq"><h3>La connexion est bloquée parce que la clé d’hôte a changé.</h3><p>C’est voulu : le serveur a peut-être été réinstallé, ou quelqu’un intercepte peut-être la connexion. Si vous avez modifié le serveur vous-même, vérifiez la nouvelle empreinte, touchez « Oublier la clé d’hôte enregistrée » dans le diagnostic de connexion, puis reconnectez-vous.</p></div>
+<div class="faq"><h3>Les connexions expirent ou se coupent sans cesse.</h3><p>Vérifiez l’adresse, le port et le pare-feu. Les serveurs de votre propre réseau nécessitent l’autorisation Réseau local (Réglages &rsaquo; Hushterm). Avec « Toujours se connecter avec tmux » activé pour un hôte, votre session se poursuit après une coupure (Pro).</p></div>
+<div class="faq"><h3>La connexion se coupe en arrière-plan.</h3><p>iOS limite la durée pendant laquelle une app peut maintenir une connexion en arrière-plan. tmux vous permet de reprendre là où vous en étiez.</p></div>
+<h2>IA et agents</h2>
+<div class="faq"><h3>Les fonctions d’IA sont absentes ou ne fonctionnent pas.</h3><p>Elles nécessitent un appareil compatible Apple Intelligence, avec cette fonctionnalité activée dans Réglages &rsaquo; Apple Intelligence et Siri. Sur les autres appareils, les explications basées sur des règles continuent de fonctionner. Toute l’IA tourne sur l’appareil.</p></div>
+<div class="faq"><h3>L’app exécute-t-elle automatiquement les commandes écrites par l’IA ?</h3><p>Non. Une suggestion ne fait que remplir la ligne de saisie et c’est vous qui décidez de l’exécuter. Les commandes comme <code>rm -rf</code>, <code>dd</code>, <code>mkfs</code>, <code>chmod -R 777</code> ou un redémarrage en production s’arrêtent avant l’envoi.</p></div>
+<div class="faq"><h3>Comment approuver les demandes de Claude Code / Codex ?</h3><p>Lorsqu’un agent de votre session SSH demande une autorisation, Hushterm détecte l’invite dans le terminal et affiche des boutons Approuver / Refuser dans l’app. iOS ne maintient pas longtemps une connexion SSH en arrière-plan : cela fonctionne donc tant que l’app est ouverte ; avec Pro, une notification locale peut apparaître brièvement après votre départ de l’app. Si vous ne voyez rien, activez les notifications dans Réglages &rsaquo; Notifications.</p></div>
+<h2>Sauvegarde et données</h2>
+<div class="faq"><h3>Comment transférer mes hôtes vers un autre appareil ?</h3><p>Activez la sauvegarde dans Réglages &rsaquo; iCloud : vos hôtes seront restaurés sur les appareils connectés au même compte Apple. Les mots de passe suivent uniquement si « Conserver aussi les mots de passe dans le Trousseau iCloud » est activé ; les clés privées ne quittent jamais un appareil, importez-les donc de nouveau sur le nouveau.</p></div>
+<div class="faq"><h3>Où sont mes données ?</h3><p>Uniquement sur votre appareil et dans votre propre iCloud. Consultez la <a href="../../privacy/fr/">politique de confidentialité</a> pour plus de détails.</p></div>
+<div class="faq"><h3>J’ai trouvé un bug ou j’ai une idée.</h3><p>Écrivez à <a href="mailto:contact@luraai.io">contact@luraai.io</a> en indiquant les étapes pour le reproduire. Nous lisons tout.</p></div>
+</div>
+<footer><p>&copy; 2026 LuraAI. Tous droits réservés.</p></footer>
+</body>
+</html>

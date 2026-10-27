@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>支持 — Hushterm | LuraAI</title>
+<meta name="description" content="Hushterm 支持。入门、订阅、连接问题、AI 与智能体、备份，以及联系方式。">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../privacy/zh/">隐私政策</a>
+<a href="../en/" hreflang="en">English</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>支持</h1>
+<p class="lead">对 Hushterm 有疑问或遇到问题？我们乐意帮忙。</p>
+<div class="contact"><p class="addr"><a href="mailto:contact@luraai.io">contact@luraai.io</a></p><p>我们会尽快回复。请附上设备型号、iOS 版本和 App 版本。切勿发送密码或私钥。</p></div>
+<h2>入门</h2>
+<div class="faq"><h3>没有服务器也能试用吗？</h3><p>打开“主机”标签页，点按“无需服务器，先试试”。它会打开一台在 App 内模拟的服务器，无需联网，您可以放心地看看危险命令警告会如何处理 <code>rm -rf</code>。</p></div>
+<div class="faq"><h3>如何添加真实服务器？</h3><p>前往“主机”&rsaquo; +，输入地址、端口、用户名和登录方式（密码或密钥）。首次连接时，App 会显示主机密钥指纹；信任之前，请先与服务器上的指纹进行比对。</p></div>
+<div class="faq"><h3>如何创建 SSH 密钥？</h3><p>在“密钥”界面，可以生成 ed25519 和 ECDSA 密钥，或导入 OpenSSH 和 PEM 密钥（Pro）。Secure Enclave 密钥受 Face ID 保护，永远不会离开设备。请把公钥添加到服务器上的 <code>~/.ssh/authorized_keys</code> 中。</p></div>
+<h2>订阅与购买</h2>
+<div class="faq"><h3>免费版和 Pro 分别有什么？</h3><p>免费：SSH、SFTP 和危险命令警告（2 个主机，每天 3 次新连接，2 窗格分屏）。Pro：不限主机和连接数、设备端 AI、4 窗格分屏、tmux、虚拟 Linux 服务器、SFTP 文件夹、密钥创建、智能体批准和主题。Pro 提供月度或年度订阅，也可一次性购买永久使用；价格因地区而异。</p></div>
+<div class="faq"><h3>如何取消订阅或申请退款？</h3><p>在“设置”&rsaquo; [您的姓名] &rsaquo; 订阅中取消。付费周期结束前仍可继续使用 Pro。退款由 Apple 处理：<a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a></p></div>
+<div class="faq"><h3>如何在新设备上恢复购买？</h3><p>在 Pro 页面（设置 &rsaquo; Hushterm Pro）点按“恢复购买”，并使用同一个 Apple 账户登录。</p></div>
+<h2>连接问题</h2>
+<div class="faq"><h3>出现“Permission denied”。</h3><p>请检查用户名、密码或密钥，并确认服务器允许该方式（<code>PasswordAuthentication</code>、<code>PubkeyAuthentication</code>）。App 的连接诊断会指出可能的原因。</p></div>
+<div class="faq"><h3>因主机密钥已变更，连接被阻止。</h3><p>这是有意为之：服务器可能已被重装，也可能有人在拦截连接。如果是您自己更改了服务器，请核实新的指纹，在连接诊断中点按“忘记已存储的主机密钥”，然后重新连接。</p></div>
+<div class="faq"><h3>连接超时或不断断开。</h3><p>请检查地址、端口和防火墙。您自己网络中的服务器需要“本地网络”权限（设置 &rsaquo; Hushterm）。如果为某个主机开启了“始终使用 tmux 连接”，断线后会话仍会继续（Pro）。</p></div>
+<div class="faq"><h3>在后台时连接断开。</h3><p>iOS 会限制 App 在后台保持连接的时间。借助 tmux，可以从中断的地方继续。</p></div>
+<h2>AI 与智能体</h2>
+<div class="faq"><h3>AI 功能缺失或无法使用。</h3><p>需要支持 Apple 智能的设备，并在“设置”&rsaquo;“Apple 智能”中开启。在其他设备上，基于规则的说明仍可使用。所有 AI 都在设备上运行。</p></div>
+<div class="faq"><h3>App 会自动运行 AI 写出的命令吗？</h3><p>不会。建议只会填入输入行，是否运行由您决定。<code>rm -rf</code>、<code>dd</code>、<code>mkfs</code>、<code>chmod -R 777</code> 等命令，或在生产环境重启，都会在发送前暂停。</p></div>
+<div class="faq"><h3>如何批准 Claude Code / Codex 的请求？</h3><p>当您 SSH 会话中的智能体请求权限时，Hushterm 会在终端中检测到该提示，并在 App 中显示“批准”和“拒绝”按钮。iOS 不会让 SSH 连接在后台长时间保持，因此这在 App 打开期间可用；使用 Pro 时，离开 App 后的短时间内可能会出现本地通知。如果什么都没看到，请在“设置”&rsaquo;“通知”中开启通知。</p></div>
+<h2>备份与数据</h2>
+<div class="faq"><h3>如何把主机迁移到另一台设备？</h3><p>在“设置”&rsaquo; iCloud 中开启备份，登录同一个 Apple 账户的设备上就会恢复。只有开启“同时将密码保存在 iCloud 钥匙串中”时，密码才会一起迁移；私钥绝不会离开设备，因此请在新设备上重新导入。</p></div>
+<div class="faq"><h3>我的数据在哪里？</h3><p>只在您的设备和您自己的 iCloud 中。详情请参阅<a href="../../privacy/zh/">隐私政策</a>。</p></div>
+<div class="faq"><h3>我发现了错误，或有好点子。</h3><p>请发送邮件到 <a href="mailto:contact@luraai.io">contact@luraai.io</a>，并附上复现步骤。我们会阅读每一封来信。</p></div>
+</div>
+<footer><p>&copy; 2026 LuraAI. 保留所有权利。</p></footer>
+</body>
+</html>

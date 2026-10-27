@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私政策 — Hushterm | LuraAI</title>
+<meta name="description" content="Hushterm 隐私政策。无需账户，不向我们的服务器发送任何内容，AI 在设备上运行。">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../support/zh/">支持</a>
+<a href="../en/" hreflang="en">English</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>隐私政策</h1>
+<p class="date">生效日期：2026 年 10 月 17 日 · <a href="../en/">English</a> · <a href="../ko/">한국어</a></p>
+<div class="callout"><p>Hushterm 没有账户，也不会向 LuraAI 的服务器发送任何内容。您的命令和终端输出只会在您的设备与您选择的服务器之间传输，所有 AI 功能都在设备上运行。没有分析、广告或跟踪 SDK。</p></div>
+<h2>1. 我们收集什么</h2>
+<p>LuraAI（“我们”）不会通过 Hushterm（“本 App”）收集<strong>任何个人信息</strong>。</p>
+<ul>
+<li>没有注册，也没有登录。</li>
+<li>我们从不索取或收集姓名、电子邮件、电话号码或位置信息。</li>
+<li>我们不使用分析、跟踪或广告框架，也不内置任何第三方 SDK。</li>
+<li>本 App 不包含任何向我们发送数据的联网代码。</li>
+</ul>
+<h2>2. 存储在您设备上的内容</h2>
+<p>以下内容<strong>保存在您的设备上</strong>，是 App 正常运行所必需的：</p>
+<ul>
+<li>主机信息（名称、地址、端口、用户名、标签）、文件夹、端口转发、代码片段和最近使用的命令</li>
+<li>SSH 密码和私钥，存放在 iOS 钥匙串中。Secure Enclave 密钥无法离开设备，私钥也绝不会离开设备。</li>
+<li>已连接过的服务器的主机密钥指纹（首次使用时确认）</li>
+<li>服务器检查报告（每个主机保留最近几份）、AI 智能体请求和您所做决定的历史记录、您自己的服务器检查，以及练习课程进度</li>
+<li>App 设置（主题、按键栏、回滚缓冲区、App 锁定等）和您的 Pro 权益</li>
+</ul>
+<h2>3. 服务器连接与终端内容</h2>
+<p>SSH 和 SFTP 连接从您的设备<strong>直接</strong>连到您指定的服务器，不经过任何 LuraAI 中继。我们无法看到终端输出或您传输的文件。服务器上发生的事情由该服务器的运营者负责。</p>
+<p><strong>服务器检查。</strong>服务器检查只会通过您自己的 SSH 连接，在您选择的服务器上运行只读命令（来自固定的允许列表，或由您编写且通过同一允许列表检查的命令）。结果在设备上判定并保存在设备上，不会发送给我们或任何其他方。Linux 练习课程在 App 内的模拟服务器上运行，不使用网络。</p>
+<h2>4. AI 功能与语音输入</h2>
+<p>命令建议、错误分析、长输出摘要和连接诊断，均借助 Apple 智能的设备端模型（Foundation Models）在<strong>设备上</strong>运行，不使用网络。语音输入仅使用设备端语音识别；音频绝不会发送到服务器。危险命令警告由设备上的规则引擎判定，而不是由模型判定。</p>
+<p><strong>不使用第三方 AI 服务。</strong>Hushterm 不使用、不调用任何第三方 AI 服务（不使用 OpenAI、Anthropic、Google 或类似服务），也不与其共享数据，并且没有自己的 AI 服务器。这些功能所读取的文字——您输入的命令、最近的终端输出和失败命令的错误信息——只会交给您 iPhone 或 iPad 上 Apple 的设备端模型，驻留在内存中，不由我们存储，也绝不会离开设备。由于不会为 AI 向任何第三方发送个人数据，因此无需征得同意，也没有可共享的内容。如果将来有所改变，App 会先显示将发送哪些数据、发给谁，并在发送任何内容之前征求您的许可。</p>
+<h2>5. iCloud 备份——您的存储空间，而非我们的</h2>
+<p>如果您开启 iCloud 备份，主机信息、端口转发、代码片段和文件夹会通过 Apple 的 iCloud 键值存储保存在您自己的 Apple 账户中。<strong>我们无法访问这些内容。</strong>只有在您开启“同时将密码保存在 iCloud 钥匙串中”（默认关闭）时，SSH 密码才会通过 iCloud 钥匙串同步；私钥绝不会同步。您可以随时在“设置”&rsaquo; iCloud 中将其关闭。</p>
+<h2>6. AI 智能体批准、小组件与 Apple Watch</h2>
+<p>当在<em>您自己的 SSH 会话中</em>运行的 AI 编程智能体（例如 Claude Code 或 Codex）请求权限时，Hushterm 会在设备上检测终端文字中的提示，并在 App 中显示“批准”和“拒绝”按钮。Hushterm 本身绝不会联系这些智能体或其提供方。使用 Pro 时，离开 App 后的短时间内，设备上可能会出现本地通知。不使用任何推送服务器。您的主机列表和批准请求仅在 iPhone 与 Apple Watch 之间传递，不经过任何服务器。</p>
+<h2>7. 设备权限</h2>
+<p>拒绝某项权限只会停用需要它的功能。</p>
+<table>
+<tr><th>权限</th><th>用途</th></tr>
+<tr><td><strong>Face ID</strong></td><td>App 锁定和 Secure Enclave 密钥的使用。生物识别数据由 Apple 处理；App 绝不会收到这些数据。</td></tr>
+<tr><td><strong>麦克风和语音识别</strong></td><td>仅在您口述命令时使用；在设备上处理。</td></tr>
+<tr><td><strong>本地网络</strong></td><td>通过 SSH 访问您网络中的服务器时需要。</td></tr>
+<tr><td><strong>通知</strong></td><td>智能体批准请求和连接状态，在设备上安排。</td></tr>
+</table>
+<h2>8. 剪贴板</h2>
+<p>粘贴保护会在您粘贴的那一刻，在设备上修正智能引号和破折号，并在粘贴多行内容前询问。它不会存储或传输剪贴板内容。</p>
+<h2>9. App 内购买</h2>
+<p>月度和年度订阅以及永久购买均通过 Apple 的 StoreKit 销售。付款和收据验证<strong>完全由 Apple 处理</strong>；我们绝不会收到付款信息或 Apple 账户信息。可在 Apple 账户设置中管理或取消订阅。</p>
+<h2>10. 共享与出售</h2>
+<p>我们不收集任何个人信息，因此没有可与任何人共享或向其出售的内容。本 App 不使用 Cookie、广告标识符 (IDFA) 或跨 App 跟踪。</p>
+<h2>11. 加密</h2>
+<p>本 App 仅使用标准的 SSH 加密。</p>
+<h2>12. 儿童</h2>
+<p>我们不收集任何人的个人信息，包括儿童。</p>
+<h2>13. 删除您的数据</h2>
+<p>删除本 App 会从设备上移除主机、设置和钥匙串项目。已备份到 iCloud 的数据，可在“设置”&rsaquo; [您的姓名] &rsaquo; iCloud &rsaquo; 管理存储空间中删除。</p>
+<h2>14. 本政策的变更</h2>
+<p>如果本政策有变更，上方的生效日期也会随之更新，重大变更会在 App 更新说明中公布。</p>
+<h2>15. 联系我们</h2>
+<p>关于隐私的问题：<a href="mailto:contact@luraai.io">contact@luraai.io</a></p>
+</div>
+<footer><p>&copy; 2026 LuraAI. 保留所有权利。</p></footer>
+</body>
+</html>

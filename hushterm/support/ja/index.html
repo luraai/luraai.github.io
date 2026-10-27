@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サポート — Hushterm | LuraAI</title>
+<meta name="description" content="Hushtermのサポート。使い始め方、サブスクリプション、接続のトラブル、AIとエージェント、バックアップ、お問い合わせ方法。">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../privacy/ja/">プライバシー</a>
+<a href="../en/" hreflang="en">English</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>サポート</h1>
+<p class="lead">Hushtermについてのご質問や、お困りのことはありませんか？お気軽にお問い合わせください。</p>
+<div class="contact"><p class="addr"><a href="mailto:contact@luraai.io">contact@luraai.io</a></p><p>できるだけ早くご返信します。お使いのデバイスのモデル、iOSのバージョン、アプリのバージョンをお知らせください。パスワードや秘密鍵は絶対に送らないでください。</p></div>
+<h2>使い始めるには</h2>
+<div class="faq"><h3>サーバーなしで試せますか？</h3><p>ホストタブを開き、「サーバーなしで試す」をタップします。アプリ内に仮想のサーバーが開くので、ネットワークは不要で、<code>rm -rf</code> に対して危険コマンド警告がどう働くかを安全に確認できます。</p></div>
+<div class="faq"><h3>実際のサーバーはどう追加しますか？</h3><p>ホスト &rsaquo; + に進み、アドレス、ポート、ユーザー名、ログイン方法（パスワードまたは鍵）を入力します。初回接続時にホストキーのフィンガープリントが表示されるので、信頼する前にサーバー側の値と照合してください。</p></div>
+<div class="faq"><h3>SSH鍵はどう作りますか？</h3><p>SSH鍵の画面で、ed25519とECDSAの鍵を生成したり、OpenSSHやPEMの鍵を読み込んだりできます（Pro）。Secure Enclave鍵はFace IDで保護され、デバイスの外には出ません。公開鍵をサーバーの <code>~/.ssh/authorized_keys</code> に追加してください。</p></div>
+<h2>サブスクリプションと購入</h2>
+<div class="faq"><h3>無料とProの違いは何ですか？</h3><p>無料：SSH、SFTP、危険コマンド警告（ホスト2件、1日の新規接続3回、2分割まで）。Pro：ホストと接続の無制限、オンデバイスAI、4分割、tmux、仮想Linuxサーバー、SFTPのフォルダ作成、鍵の作成、エージェントの承認、テーマ。Proは月額または年額のサブスクリプション、あるいは1回の購入で使える永久版です。価格は地域によって異なります。</p></div>
+<div class="faq"><h3>キャンセルや返金はどうすればよいですか？</h3><p>設定 &rsaquo; [ご自身の名前] &rsaquo; サブスクリプション からキャンセルできます。お支払い済みの期間が終わるまで、Proを利用できます。返金はAppleが対応します：<a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a></p></div>
+<div class="faq"><h3>新しいデバイスで購入を復元するには？</h3><p>同じApple アカウントでサインインした状態で、Proの画面（設定 &rsaquo; Hushterm Pro）にある「購入を復元」をタップします。</p></div>
+<h2>接続のトラブル</h2>
+<div class="faq"><h3>「Permission denied」と表示されます。</h3><p>ユーザー名、パスワードまたは鍵を確認し、サーバーがその方式（<code>PasswordAuthentication</code>、<code>PubkeyAuthentication</code>）を許可しているか確認してください。アプリの接続診断が、考えられる原因を示します。</p></div>
+<div class="faq"><h3>ホストキーが変わったため、接続がブロックされます。</h3><p>これは意図した動作です。サーバーが再インストールされたか、誰かが通信を傍受している可能性があります。ご自身でサーバーを変更した場合は、新しいフィンガープリントを確認し、接続診断で「保存済みのホストキーを削除」をタップして、もう一度接続してください。</p></div>
+<div class="faq"><h3>接続がタイムアウトする、または頻繁に切れます。</h3><p>アドレス、ポート、ファイアウォールを確認してください。同じネットワーク内のサーバーには、ローカルネットワークの権限が必要です（設定 &rsaquo; Hushterm）。ホストで「常にtmuxで接続」をオンにしておくと、切断後もセッションが継続します（Pro）。</p></div>
+<div class="faq"><h3>バックグラウンドで接続が切れます。</h3><p>iOSは、アプリがバックグラウンドにある間に接続を維持できる時間を制限しています。tmuxを使うと、中断したところから再開できます。</p></div>
+<h2>AIとエージェント</h2>
+<div class="faq"><h3>AI機能が表示されない、または動作しません。</h3><p>Apple Intelligenceに対応したデバイスで、設定 &rsaquo; Apple IntelligenceとSiriからオンにする必要があります。それ以外のデバイスでも、ルールベースの説明は引き続き動作します。AIはすべてデバイス内で動作します。</p></div>
+<div class="faq"><h3>AIが作ったコマンドは自動で実行されますか？</h3><p>いいえ。提案は入力欄に入るだけで、実行するかどうかはご自身で決めます。<code>rm -rf</code>、<code>dd</code>、<code>mkfs</code>、<code>chmod -R 777</code> や本番サーバーの再起動などのコマンドは、送信前に一時停止します。</p></div>
+<div class="faq"><h3>Claude Code / Codexのリクエストはどう承認しますか？</h3><p>SSHセッション内のエージェントが許可を求めると、Hushtermがターミナル上でそのプロンプトを検出し、アプリ内に「承認」/「拒否」ボタンを表示します。iOSはバックグラウンドでSSH接続を長く維持しないため、この機能はアプリを開いている間に動作します。Proでは、アプリを離れてからしばらくの間、ローカル通知が表示されることがあります。何も表示されない場合は、設定 &rsaquo; 通知 で通知をオンにしてください。</p></div>
+<h2>バックアップとデータ</h2>
+<div class="faq"><h3>ホストを別のデバイスに移すには？</h3><p>設定 &rsaquo; iCloudでバックアップをオンにすると、同じApple アカウントでサインインしたデバイスで復元されます。パスワードは「パスワードもiCloudキーチェーンに保存」がオンの場合のみ引き継がれます。秘密鍵はデバイスの外に出ないため、新しいデバイスで読み込み直してください。</p></div>
+<div class="faq"><h3>データはどこにありますか？</h3><p>お使いのデバイスと、ご自身のiCloudにのみあります。詳しくは<a href="../../privacy/ja/">プライバシーポリシー</a>をご覧ください。</p></div>
+<div class="faq"><h3>不具合を見つけた、またはアイデアがあります。</h3><p>再現手順を添えて <a href="mailto:contact@luraai.io">contact@luraai.io</a> までメールしてください。すべて目を通します。</p></div>
+</div>
+<footer><p>&copy; 2026 LuraAI. All rights reserved.</p></footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — Hushterm | LuraAI</title>
+<meta name="description" content="Politique de confidentialité de Hushterm. Aucun compte, rien n’est envoyé à nos serveurs, l’IA tourne sur l’appareil.">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../support/fr/">Assistance</a>
+<a href="../en/" hreflang="en">English</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>Politique de confidentialité</h1>
+<p class="date">En vigueur le 17 octobre 2026 · <a href="../en/" hreflang="en">English</a> · <a href="../ko/" hreflang="ko">한국어</a></p>
+<div class="callout"><p>Hushterm n’a pas de compte et n’envoie rien aux serveurs de LuraAI. Vos commandes et la sortie de votre terminal circulent uniquement entre votre appareil et le serveur que vous choisissez, et toutes les fonctions d’IA tournent sur l’appareil. Il n’y a aucun SDK d’analyse, de publicité ou de suivi.</p></div>
+<h2>1. Ce que nous collectons</h2>
+<p>LuraAI (« nous ») ne collecte <strong>aucune donnée personnelle</strong> via Hushterm (l’« app »).</p>
+<ul>
+<li>Il n’y a ni inscription ni connexion à un compte.</li>
+<li>Nous ne demandons ni ne collectons jamais de nom, d’adresse e-mail, de numéro de téléphone ni de position.</li>
+<li>Nous n’utilisons aucun framework d’analyse, de suivi ou de publicité et n’intégrons aucun SDK tiers.</li>
+<li>L’app ne contient aucun code réseau qui nous envoie des données.</li>
+</ul>
+<h2>2. Ce qui est stocké sur votre appareil</h2>
+<p>Les éléments suivants restent <strong>sur votre appareil</strong> et sont nécessaires au fonctionnement de l’app :</p>
+<ul>
+<li>Informations des hôtes (nom, adresse, port, nom d’utilisateur, tag), dossiers, redirections de port, snippets et commandes récentes</li>
+<li>Mots de passe SSH et clés privées, conservés dans le trousseau iOS. Les clés Secure Enclave ne peuvent pas quitter l’appareil, et les clés privées ne le quittent jamais.</li>
+<li>Empreintes de clé d’hôte des serveurs auxquels vous vous êtes connecté (confirmées à la première utilisation)</li>
+<li>Rapports de contrôle du serveur (les derniers par hôte), historique des demandes des agents IA et de vos décisions, vos propres contrôles du serveur et votre progression dans le parcours d’entraînement</li>
+<li>Réglages de l’app (thèmes, barre de touches, historique de défilement, verrouillage de l’app, etc.) et votre accès Pro</li>
+</ul>
+<h2>3. Connexions au serveur et contenu du terminal</h2>
+<p>Les connexions SSH et SFTP vont <strong>directement</strong> de votre appareil au serveur que vous indiquez ; aucun relais LuraAI n’intervient. Nous ne pouvons pas voir la sortie du terminal ni les fichiers que vous transférez. Ce qui se passe sur le serveur relève de l’exploitant de ce serveur.</p>
+<p><strong>Contrôles du serveur.</strong> Un contrôle du serveur n’exécute que des commandes en lecture seule (issues d’une liste d’autorisation fixe, ou rédigées par vous et validées par cette même liste) sur le serveur que vous avez choisi, via votre propre connexion SSH. Les résultats sont évalués sur l’appareil et conservés sur l’appareil ; rien n’est envoyé à nous ni à aucun autre tiers. Le parcours d’entraînement Linux s’exécute sur un serveur simulé dans l’app et n’utilise pas le réseau.</p>
+<h2>4. Fonctions d’IA et saisie vocale</h2>
+<p>Les suggestions de commandes, l’analyse d’erreurs, les résumés de longues sorties et le diagnostic de connexion s’exécutent <strong>sur l’appareil</strong> avec le modèle sur l’appareil d’Apple Intelligence (Foundation Models) et n’utilisent pas le réseau. La saisie vocale utilise uniquement la reconnaissance vocale sur l’appareil ; l’audio n’est jamais envoyé à un serveur. L’alerte de commandes risquées est décidée par un moteur de règles sur l’appareil, et non par un modèle.</p>
+<p><strong>Aucun service d’IA tiers.</strong> Hushterm n’utilise ni n’appelle aucun service d’IA tiers (ni OpenAI, ni Anthropic, ni Google, ni équivalent), ne partage aucune donnée avec eux et n’a pas de serveur d’IA propre. Le texte que ces fonctions lisent &mdash; votre commande saisie, la sortie récente du terminal et le message d’erreur de la commande ayant échoué &mdash; est transmis uniquement au modèle sur l’appareil d’Apple, sur votre iPhone ou iPad, reste en mémoire, n’est pas conservé par nous et ne quitte jamais l’appareil. Comme aucune donnée personnelle n’est envoyée à un tiers pour l’IA, il n’y a rien à consentir ni à partager. Si cela venait à changer, l’app indiquerait d’abord quelles données seraient envoyées et à qui, et demanderait votre autorisation avant tout envoi.</p>
+<h2>5. Sauvegarde iCloud — votre stockage, pas le nôtre</h2>
+<p>Si vous activez la sauvegarde iCloud, les informations des hôtes, redirections de port, snippets et dossiers sont stockés dans votre propre compte Apple via le stockage clé-valeur d’iCloud d’Apple. <strong>Nous n’y avons pas accès.</strong> Les mots de passe SSH ne se synchronisent via le Trousseau iCloud que si vous activez « Conserver aussi les mots de passe dans le Trousseau iCloud » (désactivé par défaut) ; les clés privées ne sont jamais synchronisées. Vous pouvez désactiver la sauvegarde à tout moment dans Réglages &rsaquo; iCloud.</p>
+<h2>6. Approbations des agents IA, widgets et Apple Watch</h2>
+<p>Lorsqu’un agent de codage IA tel que Claude Code ou Codex qui s’exécute <em>dans votre propre session SSH</em> demande une autorisation, Hushterm détecte l’invite dans le texte du terminal sur l’appareil et affiche des boutons Approuver / Refuser dans l’app. Hushterm lui-même ne contacte jamais ces agents ni leurs fournisseurs. Avec Pro, une notification locale peut apparaître sur l’appareil pendant une courte durée après votre départ de l’app. Aucun serveur push n’est utilisé. Votre liste d’hôtes et les demandes d’approbation circulent uniquement entre l’iPhone et l’Apple Watch et ne passent par aucun serveur.</p>
+<h2>7. Autorisations de l’appareil</h2>
+<p>Refuser une autorisation désactive uniquement la fonction qui en a besoin.</p>
+<table>
+<tr><th>Autorisation</th><th>Pourquoi</th></tr>
+<tr><td><strong>Face ID</strong></td><td>Verrouillage de l’app et utilisation des clés Secure Enclave. Les données biométriques sont gérées par Apple ; l’app ne les reçoit jamais.</td></tr>
+<tr><td><strong>Micro et reconnaissance vocale</strong></td><td>Uniquement lorsque vous dictez une commande ; traité sur l’appareil.</td></tr>
+<tr><td><strong>Réseau local</strong></td><td>Nécessaire pour joindre les serveurs de votre réseau via SSH.</td></tr>
+<tr><td><strong>Notifications</strong></td><td>Demandes d’approbation des agents et état de la connexion, planifiées sur l’appareil.</td></tr>
+</table>
+<h2>8. Presse-papiers</h2>
+<p>La protection du collage corrige les guillemets et tirets typographiques et demande confirmation avant un collage multiligne, au moment où vous collez, sur l’appareil. Elle ne stocke ni ne transmet le contenu du presse-papiers.</p>
+<h2>9. Achats intégrés</h2>
+<p>Les abonnements mensuel et annuel et l’achat à vie sont vendus via StoreKit d’Apple. Le paiement et la validation des reçus sont gérés <strong>entièrement par Apple</strong> ; nous ne recevons jamais de données de paiement ni d’informations sur le compte Apple. Gérez ou annulez vos abonnements dans les réglages de votre compte Apple.</p>
+<h2>10. Partage et vente</h2>
+<p>Nous ne collectons aucune donnée personnelle ; il n’y a donc rien à partager ni à vendre à qui que ce soit. L’app n’utilise ni cookies, ni identifiants publicitaires (IDFA), ni suivi inter-apps.</p>
+<h2>11. Chiffrement</h2>
+<p>L’app utilise uniquement le chiffrement SSH standard.</p>
+<h2>12. Enfants</h2>
+<p>Nous ne collectons de données personnelles auprès de personne, y compris des enfants.</p>
+<h2>13. Suppression de vos données</h2>
+<p>La suppression de l’app efface de l’appareil les hôtes, les réglages et les éléments du trousseau. Les données sauvegardées dans iCloud peuvent être supprimées dans Réglages &rsaquo; [votre nom] &rsaquo; iCloud &rsaquo; Gérer le stockage.</p>
+<h2>14. Modifications de cette politique</h2>
+<p>Si cette politique change, la date d’entrée en vigueur ci-dessus change avec elle, et les changements importants sont annoncés dans les notes de mise à jour de l’app.</p>
+<h2>15. Contact</h2>
+<p>Questions sur la confidentialité : <a href="mailto:contact@luraai.io">contact@luraai.io</a></p>
+</div>
+<footer><p>&copy; 2026 LuraAI. Tous droits réservés.</p></footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supporto — Hushterm | LuraAI</title>
+<meta name="description" content="Supporto di Hushterm. Primi passi, abbonamenti, problemi di connessione, AI e agenti, backup e come contattarci.">
+<link rel="icon" type="image/png" href="../../icon.png">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<nav>
+<a class="brand" href="../../../"><img src="../../icon.png" alt="">Hushterm</a>
+<div class="nav-links">
+<a href="../../privacy/it/">Privacy</a>
+<a href="../en/" hreflang="en">English</a>
+<a href="../ko/" hreflang="ko">한국어</a>
+</div>
+</nav>
+<div class="container">
+<h1>Supporto</h1>
+<p class="lead">Domande o problemi con Hushterm? Siamo felici di aiutarti.</p>
+<div class="contact"><p class="addr"><a href="mailto:contact@luraai.io">contact@luraai.io</a></p><p>Ti risponderemo il prima possibile. Indica il modello del dispositivo, la versione di iOS e la versione dell’app. Non inviare mai password o chiavi private.</p></div>
+<h2>Per iniziare</h2>
+<div class="faq"><h3>Posso provarlo senza un server?</h3><p>Apri la scheda Host e tocca &ldquo;Prova senza un server&rdquo;. Si apre un server simulato dentro l’app, quindi non serve la rete e puoi vedere in sicurezza cosa fa l’avviso sui comandi rischiosi con <code>rm -rf</code>.</p></div>
+<div class="faq"><h3>Come aggiungo un server reale?</h3><p>Vai in Host &rsaquo; + e inserisci indirizzo, porta, nome utente e modalità di accesso (password o chiave). Alla prima connessione l’app mostra l’impronta della chiave host; confrontala con quella del server prima di considerarla attendibile.</p></div>
+<div class="faq"><h3>Come creo una chiave SSH?</h3><p>Nella schermata Chiavi puoi generare chiavi ed25519 ed ECDSA oppure importare chiavi OpenSSH e PEM (Pro). Le chiavi Secure Enclave sono protette da Face ID e non lasciano mai il dispositivo. Aggiungi la chiave pubblica a <code>~/.ssh/authorized_keys</code> sul server.</p></div>
+<h2>Abbonamenti e acquisti</h2>
+<div class="faq"><h3>Cosa è gratis e cosa è Pro?</h3><p>Gratis: SSH, SFTP e l’avviso sui comandi rischiosi (2 host, 3 nuove connessioni al giorno, schermo diviso a 2 riquadri). Pro: host e connessioni illimitati, AI sul dispositivo, schermo diviso a 4 riquadri, tmux, server Linux virtuali, cartelle SFTP, creazione di chiavi, approvazioni degli agenti e temi. Pro è un abbonamento mensile o annuale, oppure un acquisto una tantum a vita; i prezzi variano in base all’area geografica.</p></div>
+<div class="faq"><h3>Come annullo o ottengo un rimborso?</h3><p>Annulla in Impostazioni &rsaquo; [il tuo nome] &rsaquo; Abbonamenti. Mantieni Pro fino alla fine del periodo pagato. I rimborsi sono gestiti da Apple: <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a></p></div>
+<div class="faq"><h3>Come ripristino gli acquisti su un nuovo dispositivo?</h3><p>Tocca &ldquo;Ripristina acquisti&rdquo; nella schermata Pro (Impostazioni &rsaquo; Hushterm Pro), con lo stesso account Apple.</p></div>
+<h2>Problemi di connessione</h2>
+<div class="faq"><h3>Ricevo &ldquo;Permission denied&rdquo;.</h3><p>Controlla nome utente e password o chiave, e che il server consenta quel metodo (<code>PasswordAuthentication</code>, <code>PubkeyAuthentication</code>). La diagnosi della connessione dell’app indica la causa più probabile.</p></div>
+<div class="faq"><h3>La connessione è bloccata perché la chiave host è cambiata.</h3><p>È voluto: il server potrebbe essere stato reinstallato, oppure qualcuno potrebbe intercettare la connessione. Se hai modificato tu il server, verifica la nuova impronta, tocca &ldquo;Dimentica la chiave host salvata&rdquo; nella diagnosi della connessione e connettiti di nuovo.</p></div>
+<div class="faq"><h3>Le connessioni vanno in timeout o cadono di continuo.</h3><p>Controlla indirizzo, porta e firewall. I server sulla tua rete richiedono l’autorizzazione Rete locale (Impostazioni &rsaquo; Hushterm). Con tmux sempre collegato attivo per un host, la sessione prosegue dopo un’interruzione (Pro).</p></div>
+<div class="faq"><h3>La connessione cade in background.</h3><p>iOS limita per quanto tempo un’app può mantenere una connessione in background. tmux ti permette di riprendere da dove avevi lasciato.</p></div>
+<h2>AI e agenti</h2>
+<div class="faq"><h3>Le funzioni AI mancano o non funzionano.</h3><p>Richiedono un dispositivo che supporti Apple Intelligence, attivato in Impostazioni &rsaquo; Apple Intelligence. Sugli altri dispositivi le spiegazioni basate su regole continuano a funzionare. Tutta l’AI gira sul dispositivo.</p></div>
+<div class="faq"><h3>L’app esegue automaticamente i comandi scritti dall’AI?</h3><p>No. Un suggerimento riempie solo la riga di input e sei tu a decidere se eseguirlo. Comandi come <code>rm -rf</code>, <code>dd</code>, <code>mkfs</code>, <code>chmod -R 777</code> o un riavvio in produzione si fermano prima dell’invio.</p></div>
+<div class="faq"><h3>Come approvo le richieste di Claude Code / Codex?</h3><p>Quando un agente nella tua sessione SSH chiede un permesso, Hushterm rileva la richiesta nel terminale e mostra nell’app i pulsanti Approva / Rifiuta. iOS non mantiene a lungo attiva una connessione SSH in background, quindi funziona con l’app aperta; con Pro una notifica locale può comparire per un breve periodo dopo che esci dall’app. Se non vedi nulla, attiva le notifiche in Impostazioni &rsaquo; Notifiche.</p></div>
+<h2>Backup e dati</h2>
+<div class="faq"><h3>Come sposto i miei host su un altro dispositivo?</h3><p>Attiva il backup in Impostazioni &rsaquo; iCloud e verranno ripristinati sui dispositivi con lo stesso account Apple. Le password vengono incluse solo se è attivo &ldquo;Conserva le password anche nel Portachiavi di iCloud&rdquo;; le chiavi private non lasciano mai un dispositivo, quindi importale di nuovo sul nuovo.</p></div>
+<div class="faq"><h3>Dove sono i miei dati?</h3><p>Solo sul tuo dispositivo e nel tuo iCloud. Per i dettagli consulta l’<a href="../../privacy/it/">Informativa sulla privacy</a>.</p></div>
+<div class="faq"><h3>Ho trovato un bug o ho un’idea.</h3><p>Scrivi a <a href="mailto:contact@luraai.io">contact@luraai.io</a> indicando i passaggi per riprodurlo. Leggiamo tutto.</p></div>
+</div>
+<footer><p>&copy; 2026 LuraAI. Tutti i diritti riservati.</p></footer>
+</body>
+</html>
