@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Perimeter Privacy Policy</title>
+<style>:root{--paper:#F5F3EC;--ink:#13171A;--sub:#4B5258;--rule:#D9D5C8;--chip:#ECE9DF}body{font:16px/1.75 -apple-system,"Apple SD Gothic Neo","Helvetica Neue",sans-serif;max-width:720px;margin:0 auto;padding:40px 20px 64px;color:var(--ink);background:var(--paper)}h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 6px;padding-top:16px;border-top:1px solid var(--rule)}h3{font-size:16px;margin:20px 0 2px}p,li{margin:6px 0}ul{padding-left:20px}.meta{color:var(--sub);font-size:14px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--chip)}a{color:inherit}code{font-family:ui-monospace,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:3px}@media(prefers-color-scheme:dark){:root{--paper:#121416;--ink:#ECEAE3;--sub:#A7ACB1;--rule:#2C3136;--chip:#1E2226}}</style></head><body>
+<h1>Perimeter Privacy Policy</h1>
+<p class="meta">Effective: October 27, 2026 · Operated by LuraAI · Contact: contact@luraai.io</p>
+<p><b>In one line.</b> Perimeter (displayed as 상담노트 in Korea) has no developer server. Meeting content is processed and stored only on your iPhone, iPad, Mac and Apple Watch; the developer cannot collect or read it. There are no analytics SDKs, advertising SDKs or accounts.</p>
+
+<h2>1. What the app handles and where</h2>
+<table>
+<tr><th>Information</th><th>Processed</th><th>Stored</th></tr>
+<tr><td>Briefing voice</td><td>Apple's on-device speech recognition (SpeechAnalyzer on iOS, iPadOS and macOS 26)</td><td>Kept as a temporary file only and deleted when processing ends; the deletion is logged in the ledger</td></tr>
+<tr><td>Briefing text, need cards, message drafts</td><td>On device (Apple's on-device language model or rule-based dictionaries)</td><td>Encrypted with AES-GCM on the device</td></tr>
+<tr><td>Client names</td><td>On device</td><td>Saved only as a pseudonym such as "김○○"; the original name is not stored</td></tr>
+<tr><td>Seal and share records (evidence ledger)</td><td>On device</td><td>Hashes, categories and signatures only; meeting sentences are not put in the ledger</td></tr>
+<tr><td>Today's calendar events (optional)</td><td>On device, read-only</td><td>Names in titles are replaced with pseudonyms before saving</td></tr>
+</table>
+
+<h2>2. What we do not collect</h2>
+<p>The developer collects nothing: no names, contact details, location, device identifiers, usage data or crash logs. The app does not track you. Its App Store privacy label is "Data Not Collected".</p>
+
+<h2>3. Permissions</h2>
+<ul>
+<li><b>Microphone</b>: used only to transcribe the planner's own post-meeting briefing, including on Apple Watch and Mac.</li>
+<li><b>Speech recognition</b>: turns the briefing into text on the device. The operating system may download the Korean speech assets from Apple the first time; no voice or meeting content is sent when it does.</li>
+<li><b>Calendar (optional)</b>: reads today's events, read-only. You can add meetings by hand without it.</li>
+<li><b>Notifications (optional)</b>: schedules a local "two minutes before you forget" reminder after a meeting ends, and reminders for deadlines you promised in a briefing. A notification shows the pseudonym (for example 김○○) and the short task wording you spoke. It does not go through a server.</li>
+</ul>
+
+<h2>4. What leaves your device</h2>
+<p>Only after you stamp Articles 17, 19 and 22 and confirm "send via KakaoTalk" yourself, the ad-filtered message text is handed to the app you choose through the system share sheet. Right before that, the screen shows what leaves and what stays, and the byte count is recorded in the ledger only if the share actually completes. The app sends nothing else on its own. What happens after the hand-off follows the policy of the app you chose (for example KakaoTalk).</p>
+
+<h2>5. Apple Watch and Mac</h2>
+<p>The watch app only records the briefing. The file is transferred to your iPhone and removed from the watch once the transfer finishes. The Mac app uses the same workspace as the iPad app and runs only on that Mac; its records are kept inside the app sandbox on that Mac. Records are not synced between iPhone, iPad and Mac. Complications show numbers that contain no client information, such as seal counts, bytes sent out and the next meeting time.</p>
+
+<h2>6. On-device AI</h2>
+<p>Need extraction, finding promises (to-dos), speech-recognition term correction and drafting sentences for the follow-up message use Apple's on-device language model (where the device supports it) or a rule-based dictionary, and call no external AI service. The app does not download any AI model of its own. Sensitive details such as health history and phone numbers are masked before anything reaches the model. Every AI result is labelled as a device estimate or shows the draft's source (on-device AI or rules), and becomes confirmed only after you confirm it. Advertising-rule corrections are made by fixed rules, not by AI, and the app does not recommend products.</p>
+
+<h2>7. Retention and deletion</h2>
+<ul>
+<li>"Erase all records on this device" in Settings deletes meetings, needs, drafts and ledger records. It cannot be undone.</li>
+<li>Deleting the app removes the data inside it. The key used to sign the ledger is held in the Keychain and may remain on the device after the app is deleted. It contains no meeting content.</li>
+<li>If iCloud or device backup is on, app data can be included in Apple's backup. That is a setting between you and Apple; the developer has no access. Turn the app off in the device's backup settings if you do not want this (on a Mac, exclude it from Time Machine).</li>
+</ul>
+
+<h2>8. Children</h2>
+<p>Perimeter is a tool for insurance consultations and is not directed at children. Because the app collects no information from anyone, it collects none from children.</p>
+
+<h2>9. Not legal advice</h2>
+<p>Perimeter is a record-keeping aid. It gives no legal advice and recommends no insurance products. Compliance with Articles 17, 19 and 22 of Korea's Financial Consumer Protection Act is your own judgment and your company's standard. You are responsible for entering, storing and sharing client information with the app.</p>
+
+<h2>10. Changes</h2>
+<p>If this policy changes, the effective date above is updated. Any change to the no-server design is also stated in the app update notes.</p>
+
+<h2>11. Contact</h2>
+<p>contact@luraai.io</p>
+</body></html>
