@@ -1,0 +1,19 @@
+<!doctype html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HajaNote 隐私政策</title>
+<style>body{font:16px/1.7 -apple-system,"PingFang SC","Apple SD Gothic Neo",sans-serif;max-width:720px;margin:40px auto;padding:0 20px;color:#121417;background:#FBFAF6}h1{font-size:26px}h2{font-size:18px;margin-top:28px}code{font-family:ui-monospace,Menlo,monospace;background:#E8E4D9;padding:1px 5px;border-radius:3px}</style></head><body>
+<h1>HajaNote 隐私政策</h1><p>生效日期：2026年10月26日 · LuraAI（contact@luraai.io）</p>
+<h2>1. 我们收集什么</h2><p>HajaNote 没有开发者服务器。照片、听写文字、备忘、房号、签名（姓名和手写图形）、小区名称、您的公司标志，以及您用 Apple Pencil 或手指在照片上绘制的标记，都<b>保存在您的设备上</b>，我们无法查看或收集。语音不会被保留，只保留转写后的文字。</p>
+<h2>2. 哪些内容会离开您的设备</h2><ul>
+<li><b>时间戳请求</b>：为了证明记录形成的时间，只有一个 <code>SHA-256 哈希</code>会发送给 RFC 3161 时间戳机构（FreeTSA、Sectigo）。一套房屋的最新哈希涵盖此前的所有条目，因此每套房屋只发送一次请求，而不是每张照片一次。照片、姓名、位置和房号都不会被发送，哈希也无法还原成原件。与任何互联网请求一样，该机构能够看到您设备的 IP 地址和请求时间。</li>
+<li><b>AI 模型下载</b>：如果您选择下载，开源模型文件会从 Hugging Face 及其文件分发服务器下载。您的任何记录都不会被发送；这些服务器能看到您的 IP 地址和请求时间。</li>
+<li><b>系统语音模型</b>：您第一次使用 Apple 听写时，iOS 可能会从 Apple 下载韩语语音模型。这由操作系统完成，HajaNote 不会向任何地方发送音频。</li>
+<li><b>购买</b>：自检套件和缺陷跟进通行证的付款由 Apple（App Store）处理。HajaNote 不会收到任何付款信息；您设备上的 StoreKit 会向 Apple 核对您的购买项目。使用条款为 Apple 标准最终用户许可协议（EULA）。</li>
+<li><b>Mac 验证器</b>：Mac 版 HajaNote 核验您收到的数据包的时间戳令牌时，签名在您的 Mac 上计算，令牌不会发送到任何地方。</li>
+<li><b>Apple Watch</b>：遥控快门、语音备忘和封存请求只在您的 iPhone 与 Apple Watch 之间传输。</li>
+<li><b>您分享的文件</b>：PDF 报告、.hjn 数据包和备份只有在您通过分享面板发送时才会离开设备。PDF 和 .hjn 文件可能包含房号和签名人姓名；PDF 提供遮盖房号和签名人姓名的选项。.hjn 文件中的房号为明文，请只发送给指定的接收人。</li></ul>
+<h2>3. 设备端 AI</h2><p>听写、报告语句草稿、语音登记缺陷（建议空间、工种和类型），以及检查摘要和请求函草稿，都在您的设备上运行，使用 Apple Intelligence 或您下载的开源模型。缺陷搜索和照片质量提示（模糊、亮度、重复）无需模型，直接在设备上计算；不会保存索引或分析结果。照片和音频不会发送到任何 AI 服务。AI 的输出只有在您确认后才会记为备忘，摘要和函件草稿不属于记录，也不计入其哈希。从 Apple Watch 发来的语音备忘会以转写文字的形式暂存在 iPhone 上，直到您确认；您也可以不添加而直接舍弃。</p>
+<h2>4. 权限</h2><p>相机（缺陷照片）、麦克风/语音识别（语音备忘）和通知（可选的维修跟进提醒）。通知文字会显示空间和缺陷编号，绝不显示房号。您可以随时在“设置”中分别关闭这些权限。</p>
+<h2>5. 存储、备份和删除</h2><p>原始照片和房号在设备上使用 AES-GCM 加密；密钥保存在这台设备的钥匙串中。签名人姓名、小区名称和备忘保存在设备的受保护存储（iOS 数据保护）中。由于密钥不会离开设备，更换或丢失设备后，App 内的记录将无法打开。您可以在“设置”中生成<b>受密码保护的完整备份</b>；HajaNote 不保存密码，也无法找回密码。</p>
+<p>删除一套房屋会立即从设备上移除其记录、加密的照片文件和户型图（已封存的房屋在确认后也一样）；删除 App 会移除所有内容。您已经分享的 PDF、数据包和备份会留在您发送或保存的位置，HajaNote 无法删除它们。</p>
+<h2>6. 跟踪和广告</h2><p>HajaNote 不使用广告、数据分析或跟踪。</p>
+<h2>7. 您的权利</h2><p>我们不持有任何与您有关的个人数据，因此您可以在 App 内自行查看、更正和删除所有内容。如有其他问题，请通过下方方式联系我们。</p>
+<h2>8. 联系方式</h2><p>contact@luraai.io</p></body></html>
