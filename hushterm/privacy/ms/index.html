@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dasar Privasi — Hushterm | LuraAI</title>
-<meta name="description" content="Dasar privasi Hushterm. Tiada akaun, tiada apa dihantar ke pelayan kami, AI berjalan pada peranti.">
+<meta name="description" content="Dasar privasi Hushterm. Tiada akaun, tiada apa dihantar ke pelayan kami, AI berjalan pada peranti secara lalai.">
 <link rel="icon" type="image/png" href="../../icon.png">
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -19,8 +19,8 @@
 </nav>
 <div class="container">
 <h1>Dasar Privasi</h1>
-<p class="date">Berkuat kuasa: 17 Oktober 2026 · <a href="../en/">English</a> · <a href="../ko/">한국어</a></p>
-<div class="callout"><p>Hushterm tidak mempunyai akaun dan tidak menghantar apa-apa ke pelayan LuraAI. Arahan dan output terminal anda hanya bergerak antara peranti anda dengan pelayan yang anda pilih, dan setiap ciri AI berjalan pada peranti. Tiada analitik, pengiklanan atau SDK penjejakan.</p></div>
+<p class="date">Berkuat kuasa: 31 Oktober 2026 · <a href="../en/">English</a> · <a href="../ko/">한국어</a></p>
+<div class="callout"><p>Hushterm tidak mempunyai akaun dan tidak menghantar apa-apa ke pelayan LuraAI. Arahan dan output terminal anda hanya bergerak antara peranti anda dengan pelayan yang anda pilih, dan secara lalai AI berjalan pada peranti. Hanya jika anda menyambungkan penyedia AI anda sendiri, data dihantar dari peranti anda terus kepada penyedia itu. Tiada analitik, pengiklanan atau SDK penjejakan.</p></div>
 <h2>1. Apa yang kami kumpulkan</h2>
 <p>LuraAI (&ldquo;kami&rdquo;) <strong>tidak mengumpulkan maklumat peribadi</strong> melalui Hushterm (&ldquo;apl&rdquo;).</p>
 <ul>
@@ -37,17 +37,19 @@
 <li>Cap jari kunci host bagi pelayan yang pernah anda sambungi (disahkan pada penggunaan pertama)</li>
 <li>Laporan semakan pelayan (beberapa yang terakhir bagi setiap host), sejarah permintaan ejen AI dan keputusan anda, semakan pelayan anda sendiri, dan kemajuan kursus latihan</li>
 <li>Tetapan apl (tema, bar kekunci, penimbal tatal, kunci apl dan sebagainya) serta hak Pro anda</li>
+<li>Playbook, log operasi (sejarah dek operasi), hasil soalan armada dan hasil kanta log</li>
+<li>Tetapan penyedia AI (penyedia, alamat, model dan persetujuan anda bagi setiap penyedia dan alamat). Kunci API untuk penyedia AI anda disimpan hanya dalam Rantai Kunci peranti dan tidak pernah disegerakkan ke iCloud.</li>
 </ul>
 <h2>3. Sambungan pelayan dan kandungan terminal</h2>
 <p>Sambungan SSH dan SFTP pergi <strong>terus</strong> dari peranti anda ke pelayan yang anda nyatakan; tiada geganti LuraAI terlibat. Kami tidak dapat melihat output terminal atau fail yang anda pindahkan. Apa yang berlaku pada pelayan diselia oleh pengendali pelayan itu.</p>
-<p><strong>Semakan pelayan.</strong> Semakan pelayan hanya menjalankan arahan baca sahaja (daripada senarai benar yang tetap, atau arahan yang anda tulis dan lulus senarai benar yang sama) pada pelayan yang anda pilih, melalui sambungan SSH anda sendiri. Keputusan dinilai pada peranti dan disimpan pada peranti; tiada apa dihantar kepada kami atau mana-mana pihak lain. Kursus latihan Linux berjalan pada pelayan simulasi di dalam apl dan tidak menggunakan rangkaian.</p>
+<p><strong>Semakan pelayan.</strong> Semakan pelayan hanya menjalankan arahan baca sahaja (daripada senarai benar yang tetap, atau arahan yang anda tulis dan lulus senarai benar yang sama) pada pelayan yang anda pilih, melalui sambungan SSH anda sendiri. Keputusan dinilai pada peranti dan disimpan pada peranti; tiada apa dihantar kepada kami atau mana-mana pihak lain, kecuali ringkasan yang anda hantar kepada penyedia AI anda sendiri seperti yang diterangkan dalam bahagian 4. Kursus latihan Linux berjalan pada pelayan simulasi di dalam apl dan tidak menggunakan rangkaian.</p>
 <h2>4. Ciri AI dan input suara</h2>
-<p>Cadangan arahan, analisis ralat, ringkasan output panjang dan diagnosis sambungan berjalan <strong>pada peranti</strong> dengan model pada peranti Apple Intelligence (Foundation Models) dan tidak menggunakan rangkaian. Input suara hanya menggunakan pengecaman pertuturan pada peranti; audio tidak pernah dihantar ke pelayan. Amaran arahan berisiko diputuskan oleh enjin peraturan pada peranti, bukan oleh model.</p>
-<p><strong>Tiada perkhidmatan AI pihak ketiga.</strong> Hushterm tidak menggunakan, memanggil atau berkongsi data dengan mana-mana perkhidmatan AI pihak ketiga (tiada OpenAI, Anthropic, Google atau yang serupa), dan ia tidak mempunyai pelayan AI sendiri. Teks yang dibaca oleh ciri ini &mdash; arahan yang anda taip, output terminal terkini dan mesej ralat bagi arahan yang gagal &mdash; hanya diserahkan kepada model pada peranti Apple pada iPhone atau iPad anda, kekal dalam memori, tidak disimpan oleh kami dan tidak pernah meninggalkan peranti. Oleh sebab tiada data peribadi dihantar kepada mana-mana pihak ketiga untuk AI, tiada apa yang perlu dipersetujui atau dikongsi. Jika ini berubah, apl akan terlebih dahulu menunjukkan data apa yang akan dihantar dan kepada siapa, dan meminta kebenaran anda sebelum menghantar apa-apa.</p>
+<p>Secara lalai, cadangan arahan, analisis ralat, ringkasan output, diagnosis sambungan, penerangan kanta log, jawapan kepada soalan armada dan penerangan playbook dihasilkan <strong>pada peranti</strong> oleh model pada peranti Apple Intelligence; jika model itu tidak tersedia, apl memaparkan ayat yang ditulis oleh peraturan pada peranti. Model demo yang digunakan pada pelayan maya dalam apl berjalan mengikut senario tetap yang terbina dalam apl dan tidak menggunakan rangkaian. Penilaian arahan berisiko dan keputusan semakan dibuat oleh enjin peraturan pada peranti, bukan oleh model. Input suara hanya menggunakan pengecaman pertuturan pada peranti.</p>
+<p><strong>Penyedia AI yang anda sambungkan sendiri (pilihan, Pro).</strong> Hanya jika anda menyambungkan Anthropic (Claude), perkhidmatan yang serasi dengan OpenAI atau model pada pelayan anda sendiri dengan kunci API anda sendiri dalam Tetapan &rsaquo; Ejen terbina dalam, data berikut dihantar terus dari peranti anda kepada penyedia itu apabila anda menggunakan ejen terbina dalam atau siasatan AI, atau apabila apl menulis penerangan untuk soalan armada, kanta log atau playbook: matlamat atau soalan yang anda tulis; nama pelayan, sistem pengendalian dan sama ada ia pelayan produksi; output arahan baca sahaja yang dijalankan oleh apl dan arahan yang anda luluskan; serta ringkasan hasil semakan dan log. Sebelum menghantar, apl menyembunyikan nilai rahsia seperti kunci peribadi, token dan kata laluan secara automatik, tetapi tidak dapat mengenali semua rahsia. Penghantaran ini tidak melalui pelayan kami, dan kami tidak dapat melihat kandungannya. Cara penyedia mengendalikan data yang diterimanya tertakluk pada terma dan dasar privasi penyedia itu. Sebelum penggunaan pertama, apl memaparkan penyedia, alamat dan data yang akan dihantar serta meminta persetujuan anda (direkodkan bagi setiap penyedia dan alamat); anda boleh menarik balik persetujuan dan memadam kunci dalam Tetapan. Jika anda menyambungkan pelayan yang berjalan dalam rangkaian yang sama atau pada peranti ini, data tidak keluar ke internet. Jika anda tidak menyambungkan penyedia, tiada data dihantar kepada perkhidmatan AI pihak ketiga.</p>
 <h2>5. Sandaran iCloud — storan anda, bukan storan kami</h2>
 <p>Jika anda menghidupkan sandaran iCloud, butiran host, penerusan port, snippet dan folder disimpan dalam akaun Apple anda sendiri melalui stor nilai-kunci iCloud Apple. <strong>Kami tidak dapat mengaksesnya.</strong> Kata laluan SSH disegerakkan melalui Rantai Kunci iCloud hanya jika anda menghidupkan &ldquo;Simpan juga kata laluan dalam Rantai Kunci iCloud&rdquo; (mati secara lalai); kunci peribadi tidak pernah disegerakkan. Anda boleh mematikannya pada bila-bila masa dalam Tetapan &rsaquo; iCloud.</p>
 <h2>6. Kelulusan ejen AI, widget dan Apple Watch</h2>
-<p>Apabila ejen pengekodan AI seperti Claude Code atau Codex yang berjalan <em>di dalam sesi SSH anda sendiri</em> meminta kebenaran, Hushterm mengesan gesaan itu dalam teks terminal pada peranti dan memaparkan butang Luluskan / Tolak dalam apl. Hushterm sendiri tidak pernah menghubungi ejen tersebut atau penyedianya. Dengan Pro, pemberitahuan setempat mungkin muncul pada peranti untuk seketika selepas anda meninggalkan apl. Tiada pelayan push digunakan. Senarai host dan permintaan kelulusan anda hanya bergerak antara iPhone dan Apple Watch dan tidak melalui mana-mana pelayan.</p>
+<p>Apabila ejen pengekodan AI seperti Claude Code atau Codex yang berjalan <em>di dalam sesi SSH anda sendiri</em> meminta kebenaran, Hushterm mengesan gesaan itu dalam teks terminal pada peranti dan memaparkan butang Luluskan / Tolak dalam apl. Hushterm sendiri tidak pernah menghubungi ejen tersebut atau penyedianya. Dengan Pro, pemberitahuan setempat mungkin muncul pada peranti untuk seketika selepas anda meninggalkan apl. Pemberitahuan kelulusan dan Live Activity dijana secara setempat pada peranti; tiada pelayan push digunakan. Senarai host dan permintaan kelulusan anda hanya bergerak antara iPhone dan Apple Watch dan tidak melalui mana-mana pelayan.</p>
 <h2>7. Kebenaran peranti</h2>
 <p>Menolak sesuatu kebenaran hanya melumpuhkan ciri yang memerlukannya.</p>
 <table>
@@ -62,7 +64,7 @@
 <h2>9. Pembelian dalam apl</h2>
 <p>Langganan bulanan dan tahunan serta pembelian seumur hidup dijual melalui StoreKit Apple. Pembayaran dan pengesahan resit dikendalikan <strong>sepenuhnya oleh Apple</strong>; kami tidak pernah menerima butiran pembayaran atau maklumat Akaun Apple. Urus atau batalkan langganan dalam tetapan Akaun Apple anda.</p>
 <h2>10. Perkongsian dan penjualan</h2>
-<p>Kami tidak mengumpulkan maklumat peribadi, jadi tiada apa yang boleh dikongsi dengan atau dijual kepada sesiapa. Apl ini tidak menggunakan kuki, pengecam pengiklanan (IDFA) atau penjejakan merentas apl.</p>
+<p>Kami tidak mengumpulkan maklumat peribadi dan tidak menjual atau berkongsi data anda. Satu-satunya pengecualian ialah data yang anda pilih untuk dihantar kepada penyedia AI anda sendiri, seperti yang diterangkan dalam bahagian 4. Apl ini tidak menggunakan kuki, pengecam pengiklanan (IDFA) atau penjejakan merentas apl.</p>
 <h2>11. Penyulitan</h2>
 <p>Apl ini hanya menggunakan penyulitan SSH standard.</p>
 <h2>12. Kanak-kanak</h2>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Informativa sulla privacy — Hushterm | LuraAI</title>
-<meta name="description" content="Informativa sulla privacy di Hushterm. Nessun account, nulla inviato ai nostri server, l’AI gira sul dispositivo.">
+<meta name="description" content="Informativa sulla privacy di Hushterm. Nessun account, nulla inviato ai nostri server, l’AI gira sul dispositivo per impostazione predefinita.">
 <link rel="icon" type="image/png" href="../../icon.png">
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -19,8 +19,8 @@
 </nav>
 <div class="container">
 <h1>Informativa sulla privacy</h1>
-<p class="date">In vigore dal 17 ottobre 2026 · <a href="../en/">English</a> · <a href="../ko/">한국어</a></p>
-<div class="callout"><p>Hushterm non ha account e non invia nulla ai server di LuraAI. I tuoi comandi e l’output del terminale viaggiano solo tra il tuo dispositivo e il server che scegli, e ogni funzione AI gira sul dispositivo. Non ci sono analytics, pubblicità né SDK di tracciamento.</p></div>
+<p class="date">In vigore dal 31 ottobre 2026 · <a href="../en/">English</a> · <a href="../ko/">한국어</a></p>
+<div class="callout"><p>Hushterm non ha account e non invia nulla ai server di LuraAI. I tuoi comandi e l’output del terminale viaggiano solo tra il tuo dispositivo e il server che scegli, e l’AI gira sul dispositivo per impostazione predefinita. Solo se colleghi un tuo fornitore di AI i dati vanno dal tuo dispositivo direttamente a quel fornitore. Non ci sono analytics, pubblicità né SDK di tracciamento.</p></div>
 <h2>1. Cosa raccogliamo</h2>
 <p>LuraAI (&ldquo;noi&rdquo;) <strong>non raccoglie alcuna informazione personale</strong> tramite Hushterm (l’&ldquo;app&rdquo;).</p>
 <ul>
@@ -37,17 +37,19 @@
 <li>Impronte delle chiavi host dei server a cui ti sei connesso (confermate al primo utilizzo)</li>
 <li>Report dei controlli server (gli ultimi per ciascun host), cronologia delle richieste degli agenti AI e delle tue decisioni, i tuoi controlli server personalizzati e i progressi nel corso di esercizi</li>
 <li>Impostazioni dell’app (temi, barra dei tasti, scrollback, blocco app e così via) e la tua abilitazione a Pro</li>
+<li>Playbook, registro operativo (la cronologia della console operativa), risultati delle domande alla flotta e risultati della lente dei log</li>
+<li>Impostazioni del fornitore di AI (fornitore, indirizzo, modello e il tuo consenso per ciascun fornitore e indirizzo). Le chiavi API del tuo fornitore di AI sono conservate solo nel Portachiavi del dispositivo e non vengono mai sincronizzate con iCloud.</li>
 </ul>
 <h2>3. Connessioni al server e contenuto del terminale</h2>
 <p>Le connessioni SSH e SFTP vanno <strong>direttamente</strong> dal tuo dispositivo al server che indichi; non è coinvolto alcun relay di LuraAI. Non possiamo vedere l’output del terminale né i file che trasferisci. Ciò che accade sul server dipende dal gestore di quel server.</p>
-<p><strong>Controlli server.</strong> Un controllo server esegue solo comandi di sola lettura (da un elenco consentito fisso, oppure scritti da te e che hanno superato lo stesso elenco consentito) sul server che hai scelto, tramite la tua connessione SSH. I risultati vengono valutati sul dispositivo e restano sul dispositivo; nulla viene inviato a noi o ad altri. Gli esercizi Linux girano su un server simulato dentro l’app e non usano la rete.</p>
+<p><strong>Controlli server.</strong> Un controllo server esegue solo comandi di sola lettura (da un elenco consentito fisso, oppure scritti da te e che hanno superato lo stesso elenco consentito) sul server che hai scelto, tramite la tua connessione SSH. I risultati vengono valutati sul dispositivo e restano sul dispositivo; nulla viene inviato a noi o ad altri, tranne un riepilogo che invii al tuo fornitore di AI, come descritto nella sezione 4. Gli esercizi Linux girano su un server simulato dentro l’app e non usano la rete.</p>
 <h2>4. Funzioni AI e input vocale</h2>
-<p>I suggerimenti di comandi, l’analisi degli errori, i riepiloghi degli output lunghi e la diagnosi della connessione girano <strong>sul dispositivo</strong> con il modello sul dispositivo di Apple Intelligence (Foundation Models) e non usano la rete. L’input vocale usa solo il riconoscimento vocale sul dispositivo; l’audio non viene mai inviato a un server. L’avviso sui comandi rischiosi è deciso da un motore di regole sul dispositivo, non da un modello.</p>
-<p><strong>Nessun servizio AI di terze parti.</strong> Hushterm non usa, non chiama e non condivide dati con alcun servizio AI di terze parti (né OpenAI, Anthropic, Google o simili) e non ha un proprio server AI. Il testo che queste funzioni leggono &mdash; il comando digitato, l’output recente del terminale e il messaggio di errore del comando fallito &mdash; viene passato solo al modello sul dispositivo di Apple sul tuo iPhone o iPad, resta in memoria, non viene salvato da noi e non lascia mai il dispositivo. Poiché per l’AI non vengono inviati dati personali a terzi, non c’è nulla a cui acconsentire né da condividere. Se questo dovesse cambiare, l’app mostrerà prima quali dati verrebbero inviati e a chi, e chiederà il tuo permesso prima di inviare qualsiasi cosa.</p>
+<p>Per impostazione predefinita, suggerimenti di comandi, analisi degli errori, riepiloghi dell’output, diagnosi della connessione, spiegazioni della lente dei log, risposte alle domande alla flotta e spiegazioni dei playbook vengono generati <strong>sul dispositivo</strong> dal modello on-device di Apple Intelligence; se non è disponibile, l’app mostra frasi scritte da regole sul dispositivo. Il modello demo usato sui server virtuali dell’app segue scenari fissi inclusi nell’app e non usa la rete. La valutazione dei comandi rischiosi e gli esiti dei controlli sono decisi da un motore di regole sul dispositivo, non da un modello. L’input vocale usa solo il riconoscimento vocale sul dispositivo.</p>
+<p><strong>Fornitore di AI che colleghi tu (facoltativo, Pro).</strong> Solo se in Impostazioni &rsaquo; Agente integrato colleghi con la tua chiave API Anthropic (Claude), un servizio compatibile con OpenAI o un modello sul tuo server, quando usi l’agente integrato o un’indagine IA, oppure quando l’app scrive la spiegazione di una domanda alla flotta, della lente dei log o di un playbook, i seguenti dati vengono inviati direttamente dal tuo dispositivo a quel fornitore: l’obiettivo o la domanda che hai scritto; nome e sistema operativo del server e se è di produzione; l’output dei comandi in sola lettura eseguiti dall’app e dei comandi che hai approvato; il riepilogo dei risultati dei controlli e dei log. Prima dell’invio l’app oscura automaticamente i valori segreti come chiavi private, token e password, ma non riesce a riconoscere ogni segreto. Questo trasferimento non passa dai nostri server e non possiamo vederne il contenuto. Il modo in cui il fornitore tratta i dati ricevuti è regolato dai suoi termini e dalla sua informativa sulla privacy. Prima del primo utilizzo l’app ti mostra il fornitore, l’indirizzo e i dati che invierà e ti chiede il consenso (registrato per ciascun fornitore e indirizzo); puoi revocare il consenso ed eliminare la chiave nelle Impostazioni. Se colleghi un server che gira sulla stessa rete o su questo dispositivo, i dati non escono su Internet. Se non colleghi alcun fornitore, nessun dato viene inviato a servizi di AI di terze parti.</p>
 <h2>5. Backup iCloud — il tuo spazio, non il nostro</h2>
 <p>Se attivi il backup iCloud, i dettagli degli host, gli inoltri di porta, gli snippet e le cartelle vengono salvati nel tuo account Apple tramite l’archivio chiave-valore di iCloud. <strong>Non possiamo accedervi.</strong> Le password SSH si sincronizzano tramite il Portachiavi di iCloud solo se attivi &ldquo;Conserva le password anche nel Portachiavi di iCloud&rdquo; (disattivato per impostazione predefinita); le chiavi private non vengono mai sincronizzate. Puoi disattivarlo in qualsiasi momento in Impostazioni &rsaquo; iCloud.</p>
 <h2>6. Approvazioni degli agenti AI, widget e Apple Watch</h2>
-<p>Quando un agente AI di programmazione come Claude Code o Codex che gira <em>all’interno della tua sessione SSH</em> chiede un permesso, Hushterm rileva la richiesta nel testo del terminale sul dispositivo e mostra nell’app i pulsanti Approva / Rifiuta. Hushterm stesso non contatta mai questi agenti né i loro fornitori. Con Pro, una notifica locale può comparire sul dispositivo per un breve periodo dopo che esci dall’app. Non viene usato alcun server push. L’elenco degli host e le richieste di approvazione passano solo tra iPhone e Apple Watch e non attraversano alcun server.</p>
+<p>Quando un agente AI di programmazione come Claude Code o Codex che gira <em>all’interno della tua sessione SSH</em> chiede un permesso, Hushterm rileva la richiesta nel testo del terminale sul dispositivo e mostra nell’app i pulsanti Approva / Rifiuta. Hushterm stesso non contatta mai questi agenti né i loro fornitori. Con Pro, una notifica locale può comparire sul dispositivo per un breve periodo dopo che esci dall’app. Le notifiche di approvazione e la Live Activity vengono generate localmente sul dispositivo; non viene usato alcun server push. L’elenco degli host e le richieste di approvazione passano solo tra iPhone e Apple Watch e non attraversano alcun server.</p>
 <h2>7. Autorizzazioni del dispositivo</h2>
 <p>Negare un’autorizzazione disattiva solo la funzione che ne ha bisogno.</p>
 <table>
@@ -62,7 +64,7 @@
 <h2>9. Acquisti in-app</h2>
 <p>Gli abbonamenti mensile e annuale e l’acquisto a vita sono venduti tramite StoreKit di Apple. Il pagamento e la convalida della ricevuta sono gestiti <strong>interamente da Apple</strong>; non riceviamo mai dati di pagamento né informazioni sull’account Apple. Gestisci o annulla gli abbonamenti nelle impostazioni del tuo account Apple.</p>
 <h2>10. Condivisione e vendita</h2>
-<p>Non raccogliamo informazioni personali, quindi non ce ne sono da condividere o vendere a nessuno. L’app non usa cookie, identificatori pubblicitari (IDFA) né tracciamento tra app.</p>
+<p>Non raccogliamo informazioni personali e non vendiamo né condividiamo i tuoi dati. L’unica eccezione sono i dati che scegli di inviare al tuo fornitore di AI, come descritto nella sezione 4. L’app non usa cookie, identificatori pubblicitari (IDFA) né tracciamento tra app.</p>
 <h2>11. Crittografia</h2>
 <p>L’app usa solo la crittografia SSH standard.</p>
 <h2>12. Minori</h2>

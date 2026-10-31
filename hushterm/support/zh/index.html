@@ -22,7 +22,7 @@
 <p class="lead">对 Hushterm 有疑问或遇到问题？我们乐意帮忙。</p>
 <div class="contact"><p class="addr"><a href="mailto:contact@luraai.io">contact@luraai.io</a></p><p>我们会尽快回复。请附上设备型号、iOS 版本和 App 版本。切勿发送密码或私钥。</p></div>
 <h2>入门</h2>
-<div class="faq"><h3>没有服务器也能试用吗？</h3><p>打开“主机”标签页，点按“无需服务器，先试试”。它会打开一台在 App 内模拟的服务器，无需联网，您可以放心地看看危险命令警告会如何处理 <code>rm -rf</code>。</p></div>
+<div class="faq"><h3>没有服务器也能试用吗？</h3><p>在“运维面板”上点按“无需服务器体验”。它会添加在 App 内模拟的演示服务器和虚拟服务器，无需联网，您可以放心地看看危险命令警告会如何处理 <code>rm -rf</code>。</p></div>
 <div class="faq"><h3>如何添加真实服务器？</h3><p>前往“主机”&rsaquo; +，输入地址、端口、用户名和登录方式（密码或密钥）。首次连接时，App 会显示主机密钥指纹；信任之前，请先与服务器上的指纹进行比对。</p></div>
 <div class="faq"><h3>如何创建 SSH 密钥？</h3><p>在“密钥”界面，可以生成 ed25519 和 ECDSA 密钥，或导入 OpenSSH 和 PEM 密钥（Pro）。Secure Enclave 密钥受 Face ID 保护，永远不会离开设备。请把公钥添加到服务器上的 <code>~/.ssh/authorized_keys</code> 中。</p></div>
 <h2>订阅与购买</h2>
@@ -35,9 +35,13 @@
 <div class="faq"><h3>连接超时或不断断开。</h3><p>请检查地址、端口和防火墙。您自己网络中的服务器需要“本地网络”权限（设置 &rsaquo; Hushterm）。如果为某个主机开启了“始终使用 tmux 连接”，断线后会话仍会继续（Pro）。</p></div>
 <div class="faq"><h3>在后台时连接断开。</h3><p>iOS 会限制 App 在后台保持连接的时间。借助 tmux，可以从中断的地方继续。</p></div>
 <h2>AI 与智能体</h2>
-<div class="faq"><h3>AI 功能缺失或无法使用。</h3><p>需要支持 Apple 智能的设备，并在“设置”&rsaquo;“Apple 智能”中开启。在其他设备上，基于规则的说明仍可使用。所有 AI 都在设备上运行。</p></div>
+<div class="faq"><h3>AI 功能缺失或无法使用。</h3><p>需要支持 Apple 智能的设备，并在“设置”&rsaquo;“Apple 智能”中开启。在其他设备上，基于规则的说明仍可使用。AI 默认在设备上运行。</p></div>
 <div class="faq"><h3>App 会自动运行 AI 写出的命令吗？</h3><p>不会。建议只会填入输入行，是否运行由您决定。<code>rm -rf</code>、<code>dd</code>、<code>mkfs</code>、<code>chmod -R 777</code> 等命令，或在生产环境重启，都会在发送前暂停。</p></div>
 <div class="faq"><h3>如何批准 Claude Code / Codex 的请求？</h3><p>当您 SSH 会话中的智能体请求权限时，Hushterm 会在终端中检测到该提示，并在 App 中显示“批准”和“拒绝”按钮。iOS 不会让 SSH 连接在后台长时间保持，因此这在 App 打开期间可用；使用 Pro 时，离开 App 后的短时间内可能会出现本地通知。如果什么都没看到，请在“设置”&rsaquo;“通知”中开启通知。</p></div>
+<h2>AI 体验、请求去向与批准</h2>
+<div class="faq"><h3>没有服务器或 API 密钥，也能试用 AI 吗？</h3><p>可以。在运维面板中点按“无需服务器体验”，App 内会添加一台演示服务器、三台虚拟 Linux 服务器和一个离线演示模型。演示模型只能在这些虚拟服务器上使用。</p></div>
+<div class="faq"><h3>我的 AI 请求会发送到哪里？</h3><p>默认情况下在设备上由 Apple 智能的设备端模型处理。如果您在“设置”&rsaquo;“内置智能体”中接入自己的 API 密钥，请求只会在您同意后，从您的设备直接发送到您选择的提供方，绝不经过我们的服务器。API 密钥只保存在设备的钥匙串中，不会同步到 iCloud。详情请参阅<a href="../../privacy/zh/">隐私政策</a>。</p></div>
+<div class="faq"><h3>智能体会自行更改我的服务器吗？</h3><p>不会。只有只读命令会自动运行；每条命令的执行或文件更改都要等待您批准。在标记为生产环境的主机上，危险命令会被阻止，您也可以随时让它停止。</p></div>
 <h2>备份与数据</h2>
 <div class="faq"><h3>如何把主机迁移到另一台设备？</h3><p>在“设置”&rsaquo; iCloud 中开启备份，登录同一个 Apple 账户的设备上就会恢复。只有开启“同时将密码保存在 iCloud 钥匙串中”时，密码才会一起迁移；私钥绝不会离开设备，因此请在新设备上重新导入。</p></div>
 <div class="faq"><h3>我的数据在哪里？</h3><p>只在您的设备和您自己的 iCloud 中。详情请参阅<a href="../../privacy/zh/">隐私政策</a>。</p></div>

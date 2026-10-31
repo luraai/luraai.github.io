@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kebijakan Privasi — Hushterm | LuraAI</title>
-<meta name="description" content="Kebijakan privasi Hushterm. Tanpa akun, tidak ada yang dikirim ke server kami, AI berjalan di perangkat.">
+<meta name="description" content="Kebijakan privasi Hushterm. Tanpa akun, tidak ada yang dikirim ke server kami, AI berjalan di perangkat secara default.">
 <link rel="icon" type="image/png" href="../../icon.png">
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -19,8 +19,8 @@
 </nav>
 <div class="container">
 <h1>Kebijakan Privasi</h1>
-<p class="date">Berlaku sejak: 17 Oktober 2026 · <a href="../en/" hreflang="en">English</a> · <a href="../ko/" hreflang="ko">한국어</a></p>
-<div class="callout"><p>Hushterm tidak memiliki akun dan tidak mengirim apa pun ke server LuraAI. Perintah dan output terminal Anda hanya berpindah antara perangkat Anda dan server yang Anda pilih, dan semua fitur AI berjalan di perangkat. Tidak ada analitik, iklan, atau SDK pelacakan.</p></div>
+<p class="date">Berlaku sejak: 31 Oktober 2026 · <a href="../en/" hreflang="en">English</a> · <a href="../ko/" hreflang="ko">한국어</a></p>
+<div class="callout"><p>Hushterm tidak memiliki akun dan tidak mengirim apa pun ke server LuraAI. Perintah dan output terminal Anda hanya berpindah antara perangkat Anda dan server yang Anda pilih, dan secara default AI berjalan di perangkat. Hanya jika Anda menghubungkan penyedia AI Anda sendiri, data dikirim dari perangkat Anda langsung ke penyedia tersebut. Tidak ada analitik, iklan, atau SDK pelacakan.</p></div>
 <h2>1. Data yang kami kumpulkan</h2>
 <p>LuraAI (&ldquo;kami&rdquo;) <strong>tidak mengumpulkan informasi pribadi apa pun</strong> melalui Hushterm (&ldquo;aplikasi&rdquo;).</p>
 <ul>
@@ -37,17 +37,19 @@
 <li>Fingerprint kunci host dari server yang pernah Anda hubungi (dikonfirmasi saat pertama kali dipakai)</li>
 <li>Laporan pemeriksaan server (beberapa yang terakhir per host), riwayat permintaan agen AI dan keputusan Anda, pemeriksaan server buatan Anda sendiri, serta progres kursus latihan</li>
 <li>Pengaturan aplikasi (tema, bilah tombol, scrollback, kunci aplikasi, dan sebagainya) serta hak Pro Anda</li>
+<li>Playbook, log operasi (riwayat dek operasi), hasil pertanyaan armada, dan hasil lensa log</li>
+<li>Pengaturan penyedia AI (penyedia, alamat, model, dan persetujuan Anda untuk setiap penyedia dan alamat). Kunci API untuk penyedia AI Anda hanya disimpan di Rantai Kunci perangkat dan tidak pernah disinkronkan ke iCloud.</li>
 </ul>
 <h2>3. Koneksi server dan konten terminal</h2>
 <p>Koneksi SSH dan SFTP berjalan <strong>langsung</strong> dari perangkat Anda ke server yang Anda tentukan; tidak ada relay LuraAI yang terlibat. Kami tidak dapat melihat output terminal atau file yang Anda transfer. Apa yang terjadi di server diatur oleh operator server tersebut.</p>
-<p><strong>Pemeriksaan server.</strong> Pemeriksaan server hanya menjalankan perintah read-only (dari daftar izin tetap, atau perintah yang Anda tulis dan lolos daftar izin yang sama) pada server yang Anda pilih, melalui koneksi SSH Anda sendiri. Hasilnya dinilai di perangkat dan disimpan di perangkat; tidak ada yang dikirim kepada kami atau pihak lain mana pun. Kursus latihan Linux berjalan di server simulasi di dalam aplikasi dan tidak memakai jaringan.</p>
+<p><strong>Pemeriksaan server.</strong> Pemeriksaan server hanya menjalankan perintah read-only (dari daftar izin tetap, atau perintah yang Anda tulis dan lolos daftar izin yang sama) pada server yang Anda pilih, melalui koneksi SSH Anda sendiri. Hasilnya dinilai di perangkat dan disimpan di perangkat; tidak ada yang dikirim kepada kami atau pihak lain mana pun, kecuali ringkasan yang Anda kirim ke penyedia AI Anda sendiri seperti dijelaskan di bagian 4. Kursus latihan Linux berjalan di server simulasi di dalam aplikasi dan tidak memakai jaringan.</p>
 <h2>4. Fitur AI dan input suara</h2>
-<p>Saran perintah, analisis error, ringkasan output panjang, dan diagnosis koneksi berjalan <strong>di perangkat</strong> dengan model di perangkat milik Apple Intelligence (Foundation Models) dan tidak memakai jaringan. Input suara hanya memakai pengenalan ucapan di perangkat; audio tidak pernah dikirim ke server. Peringatan perintah berisiko diputuskan oleh mesin aturan di perangkat, bukan oleh model.</p>
-<p><strong>Tanpa layanan AI pihak ketiga.</strong> Hushterm tidak menggunakan, memanggil, atau membagikan data dengan layanan AI pihak ketiga mana pun (bukan OpenAI, Anthropic, Google, atau sejenisnya), dan tidak memiliki server AI sendiri. Teks yang dibaca fitur-fitur ini &mdash; perintah yang Anda ketik, output terminal terbaru, dan pesan error dari perintah yang gagal &mdash; hanya diteruskan ke model di perangkat milik Apple pada iPhone atau iPad Anda, tetap berada di memori, tidak kami simpan, dan tidak pernah meninggalkan perangkat. Karena tidak ada data pribadi yang dikirim ke pihak ketiga mana pun untuk keperluan AI, tidak ada yang perlu disetujui atau dibagikan. Jika hal ini suatu saat berubah, aplikasi akan lebih dulu menampilkan data apa yang akan dikirim dan kepada siapa, serta meminta izin Anda sebelum mengirim apa pun.</p>
+<p>Secara default, saran perintah, analisis error, ringkasan output, diagnosis koneksi, penjelasan lensa log, jawaban pertanyaan armada, dan penjelasan playbook dibuat <strong>di perangkat</strong> oleh model on-device Apple Intelligence; jika model itu tidak tersedia, aplikasi menampilkan kalimat yang ditulis oleh aturan di perangkat. Model demo yang dipakai di server virtual dalam aplikasi berjalan dengan skenario tetap yang ada di dalam aplikasi dan tidak memakai jaringan. Penilaian perintah berbahaya dan hasil pemeriksaan ditentukan oleh mesin aturan di perangkat, bukan oleh model. Input suara hanya memakai pengenalan suara di perangkat.</p>
+<p><strong>Penyedia AI yang Anda hubungkan sendiri (opsional, Pro).</strong> Hanya jika Anda menghubungkan Anthropic (Claude), layanan yang kompatibel dengan OpenAI, atau model di server Anda sendiri dengan kunci API Anda sendiri di Pengaturan &rsaquo; Agen bawaan, data berikut dikirim langsung dari perangkat Anda ke penyedia tersebut saat Anda memakai agen bawaan atau investigasi AI, atau saat aplikasi menulis penjelasan untuk pertanyaan armada, lensa log, atau playbook: tujuan atau pertanyaan yang Anda tulis; nama server, sistem operasi, dan apakah server itu produksi; output perintah baca-saja yang dijalankan aplikasi dan perintah yang Anda setujui; serta ringkasan hasil pemeriksaan dan log. Sebelum mengirim, aplikasi otomatis menyamarkan nilai rahasia seperti kunci privat, token, dan kata sandi, tetapi tidak dapat mengenali semua rahasia. Pengiriman ini tidak melewati server kami, dan kami tidak dapat melihat isinya. Cara penyedia memproses data yang diterimanya diatur oleh ketentuan dan kebijakan privasi penyedia tersebut. Sebelum penggunaan pertama, aplikasi menampilkan penyedia, alamat, dan data yang akan dikirim lalu meminta persetujuan Anda (dicatat per penyedia dan alamat); Anda dapat mencabut persetujuan dan menghapus kunci di Pengaturan. Jika Anda menghubungkan server yang berjalan di jaringan yang sama atau di perangkat ini, data tidak keluar ke internet. Jika Anda tidak menghubungkan penyedia, tidak ada data yang dikirim ke layanan AI pihak ketiga.</p>
 <h2>5. Cadangan iCloud — penyimpanan Anda, bukan milik kami</h2>
 <p>Jika Anda mengaktifkan pencadangan iCloud, detail host, port forwarding, snippet, dan folder disimpan di akun Apple Anda sendiri melalui penyimpanan key-value iCloud milik Apple. <strong>Kami tidak dapat mengaksesnya.</strong> Kata sandi SSH tersinkron melalui Rantai Kunci iCloud hanya jika Anda mengaktifkan &ldquo;Simpan juga kata sandi di Rantai Kunci iCloud&rdquo; (nonaktif secara default); kunci privat tidak pernah disinkronkan. Anda dapat mematikannya kapan saja di Pengaturan &rsaquo; iCloud.</p>
 <h2>6. Persetujuan agen AI, widget, dan Apple Watch</h2>
-<p>Ketika agen coding AI seperti Claude Code atau Codex yang berjalan <em>di dalam sesi SSH Anda sendiri</em> meminta izin, Hushterm mendeteksi permintaan itu pada teks terminal di perangkat dan menampilkan tombol Setujui / Tolak di aplikasi. Hushterm sendiri tidak pernah menghubungi agen tersebut atau penyedianya. Dengan Pro, notifikasi lokal dapat muncul di perangkat untuk waktu singkat setelah Anda meninggalkan aplikasi. Tidak ada server push yang digunakan. Daftar host dan permintaan persetujuan Anda hanya berpindah antara iPhone dan Apple Watch dan tidak melewati server mana pun.</p>
+<p>Ketika agen coding AI seperti Claude Code atau Codex yang berjalan <em>di dalam sesi SSH Anda sendiri</em> meminta izin, Hushterm mendeteksi permintaan itu pada teks terminal di perangkat dan menampilkan tombol Setujui / Tolak di aplikasi. Hushterm sendiri tidak pernah menghubungi agen tersebut atau penyedianya. Dengan Pro, notifikasi lokal dapat muncul di perangkat untuk waktu singkat setelah Anda meninggalkan aplikasi. Notifikasi persetujuan dan Live Activity dibuat secara lokal di perangkat; tidak ada server push yang digunakan. Daftar host dan permintaan persetujuan Anda hanya berpindah antara iPhone dan Apple Watch dan tidak melewati server mana pun.</p>
 <h2>7. Izin perangkat</h2>
 <p>Menolak sebuah izin hanya menonaktifkan fitur yang membutuhkannya.</p>
 <table>
@@ -62,7 +64,7 @@
 <h2>9. Pembelian dalam aplikasi</h2>
 <p>Langganan bulanan dan tahunan serta pembelian seumur hidup dijual melalui StoreKit milik Apple. Pembayaran dan validasi kuitansi ditangani <strong>sepenuhnya oleh Apple</strong>; kami tidak pernah menerima detail pembayaran atau informasi Akun Apple. Kelola atau batalkan langganan di pengaturan Akun Apple Anda.</p>
 <h2>10. Berbagi dan penjualan</h2>
-<p>Kami tidak mengumpulkan informasi pribadi, sehingga tidak ada yang dapat dibagikan atau dijual kepada siapa pun. Aplikasi tidak memakai cookie, pengidentifikasi iklan (IDFA), atau pelacakan lintas aplikasi.</p>
+<p>Kami tidak mengumpulkan informasi pribadi dan tidak menjual atau membagikan data Anda. Satu-satunya pengecualian adalah data yang Anda pilih untuk dikirim ke penyedia AI Anda sendiri, seperti dijelaskan di bagian 4. Aplikasi tidak memakai cookie, pengidentifikasi iklan (IDFA), atau pelacakan lintas aplikasi.</p>
 <h2>11. Enkripsi</h2>
 <p>Aplikasi hanya memakai enkripsi SSH standar.</p>
 <h2>12. Anak-anak</h2>
